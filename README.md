@@ -20,7 +20,7 @@ AI can help people ask better questions, organize real problems, prepare for imp
 
 | # | Framework | Vertical | Status | Demo | Substack |
 |---|-----------|----------|--------|------|----------|
-| 01 | Women's Health Longitudinal Dashboard | HealthTech / Patient Data | Spec ready, demo preview | Coming soon | Coming soon |
+| 01 | Women's Health Longitudinal Dashboard | HealthTech / Patient Data | Spec ready, demo live | [Demo](https://frameworks.thihsystems.com/frameworks/womens-health-longitudinal-dashboard/demo) | [Substack](https://substack.com/@michaelmartinthih) |
 | 02 | Service Trade Intake Stewardship | Local Services / Trades | Planned | Coming soon | Coming soon |
 | 03 | Real Estate Client Clarity Framework | Real Estate / Client Ops | Planned | Coming soon | Coming soon |
 
@@ -85,11 +85,15 @@ No environment variables are required for v1.
 
 - Website: `https://frameworks.thihsystems.com`
 - Preview URL: `https://thihsystems-frameworks.vercel.app`
-- Substack: Coming soon
-- LinkedIn: `@thihsystems`
+- Substack: `https://substack.com/@michaelmartinthih`
+- THIHsystems LinkedIn: `https://www.linkedin.com/company/124453928/admin/dashboard/`
+- Personal LinkedIn: `https://www.linkedin.com/in/michaelmartinthih`
 - GitHub: This repository
 
 ## Built by
 
 Michael E Martin Jr  
 THIHsystems
+
+
+

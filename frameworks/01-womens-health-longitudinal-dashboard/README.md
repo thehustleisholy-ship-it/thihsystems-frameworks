@@ -49,12 +49,13 @@ This is not a copy-and-paste mandate.
 
 - Framework draft: ready
 - Synthetic data: ready
-- Rule-based pattern engine: planned or in progress
-- Clinical export preview: planned or in progress
-- Web demo: coming soon at `frameworks.thihsystems.com`
+- Rule-based pattern engine: prototype ready
+- Clinical export preview: demo preview ready
+- Web demo: live at `https://frameworks.thihsystems.com/frameworks/womens-health-longitudinal-dashboard/demo`
 
 ## Use this framework
 
 Fork it. Study it. Personalize it.
 
 Do not simply copy the surface. Adapt the structure to the person, condition, community, and burden in front of you.
+

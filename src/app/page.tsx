@@ -208,13 +208,14 @@ export default function Home() {
         <div className="shell flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <div>
             <h2 className="text-4xl font-semibold text-white">Every Friday is Framework Fridays.</h2>
-            <p className="mt-4 text-lg muted-text">Follow @thihsystems for the next release.</p>
+            <p className="mt-4 text-lg muted-text">Follow THIHsystems for the next release.</p>
           </div>
           <ButtonLink href={links.linkedin} variant="primary">
-            Follow @thihsystems
+            Follow THIHsystems
           </ButtonLink>
         </div>
       </section>
     </main>
   );
 }
+

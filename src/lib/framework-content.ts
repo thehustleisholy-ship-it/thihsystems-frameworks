@@ -2,8 +2,8 @@ export const links = {
   framework: "/frameworks/womens-health-longitudinal-dashboard",
   demo: "/frameworks/womens-health-longitudinal-dashboard/demo",
   github: "https://github.com/thehustleisholy-ship-it/thihsystems-frameworks",
-  substack: "https://thihsystems.substack.com",
-  linkedin: "https://www.linkedin.com/company/thihsystems/",
+  substack: "https://substack.com/@michaelmartinthih",
+  linkedin: "https://www.linkedin.com/company/124453928/admin/dashboard/",
 };
 
 export const framework = {
@@ -11,7 +11,7 @@ export const framework = {
   title: "Women's Health Longitudinal Dashboard",
   tagline: "Patient-owned. Longitudinal. Clinical-conversation-ready.",
   thesis: "The data model is medicine. The export format is the appointment.",
-  statuses: ["Spec Ready", "Demo Preview", "GitHub Pending"],
+  statuses: ["Spec Ready", "Demo Live", "GitHub Live"],
 };
 
 export const phaseHeatmap = [
@@ -45,3 +45,4 @@ export const insights = [
   "Fatigue and pain rise together in two of the last three cycles.",
   "Sleep disruption appears before the highest symptom days, making it useful for visit prep.",
 ];
+
