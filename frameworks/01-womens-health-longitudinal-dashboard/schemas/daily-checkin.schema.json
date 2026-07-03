@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frameworks.thihsystems.com/schemas/daily-checkin.schema.json",
+  "title": "Daily Check-In",
+  "type": "object",
+  "required": ["checkinId", "patientId", "cycleId", "date", "cycleDay", "phase", "symptoms"],
+  "properties": {
+    "checkinId": { "type": "string" },
+    "patientId": { "type": "string" },
+    "cycleId": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "cycleDay": { "type": "integer", "minimum": 1 },
+    "phase": { "type": "string", "enum": ["menstrual", "follicular", "ovulation", "luteal", "unknown"] },
+    "symptoms": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0, "maximum": 10 }
+    },
+    "sleepHours": { "type": "number", "minimum": 0, "maximum": 24 },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

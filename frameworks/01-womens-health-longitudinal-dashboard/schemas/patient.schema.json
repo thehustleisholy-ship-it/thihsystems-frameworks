@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frameworks.thihsystems.com/schemas/patient.schema.json",
+  "title": "Patient",
+  "type": "object",
+  "required": ["patientId", "dataOwner", "createdAt"],
+  "properties": {
+    "patientId": { "type": "string" },
+    "dataOwner": { "type": "string", "const": "patient" },
+    "displayName": { "type": "string" },
+    "birthYear": { "type": "integer", "minimum": 1900 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "consentNotes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

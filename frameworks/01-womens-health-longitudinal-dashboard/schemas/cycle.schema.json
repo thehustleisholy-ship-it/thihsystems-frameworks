@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frameworks.thihsystems.com/schemas/cycle.schema.json",
+  "title": "Cycle",
+  "type": "object",
+  "required": ["cycleId", "patientId", "cycleNumber", "startDate"],
+  "properties": {
+    "cycleId": { "type": "string" },
+    "patientId": { "type": "string" },
+    "cycleNumber": { "type": "integer", "minimum": 1 },
+    "startDate": { "type": "string", "format": "date" },
+    "endDate": { "type": "string", "format": "date" },
+    "estimatedLengthDays": { "type": "integer", "minimum": 1 },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

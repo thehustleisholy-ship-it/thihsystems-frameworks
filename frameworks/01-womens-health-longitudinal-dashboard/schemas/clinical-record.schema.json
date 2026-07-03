@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frameworks.thihsystems.com/schemas/clinical-record.schema.json",
+  "title": "Clinical Record",
+  "type": "object",
+  "required": ["recordId", "patientId", "date", "recordType", "summary"],
+  "properties": {
+    "recordId": { "type": "string" },
+    "patientId": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "recordType": { "type": "string", "enum": ["visit", "lab", "imaging", "procedure", "note", "other"] },
+    "summary": { "type": "string" },
+    "source": { "type": "string" },
+    "patientQuestion": { "type": "string" }
+  },
+  "additionalProperties": false
+}

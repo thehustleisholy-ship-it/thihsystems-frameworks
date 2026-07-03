@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frameworks.thihsystems.com/schemas/life-event.schema.json",
+  "title": "Life Event",
+  "type": "object",
+  "required": ["eventId", "patientId", "date", "category", "description"],
+  "properties": {
+    "eventId": { "type": "string" },
+    "patientId": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "category": { "type": "string", "enum": ["stress", "travel", "sleep", "nutrition", "movement", "care", "other"] },
+    "description": { "type": "string" },
+    "patientMarkedRelevant": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

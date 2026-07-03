@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frameworks.thihsystems.com/schemas/medication.schema.json",
+  "title": "Medication",
+  "type": "object",
+  "required": ["medicationId", "patientId", "name", "startDate"],
+  "properties": {
+    "medicationId": { "type": "string" },
+    "patientId": { "type": "string" },
+    "name": { "type": "string" },
+    "dose": { "type": "string" },
+    "startDate": { "type": "string", "format": "date" },
+    "endDate": { "type": "string", "format": "date" },
+    "reportedSideEffects": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

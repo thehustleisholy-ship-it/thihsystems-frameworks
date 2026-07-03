@@ -1,46 +1,95 @@
 # THIHsystems Framework Fridays
 
-Production-ready public hub for Framework Fridays by THIHsystems, designed for `frameworks.thihsystems.com`.
+**AI frameworks for real human burdens.**
 
-## What is included
+Framework Fridays is a public framework library by THIHsystems. Every Friday, we introduce a practical AI framework, explain the thinking on Substack, publish the build notes on GitHub, and turn the strongest ideas into working demos.
 
-- Home page at `/`
-- Framework detail page at `/frameworks/womens-health-longitudinal-dashboard`
-- Static synthetic demo preview at `/frameworks/womens-health-longitudinal-dashboard/demo`
-- Next.js App Router, TypeScript, Tailwind CSS, and ESLint
-- No database, auth, or external API calls
+This repository is not a collection of copy-and-paste products.
 
-## Local development
+It is a library of adaptable frameworks: problem maps, data models, workflow ideas, demo scaffolds, schemas, prompts, and implementation notes that builders can study, personalize, fork, and improve.
+
+## The operating thesis
+
+Not just leads.  
+Not just sales.  
+Not automation for automation's sake.
+
+AI can help people ask better questions, organize real problems, prepare for important conversations, and build systems that serve.
+
+## Framework Library
+
+| # | Framework | Vertical | Status | Demo | Substack |
+|---|-----------|----------|--------|------|----------|
+| 01 | Women's Health Longitudinal Dashboard | HealthTech / Patient Data | Spec ready, demo preview | Coming soon | Coming soon |
+| 02 | Service Trade Intake Stewardship | Local Services / Trades | Planned | Coming soon | Coming soon |
+| 03 | Real Estate Client Clarity Framework | Real Estate / Client Ops | Planned | Coming soon | Coming soon |
+
+## How each framework is organized
+
+Each framework folder may include:
+
+- `README.md`, plain-English overview
+- `framework.md`, full written framework
+- `schemas/`, structured data models
+- `demo-data/`, synthetic or sample data only
+- `scripts/`, local proof-of-concept tools
+- `outputs/`, generated examples
+- `docs/`, privacy notes, roadmap, open questions, MVP test plan
+
+## Current Framework
+
+### Framework 01: Women's Health Longitudinal Dashboard
+
+**Patient-owned. Longitudinal. Clinical-conversation-ready.**
+
+A framework for helping patients organize symptoms, cycles, life events, labs, medications, and clinical questions into a visit-ready export.
+
+This is not a diagnostic tool and is not medical advice. It is designed to help patients organize their own data and prepare better questions for licensed clinicians.
+
+## Build philosophy
+
+A framework is not a shortcut around discernment.
+
+Use these ideas as starting points. Change the fields. Change the flow. Change the language. Change the assumptions. Make the framework serve the person and community in front of you.
+
+The goal is not to clone the idea.
+
+The goal is to build systems that serve.
+
+## Publishing pipeline
+
+- LinkedIn introduces the issue.
+- Substack explains the framework.
+- GitHub holds the forkable build.
+- `frameworks.thihsystems.com` houses working demos.
+
+## Local website development
+
+The public website currently lives at the repository root as a Next.js App Router project.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
-
-## Verification
+Verification:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-## Vercel deployment
-
-1. Push this repository to GitHub: `thehustleisholy-ship-it/thihsystems-frameworks`.
-2. Import the repo in Vercel.
-3. Set the production domain to `frameworks.thihsystems.com`.
-4. Use the default Next.js build settings:
-   - Build command: `npm run build`
-   - Install command: `npm install`
-   - Output: Next.js default
-5. Deploy to production.
-
 No environment variables are required for v1.
 
-## Content links
+## Links
 
-- GitHub: <https://github.com/thehustleisholy-ship-it/thihsystems-frameworks>
-- Substack: <https://thihsystems.substack.com>
-- LinkedIn: <https://www.linkedin.com/company/thihsystems/>
+- Website: `https://frameworks.thihsystems.com`
+- Preview URL: `https://thihsystems-frameworks.vercel.app`
+- Substack: Coming soon
+- LinkedIn: `@thihsystems`
+- GitHub: This repository
+
+## Built by
+
+Michael E Martin Jr  
+THIHsystems

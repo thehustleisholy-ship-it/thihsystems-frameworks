@@ -1,0 +1,35 @@
+{
+  "notice": "Synthetic sample data for public demo use only. No real patient data.",
+  "patient": {
+    "patientId": "synthetic-patient-001",
+    "dataOwner": "patient",
+    "displayName": "Synthetic Patient",
+    "birthYear": 1991,
+    "createdAt": "2026-07-03T12:00:00Z",
+    "consentNotes": "Summary export only; source records remain patient-owned."
+  },
+  "cycles": [
+    { "cycleId": "cycle-015", "patientId": "synthetic-patient-001", "cycleNumber": 15, "startDate": "2026-01-04", "endDate": "2026-01-31", "estimatedLengthDays": 28 },
+    { "cycleId": "cycle-016", "patientId": "synthetic-patient-001", "cycleNumber": 16, "startDate": "2026-02-01", "endDate": "2026-02-28", "estimatedLengthDays": 28 },
+    { "cycleId": "cycle-017", "patientId": "synthetic-patient-001", "cycleNumber": 17, "startDate": "2026-03-01", "endDate": "2026-03-29", "estimatedLengthDays": 29 },
+    { "cycleId": "cycle-018", "patientId": "synthetic-patient-001", "cycleNumber": 18, "startDate": "2026-03-30", "endDate": "2026-04-26", "estimatedLengthDays": 28 },
+    { "cycleId": "cycle-019", "patientId": "synthetic-patient-001", "cycleNumber": 19, "startDate": "2026-04-27", "endDate": "2026-05-25", "estimatedLengthDays": 29 },
+    { "cycleId": "cycle-020", "patientId": "synthetic-patient-001", "cycleNumber": 20, "startDate": "2026-05-26", "endDate": "2026-06-23", "estimatedLengthDays": 29 }
+  ],
+  "dailyCheckins": [
+    { "checkinId": "chk-018-23", "patientId": "synthetic-patient-001", "cycleId": "cycle-018", "date": "2026-04-21", "cycleDay": 23, "phase": "luteal", "symptoms": { "fatigue": 8, "pain": 6, "moodShift": 7, "sleepDisruption": 6 }, "sleepHours": 5.4, "notes": "Evening energy drop." },
+    { "checkinId": "chk-019-02", "patientId": "synthetic-patient-001", "cycleId": "cycle-019", "date": "2026-04-28", "cycleDay": 2, "phase": "menstrual", "symptoms": { "fatigue": 7, "pain": 8, "moodShift": 5, "sleepDisruption": 6 }, "sleepHours": 6.1, "notes": "Pain sustained through first day." },
+    { "checkinId": "chk-019-24", "patientId": "synthetic-patient-001", "cycleId": "cycle-019", "date": "2026-05-20", "cycleDay": 24, "phase": "luteal", "symptoms": { "fatigue": 8, "pain": 7, "moodShift": 7, "sleepDisruption": 7 }, "sleepHours": 5.2, "notes": "Similar late-cycle fatigue." },
+    { "checkinId": "chk-020-14", "patientId": "synthetic-patient-001", "cycleId": "cycle-020", "date": "2026-06-08", "cycleDay": 14, "phase": "ovulation", "symptoms": { "fatigue": 4, "pain": 4, "moodShift": 3, "sleepDisruption": 5 }, "sleepHours": 5.9, "notes": "Mid-cycle sleep interruption." },
+    { "checkinId": "chk-020-25", "patientId": "synthetic-patient-001", "cycleId": "cycle-020", "date": "2026-06-19", "cycleDay": 25, "phase": "luteal", "symptoms": { "fatigue": 9, "pain": 7, "moodShift": 7, "sleepDisruption": 8 }, "sleepHours": 4.8, "notes": "Highest fatigue in sample." }
+  ],
+  "lifeEvents": [
+    { "eventId": "evt-020-12", "patientId": "synthetic-patient-001", "date": "2026-06-06", "category": "sleep", "description": "Two nights of interrupted sleep before ovulation-window check-in.", "patientMarkedRelevant": true }
+  ],
+  "medications": [
+    { "medicationId": "med-001", "patientId": "synthetic-patient-001", "name": "Synthetic medication entry", "dose": "Not specified", "startDate": "2026-03-15", "reportedSideEffects": ["fatigue question"], "notes": "Placeholder for medication timing review; not a causality claim." }
+  ],
+  "clinicalRecords": [
+    { "recordId": "rec-001", "patientId": "synthetic-patient-001", "date": "2026-06-24", "recordType": "note", "summary": "Patient wants to discuss recurring luteal fatigue and menstrual pain pattern.", "source": "patient-entered", "patientQuestion": "What should we evaluate next?" }
+  ]
+}
