@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# THIHsystems Framework Fridays
 
-## Getting Started
+Production-ready public hub for Framework Fridays by THIHsystems, designed for `frameworks.thihsystems.com`.
 
-First, run the development server:
+## What is included
+
+- Home page at `/`
+- Framework detail page at `/frameworks/womens-health-longitudinal-dashboard`
+- Static synthetic demo preview at `/frameworks/womens-health-longitudinal-dashboard/demo`
+- Next.js App Router, TypeScript, Tailwind CSS, and ESLint
+- No database, auth, or external API calls
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Vercel deployment
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repository to GitHub: `thehustleisholy-ship-it/thihsystems-frameworks`.
+2. Import the repo in Vercel.
+3. Set the production domain to `frameworks.thihsystems.com`.
+4. Use the default Next.js build settings:
+   - Build command: `npm run build`
+   - Install command: `npm install`
+   - Output: Next.js default
+5. Deploy to production.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No environment variables are required for v1.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content links
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: <https://github.com/thehustleisholy-ship-it/thihsystems-frameworks>
+- Substack: <https://thihsystems.substack.com>
+- LinkedIn: <https://www.linkedin.com/company/thihsystems/>
