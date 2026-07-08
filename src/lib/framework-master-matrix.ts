@@ -163,33 +163,43 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     enterprise_layer: "Workforce transition continuity",
     hidden_foundation:
       "The first 30 days after job loss determine the next 3 years. Operating system for income-loss stabilization.",
-    documented_research: "Research queue required",
-    statistics: "Needs source verification",
-    economic_impact: "Needs source verification",
-    evidence_confidence: EvidenceConfidenceLevel.Level1,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: implementation testing.",
+    documented_research:
+      "Secondary research compiled. BLS job displacement data, Federal Reserve household fragility, NBER job-loss effects, state UI administrative data, workforce program evaluations, benefits cliff research.",
+    statistics:
+      "Job displacement causes 20-40% earnings loss; 40% of households lack $400 emergency fund; UI replacement rate 40-50% of prior wage; ~50% never return to pre-loss wage level.",
+    economic_impact:
+      "ROI model: $1,178 intervention cost vs. $22,782 benefit (18.3x return). Break-even at 0.2 weeks accelerated employment. Needs pilot validation.",
+    evidence_confidence: EvidenceConfidenceLevel.Level2,
+    implementation_roadmap:
+      "Concept structured (complete). Demo preview (30-day workflow designed). Pilot ready (workforce partner identified, participant recruitment plan drafted). Scale decision after 12-month pilot (month 12 of 2026).",
     procurement_checklist:
-      "COBRA integration. Unemployment filing coordination. Benefits navigation tooling.",
+      "Lead implementation partner RFP. Benefits calculator development per state. Assessment platform procurement/build. Staff hiring (1 PM, 2-3 advisors, 1 coach, 0.5 evaluator). Data integration setup. Interagency MOU (UI, WIOA, emergency assistance). Participant communications. Pilot launch infrastructure.",
     roi_calculator_logic:
-      "Days to employment x income recovery x emergency-debt avoidance x housing stability.",
-    pilot_guide: "Start: 50 job-loss cases, 30-day tracking, outcomes measurement.",
-    policy_brief: "Income-shock stabilization as workforce infrastructure.",
-    primary_buyer: "Workforce boards, employer benefits departments, career services",
-    secondary_stakeholders: "Unemployment agencies, COBRA administrators, benefits navigators",
+      "$1,178 cost × (accelerated reemployment $5,400 + wage improvement $11,232 + avoided instability $1,750 + government savings $4,400) = 18.3x ROI over 3 years. Conservative scenario (30% realization) = 4.8x.",
+    pilot_guide:
+      "50-75 job-loss cases over 6 months, with matched comparison group. Intensive 30-day service delivery (intake, benefits analysis, job search, offer support). Outcomes tracking at 30-day, 90-day, 6-month, 12-month. Evaluation by external evaluator.",
+    policy_brief:
+      "Rapid coordination framework linking UI, workforce development, emergency assistance. Model state statute for automatic referral and rapid response. Interagency MOU template provided. Benefits calculator standardization. Emergency assistance fast-track.",
+    primary_buyer:
+      "State Departments of Labor, state workforce development boards, employers with transition budgets, nonprofit workforce providers",
+    secondary_stakeholders:
+      "Unemployment insurance administrators, emergency assistance coordinators, community action agencies, workforce development partners",
     affected_public:
-      "People experiencing job loss, income shock, unemployment benefits transition",
+      "Displaced workers (~2M/year U.S.); families dependent on displaced worker income; communities experiencing job-loss economic impact",
     core_data_inputs:
-      "Job loss date, COBRA deadline, unemployment filing deadline, income amount, expenses, family size",
+      "Participant financial situation (income, expenses, debt, savings); employment history & skills; benefits eligibility (UI, SNAP, childcare, housing); state benefits rules; job market data; wage records (for outcome validation)",
     key_workflow:
-      "Loss event → deadline map → Day 1 operating plan → daily checklist → 30-day tracker",
-    demo_type: "Interactive 30-day checklist and deadline tracker",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
-    procurement_readiness: ReadinessStatus.NeedsReview,
-    pilot_readiness: ReadinessStatus.Drafted,
-    policy_readiness: ReadinessStatus.NeedsReview,
+      "Day 1-3: Intake & assessment (financial, career, benefits). Day 4-7: Benefits cliff analysis & financial triage. Day 8-21: Job search acceleration. Day 22-30: Offer evaluation & decision support. Follow-up: 30-day, 90-day, 6-month, 1-year outcomes.",
+    demo_type:
+      "Interactive 30-day workflow tracker, state benefits calculator, job search bootcamp checklist, offer evaluation tool, outcomes dashboard",
+    maturity_status: "Concept Structured, Implementation Roadmap Complete, Pilot-Ready",
+    procurement_readiness: ReadinessStatus.ReadyForInternalReview,
+    pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
+    policy_readiness: ReadinessStatus.ReadyForInternalReview,
     risk_level: RiskLevel.Low,
-    primary_disclaimer: "Not financial advice. Designed for workforce continuity planning.",
-    source_status: SourceStatus.NotYetSourced,
+    primary_disclaimer:
+      "Framework supports but does not replace professional financial, legal, or career counseling. Benefits information varies by state and is subject to policy changes. Results depend on labor market conditions and individual circumstances.",
+    source_status: SourceStatus.SourceIdentified,
     public_claim_status: PublicClaimStatus.NeedsCitation,
     github_repo_url: "https://github.com/thehustleisholy-ship-it/framework-02-job-loss-income-shock-stabilizer",
     demo_url: "/frameworks/job-loss-income-shock-stabilizer/demo",
