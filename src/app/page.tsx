@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { framework, links } from "@/lib/framework-content";
+import { frameworks } from "@/lib/framework-content";
 
 const pipeline = [
   "LinkedIn introduces the issue.",
@@ -64,19 +64,19 @@ export default function Home() {
               Framework Fridays by THIHsystems
             </h1>
             <p className="mt-6 text-2xl font-medium silver-text">
-              AI frameworks for real human burdens.
+              Enterprise-layer frameworks for the systems nobody tests until they fail.
             </p>
             <p className="mt-6 max-w-2xl text-base leading-8 muted-text sm:text-lg">
-              Every Friday, THIHsystems introduces a practical framework,
-              expands the thinking on Substack, publishes the build notes on
-              GitHub, and turns the strongest ideas into working demos.
+              Every Framework Friday, THIHsystems turns overlooked infrastructure risks into
+              public frameworks, demo previews, build specs, and forkable implementation
+              starting points.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonLink href={links.framework} variant="primary">
-                Explore Framework 01
+              <ButtonLink href="/#library" variant="primary">
+                Explore Framework Library
               </ButtonLink>
-              <ButtonLink href={links.substack}>Read Substack</ButtonLink>
-              <ButtonLink href={links.github}>Fork on GitHub</ButtonLink>
+              <ButtonLink href="https://substack.com/@michaelmartinthih">Read Substack</ButtonLink>
+              <ButtonLink href="https://github.com/thehustleisholy-ship-it/thihsystems-frameworks">GitHub Hub</ButtonLink>
             </div>
           </div>
 
@@ -91,42 +91,33 @@ export default function Home() {
               <div className="h-10 w-10 rounded-full border hairline bg-[#d8b25a]/15" />
             </div>
             <div className="space-y-4">
-              <div className="rounded-md border hairline bg-black/45 p-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.16em] silver-text">
-                      {framework.number}
-                    </p>
-                    <h2 className="mt-3 text-2xl font-semibold text-white">
-                      {framework.title}
-                    </h2>
-                    <p className="mt-2 text-sm leading-6 muted-text">
-                      {framework.tagline}
-                    </p>
-                  </div>
-                  <span className="rounded-sm border border-[#d8b25a]/40 px-2 py-1 font-mono text-xs gold-text">
-                    Live
-                  </span>
-                </div>
-                <div className="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
-                  {framework.statuses.map((status) => (
-                    <span
-                      key={status}
-                      className="rounded-sm border hairline bg-white/[0.03] px-2 py-2 silver-text"
-                    >
-                      {status}
-                    </span>
-                  ))}
-                </div>
+              <div className="text-center">
+                <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
+                  10 Public Frameworks
+                </p>
+                <p className="mt-2 text-sm silver-text">Enterprise infrastructure library</p>
               </div>
-              <div className="grid grid-cols-3 gap-3">
-                {["Substack", "GitHub", "Demo"].map((item) => (
-                  <div key={item} className="rounded-md border hairline bg-white/[0.025] p-3">
-                    <div className="h-1.5 rounded-full bg-[#d8b25a]" />
-                    <p className="mt-3 text-sm font-medium text-white">{item}</p>
-                    <p className="mt-1 text-xs muted-text">Ready path</p>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-md border hairline bg-white/[0.025] p-3">
+                  <div className="h-1.5 rounded-full bg-[#d8b25a]" />
+                  <p className="mt-2 text-xs font-medium text-white">Framework Library</p>
+                  <p className="mt-1 text-xs muted-text">All frameworks</p>
+                </div>
+                <div className="rounded-md border hairline bg-white/[0.025] p-3">
+                  <div className="h-1.5 rounded-full bg-[#d8b25a]" />
+                  <p className="mt-2 text-xs font-medium text-white">Demo Previews</p>
+                  <p className="mt-1 text-xs muted-text">Interactive tours</p>
+                </div>
+                <div className="rounded-md border hairline bg-white/[0.025] p-3">
+                  <div className="h-1.5 rounded-full bg-[#d8b25a]" />
+                  <p className="mt-2 text-xs font-medium text-white">GitHub Repos</p>
+                  <p className="mt-1 text-xs muted-text">Forkable builds</p>
+                </div>
+                <div className="rounded-md border hairline bg-white/[0.025] p-3">
+                  <div className="h-1.5 rounded-full bg-[#d8b25a]" />
+                  <p className="mt-2 text-xs font-medium text-white">Build Specs</p>
+                  <p className="mt-1 text-xs muted-text">Enterprise ready</p>
+                </div>
               </div>
             </div>
           </div>
@@ -135,14 +126,13 @@ export default function Home() {
 
       <section className="section-pad border-b hairline">
         <div className="shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <h2 className="text-4xl font-semibold text-white">What this is</h2>
+          <h2 className="text-4xl font-semibold text-white">What Framework Fridays is</h2>
           <div className="space-y-5 text-2xl font-medium leading-tight silver-text sm:text-3xl">
-            <p>Not just leads.</p>
-            <p>Not just sales.</p>
+            <p>Not another prompt library.</p>
+            <p>Not another lead funnel.</p>
             <p>Not automation for automation&apos;s sake.</p>
             <p className="pt-4 text-xl leading-8 muted-text sm:text-2xl">
-              Frameworks that help people ask better questions, organize real
-              problems, and build systems that serve.
+              Framework Fridays maps the operating layers behind real-world system failures: health, housing, justice, water, food, energy, materials, labor, and critical facilities.
             </p>
           </div>
         </div>
@@ -150,43 +140,48 @@ export default function Home() {
 
       <section id="library" className="section-pad border-b hairline">
         <div className="shell">
-          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <h2 className="text-4xl font-semibold text-white">Framework Library</h2>
-              <p className="mt-3 muted-text">Public pages, demos, and build links.</p>
+              <p className="mt-3 muted-text">Public frameworks, demo previews, and build specs. Enterprise infrastructure for the systems nobody tests until they fail.</p>
             </div>
           </div>
 
-          <article className="metal-panel rounded-lg p-6 sm:p-8">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
-                <p className="font-mono text-sm uppercase tracking-[0.16em] gold-text">
-                  {framework.number}
-                </p>
-                <h3 className="mt-3 text-3xl font-semibold text-white">
-                  {framework.title}
-                </h3>
-                <p className="mt-3 text-lg silver-text">{framework.tagline}</p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {framework.statuses.map((status) => (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+            {frameworks.map((fw) => (
+              <article key={fw.slug} className="metal-panel rounded-lg p-6 sm:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
+                      {fw.number}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold text-white">
+                      {fw.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 silver-text">{fw.tagline}</p>
+                    <p className="mt-3 text-xs uppercase tracking-[0.12em] muted-text">{fw.category}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-1">
+                  {fw.statuses.map((status) => (
                     <span
                       key={status}
-                      className="rounded-sm border hairline bg-white/[0.03] px-3 py-2 text-sm silver-text"
+                      className="rounded-sm border hairline bg-white/[0.03] px-2 py-1 text-xs silver-text"
                     >
                       {status}
                     </span>
                   ))}
                 </div>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <ButtonLink href={links.framework} variant="primary">
-                  Read
-                </ButtonLink>
-                <ButtonLink href={links.demo}>Demo</ButtonLink>
-                <ButtonLink href={links.github}>GitHub</ButtonLink>
-              </div>
-            </div>
-          </article>
+                <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+                  <ButtonLink href={fw.links.detail} variant="primary">
+                    Read
+                  </ButtonLink>
+                  <ButtonLink href={fw.links.demo}>Demo</ButtonLink>
+                  <ButtonLink href={fw.links.github}>GitHub</ButtonLink>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -210,7 +205,7 @@ export default function Home() {
             <h2 className="text-4xl font-semibold text-white">Every Friday is Framework Fridays.</h2>
             <p className="mt-4 text-lg muted-text">Follow THIHsystems for the next release.</p>
           </div>
-          <ButtonLink href={links.linkedin} variant="primary">
+          <ButtonLink href="https://www.linkedin.com/company/124453928/admin/dashboard/" variant="primary">
             Follow THIHsystems
           </ButtonLink>
         </div>

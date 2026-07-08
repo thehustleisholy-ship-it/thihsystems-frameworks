@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { framework, links } from "@/lib/framework-content";
+import { frameworks } from "@/lib/framework-content";
+
+const framework = frameworks[0];
 
 export const metadata: Metadata = {
   title: framework.title,
@@ -94,9 +96,9 @@ export default function FrameworkDetailPage() {
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <CtaLink href={links.substack}>Read Substack</CtaLink>
-            <CtaLink href={links.github}>Fork GitHub</CtaLink>
-            <CtaLink href={links.demo} primary>
+            {framework.links.substack && <CtaLink href={framework.links.substack}>Read Substack</CtaLink>}
+            <CtaLink href={framework.links.github}>Fork GitHub</CtaLink>
+            <CtaLink href={framework.links.demo} primary>
               Try Demo
             </CtaLink>
           </div>

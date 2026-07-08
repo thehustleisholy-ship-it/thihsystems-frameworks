@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { framework, insights, phaseHeatmap, timeline } from "@/lib/framework-content";
+import { frameworks, insights, phaseHeatmap, timeline } from "@/lib/framework-content";
+
+const framework = frameworks[0];
 
 export const metadata: Metadata = {
   title: `${framework.title} Demo`,
