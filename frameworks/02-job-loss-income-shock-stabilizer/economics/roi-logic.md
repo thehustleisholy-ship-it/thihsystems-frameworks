@@ -148,14 +148,18 @@ Cost per worker: $65,000 / (52 weeks × 20 workers) = **$63/week × 4.3 weeks = 
 
 ## ROI Calculation
 
+**IMPORTANT: All ROI scenarios below are assumptions-based models. Actual ROI depends on pilot validation.**
+
 ### Economic Return (30-day intervention cost vs. 3-year benefits)
 
 **Cost:** $1,178 per worker  
-**Benefit:** $22,782 per worker (household + government savings)
+**Benefit (Modeled):** $22,782 per worker (household + government savings, based on assumptions)
 
-**ROI = ($22,782 - $1,178) / $1,178 = $21,604 / $1,178 = 18.3x**
+**Modeled ROI = ($22,782 - $1,178) / $1,178 = $21,604 / $1,178 = 18.3x**  
+*Note: This is a scenario based on assumption of 6-week reemployment acceleration and 8% wage improvement. Actual ROI will depend on pilot results.*
 
-**Payback period:** Benefits exceed cost within ~1 week of reemployment
+**Payback period (Modeled):** Model shows benefits exceed cost within ~1 week of reemployment  
+*Note: Actual payback depends on intervention effectiveness in pilot.*
 
 ### Conservative Scenario (30% of benefits realized)
 

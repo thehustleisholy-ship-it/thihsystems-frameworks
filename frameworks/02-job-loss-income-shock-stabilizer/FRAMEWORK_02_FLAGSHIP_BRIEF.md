@@ -196,11 +196,14 @@ Day 22-30: DECIDE
 - Government cost savings (UI/emergency assistance reduction): $4,400
 - **Total benefit:** $22,782
 
-**ROI = 18.3x** (in conservative scenarios, 4.8x)
+**ROI (Modeled, not validated):** 18.3x (in conservative scenarios, 4.8x)  
+*Note: These are assumptions-based ROI scenarios. Actual ROI depends on pilot outcomes.*
 
-**Payback Period:** Benefits exceed costs within ~1 week of reemployment
+**Payback Period (Assumptions-Based):** Modeled scenario shows benefits exceed costs within ~1 week of reemployment  
+*Note: Actual payback depends on intervention effectiveness, labor market, participant characteristics.*
 
-**Break-Even Threshold:** Need just 0.2 weeks of accelerated employment OR 1% wage improvement (very low hurdle)
+**Break-Even Threshold (Assumptions-Based):** Model shows break-even at 0.2 weeks of accelerated employment OR 1% wage improvement  
+*Note: Pilot will test if these thresholds are realistic.*
 
 ---
 
@@ -213,14 +216,17 @@ Day 22-30: DECIDE
 - 50-75 comparison participants (receive standard services)
 - Matched by demographics, industry, wage history
 
-**Primary Outcomes:**
-- 30-day reemployment rate (target: ≥50%)
-- Time to employment (target: 12 weeks avg, improvement from 18 weeks)
-- Starting wage (target: ≥95% of pre-loss wage)
-- Program cost (target: ≤$1,500 per participant)
+**Pilot Targets (Not Proven Outcomes — Goals for Testing):**
+- 30-day reemployment rate (pilot target: ≥50%)
+- Time to employment (pilot target: 12 weeks avg, improvement from 18 weeks baseline)
+- Starting wage (pilot target: ≥95% of pre-loss wage)
+- Program cost (pilot target: ≤$1,500 per participant)
 
-**Success Criteria (Scale Decision):**
-- ✓ If all primary outcomes achieved → recommend full implementation
+*Note: These are targets for pilot testing, not claimed outcomes. Actual results will depend on implementation quality, labor market conditions, and participant characteristics.*
+
+**Success Criteria (Scale Decision, Pilot Targets Not Proven):**
+
+- ✓ If all pilot targets achieved → recommend full implementation testing
 - ✓ If ROI positive → justify as workforce investment
 - ✗ If outcomes fall significantly short → recommend redesign or discontinuation
 

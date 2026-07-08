@@ -168,14 +168,14 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics:
       "Job displacement causes 20-40% earnings loss; 40% of households lack $400 emergency fund; UI replacement rate 40-50% of prior wage; ~50% never return to pre-loss wage level.",
     economic_impact:
-      "ROI model: $1,178 intervention cost vs. $22,782 benefit (18.3x return). Break-even at 0.2 weeks accelerated employment. Needs pilot validation.",
+      "Assumptions-based ROI model: $1,178 cost vs. $22,782 modeled benefit (18.3x return under assumptions). Modeled break-even at 0.2 weeks accelerated employment. Requires pilot validation for actual outcomes.",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
     implementation_roadmap:
       "Concept structured (complete). Demo preview (30-day workflow designed). Pilot ready (workforce partner identified, participant recruitment plan drafted). Scale decision after 12-month pilot (month 12 of 2026).",
     procurement_checklist:
       "Lead implementation partner RFP. Benefits calculator development per state. Assessment platform procurement/build. Staff hiring (1 PM, 2-3 advisors, 1 coach, 0.5 evaluator). Data integration setup. Interagency MOU (UI, WIOA, emergency assistance). Participant communications. Pilot launch infrastructure.",
     roi_calculator_logic:
-      "$1,178 cost × (accelerated reemployment $5,400 + wage improvement $11,232 + avoided instability $1,750 + government savings $4,400) = 18.3x ROI over 3 years. Conservative scenario (30% realization) = 4.8x.",
+      "Modeled ROI scenario (not validated): $1,178 cost × (modeled accelerated reemployment $5,400 + wage improvement $11,232 + avoided instability $1,750 + government savings $4,400) = 18.3x modeled ROI. Conservative scenario (30% realization) = 4.8x. Actual ROI requires pilot data.",
     pilot_guide:
       "50-75 job-loss cases over 6 months, with matched comparison group. Intensive 30-day service delivery (intake, benefits analysis, job search, offer support). Outcomes tracking at 30-day, 90-day, 6-month, 12-month. Evaluation by external evaluator.",
     policy_brief:
