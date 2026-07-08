@@ -1,6 +1,9 @@
 import fs from "fs";
 import path from "path";
-import { frameworkMasterMatrix } from "../src/lib/framework-master-matrix";
+import {
+  frameworkMasterMatrix,
+  FrameworkMatrixEntry,
+} from "../src/lib/framework-master-matrix";
 
 interface ExportFormat {
   format: "json" | "csv" | "markdown";
@@ -13,7 +16,8 @@ function exportAsJSON(
   outputPath?: string
 ): string {
   const filePath =
-    outputPath || path.join(process.cwd(), "data", "framework-matrix.json");
+    outputPath ||
+    path.join(process.cwd(), "public", "data", "framework-master-matrix.json");
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   console.log(`✓ Exported to ${filePath}`);
@@ -26,7 +30,13 @@ function exportAsCSV(
   outputPath?: string
 ): string {
   const filePath =
-    outputPath || path.join(process.cwd(), "data", "framework-matrix.csv");
+    outputPath ||
+    path.join(
+      process.cwd(),
+      "public",
+      "data",
+      "framework-master-matrix.csv"
+    );
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
 
   if (!data.length) {
@@ -37,10 +47,10 @@ function exportAsCSV(
   const allFields = includeFields || Object.keys(data[0]);
   const headers = allFields.join(",");
 
-  const rows = data.map((framework: any) =>
+  const rows = data.map((framework: FrameworkMatrixEntry) =>
     allFields
       .map((field) => {
-        const value = framework[field];
+        const value = (framework as Record<string, unknown>)[field];
         const stringValue =
           typeof value === "string"
             ? value.replace(/"/g, '""')
@@ -62,7 +72,12 @@ function exportAsMarkdown(
 ): string {
   const filePath =
     outputPath ||
-    path.join(process.cwd(), "data", "framework-matrix-summary.md");
+    path.join(
+      process.cwd(),
+      "public",
+      "data",
+      "framework-master-matrix.md"
+    );
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
 
   const markdown = `# Framework Master Matrix Export
@@ -77,7 +92,7 @@ Generated: ${new Date().toISOString()}
 
 ${data
   .map(
-    (framework: any) => `
+    (framework: FrameworkMatrixEntry) => `
 ### ${framework.framework_number}: ${framework.framework_title}
 
 **Slug:** \`${framework.slug}\`
