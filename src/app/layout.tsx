@@ -15,17 +15,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://frameworks.thihsystems.com"),
   title: {
-    default: "Framework Fridays by THIHsystems",
+    default: "Framework Fridays by THIHsystems | Enterprise Layer Infrastructure Library",
     template: "%s | THIHsystems Framework Fridays",
   },
   description:
-    "A public THIHsystems library for practical AI frameworks, demos, GitHub build notes, and Substack essays.",
+    "A public THIHsystems library of enterprise-layer infrastructure frameworks, demo previews, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.",
   openGraph: {
     title: "Framework Fridays by THIHsystems",
-    description: "AI frameworks for real human burdens.",
+    description: "Enterprise-layer frameworks for the systems nobody tests until they fail.",
     url: "https://frameworks.thihsystems.com",
     siteName: "THIHsystems Framework Fridays",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Framework Fridays by THIHsystems",
+    description: "Enterprise-layer frameworks for invisible infrastructure failures.",
   },
 };
 

@@ -1,12 +1,5 @@
 import Link from "next/link";
-import { frameworks } from "@/lib/framework-content";
-
-const pipeline = [
-  "LinkedIn introduces the issue.",
-  "Substack explains the framework.",
-  "GitHub holds the forkable build.",
-  "This site houses the working demos.",
-];
+import { frameworkMasterMatrix } from "@/lib/framework-master-matrix";
 
 function ArrowIcon() {
   return (
@@ -51,9 +44,28 @@ function ButtonLink({
   );
 }
 
+function getStatusPillClass(status: string): string {
+  if (status.includes("Ready for Public") || status.includes("verified")) {
+    return "status-pill-mint";
+  }
+  if (status.includes("Needs Review") || status.includes("Needs Citation")) {
+    return "status-pill-amber";
+  }
+  if (status.includes("Not Ready") || status.includes("Risk")) {
+    return "status-pill-crimson";
+  }
+  return "";
+}
+
 export default function Home() {
+  // Featured frameworks for start here section
+  const featuredFrameworks = frameworkMasterMatrix.filter(
+    (fw) => ["02", "05", "10", "29"].includes(fw.framework_number)
+  );
+
   return (
     <main>
+      {/* Hero Section */}
       <section className="section-pad border-b hairline">
         <div className="shell grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div className="max-w-3xl">
@@ -67,16 +79,15 @@ export default function Home() {
               Enterprise-layer frameworks for the systems nobody tests until they fail.
             </p>
             <p className="mt-6 max-w-2xl text-base leading-8 muted-text sm:text-lg">
-              Every Framework Friday, THIHsystems turns overlooked infrastructure risks into
-              public frameworks, demo previews, build specs, and forkable implementation
-              starting points.
+              THIHsystems turns overlooked system failures into public frameworks, demo previews,
+              forkable repos, source queues, procurement paths, pilot guides, and policy briefs.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href="/#library" variant="primary">
                 Explore Framework Library
               </ButtonLink>
-              <ButtonLink href="https://substack.com/@michaelmartinthih">Read Substack</ButtonLink>
-              <ButtonLink href="https://github.com/thehustleisholy-ship-it/thihsystems-frameworks">GitHub Hub</ButtonLink>
+              <ButtonLink href="#matrix">View Master Matrix</ButtonLink>
+              <ButtonLink href="https://github.com/thehustleisholy-ship-it/thihsystems-frameworks">Fork Hub Repo</ButtonLink>
             </div>
           </div>
 
@@ -86,22 +97,22 @@ export default function Home() {
                 <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
                   Library index
                 </p>
-                <p className="mt-1 text-sm muted-text">Public framework system</p>
+                <p className="mt-1 text-sm muted-text">Master matrix standard</p>
               </div>
               <div className="h-10 w-10 rounded-full border hairline bg-[#d8b25a]/15" />
             </div>
             <div className="space-y-4">
               <div className="text-center">
                 <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
-                  10 Public Frameworks
+                  30 Frameworks
                 </p>
-                <p className="mt-2 text-sm silver-text">Enterprise infrastructure library</p>
+                <p className="mt-2 text-sm silver-text">Enterprise infrastructure portfolio</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-md border hairline bg-white/[0.025] p-3">
                   <div className="h-1.5 rounded-full bg-[#d8b25a]" />
                   <p className="mt-2 text-xs font-medium text-white">Framework Library</p>
-                  <p className="mt-1 text-xs muted-text">All frameworks</p>
+                  <p className="mt-1 text-xs muted-text">All 30 frameworks</p>
                 </div>
                 <div className="rounded-md border hairline bg-white/[0.025] p-3">
                   <div className="h-1.5 rounded-full bg-[#d8b25a]" />
@@ -115,8 +126,8 @@ export default function Home() {
                 </div>
                 <div className="rounded-md border hairline bg-white/[0.025] p-3">
                   <div className="h-1.5 rounded-full bg-[#d8b25a]" />
-                  <p className="mt-2 text-xs font-medium text-white">Build Specs</p>
-                  <p className="mt-1 text-xs muted-text">Enterprise ready</p>
+                  <p className="mt-2 text-xs font-medium text-white">Source Discipline</p>
+                  <p className="mt-1 text-xs muted-text">Verified claims</p>
                 </div>
               </div>
             </div>
@@ -124,60 +135,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Signal Strip */}
       <section className="section-pad border-b hairline">
-        <div className="shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <h2 className="text-4xl font-semibold text-white">What Framework Fridays is</h2>
-          <div className="space-y-5 text-2xl font-medium leading-tight silver-text sm:text-3xl">
-            <p>Not another prompt library.</p>
-            <p>Not another lead funnel.</p>
-            <p>Not automation for automation&apos;s sake.</p>
-            <p className="pt-4 text-xl leading-8 muted-text sm:text-2xl">
-              Framework Fridays maps the operating layers behind real-world system failures: health, housing, justice, water, food, energy, materials, labor, and critical facilities.
-            </p>
+        <div className="shell">
+          <div className="grid gap-8 md:grid-cols-5">
+            <div>
+              <p className="text-3xl font-semibold text-white">30</p>
+              <p className="mt-2 text-sm muted-text">Public Frameworks</p>
+            </div>
+            <div>
+              <p className="text-3xl font-semibold text-white">60</p>
+              <p className="mt-2 text-sm muted-text">Public Routes</p>
+            </div>
+            <div>
+              <p className="text-3xl font-semibold text-white">30</p>
+              <p className="mt-2 text-sm muted-text">Forkable Repos</p>
+            </div>
+            <div>
+              <p className="text-3xl font-semibold text-white">1</p>
+              <p className="mt-2 text-sm muted-text">Master Matrix</p>
+            </div>
+            <div>
+              <p className="text-3xl font-semibold text-white">∞</p>
+              <p className="mt-2 text-sm muted-text">Source Discipline</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="library" className="section-pad border-b hairline">
+      {/* Start Here: Featured Frameworks */}
+      <section className="section-pad border-b hairline">
         <div className="shell">
-          <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <h2 className="text-4xl font-semibold text-white">Framework Library</h2>
-              <p className="mt-3 muted-text">Public frameworks, demo previews, and build specs. Enterprise infrastructure for the systems nobody tests until they fail.</p>
-            </div>
+          <div className="mb-12">
+            <h2 className="text-4xl font-semibold text-white">Start Here</h2>
+            <p className="mt-3 muted-text">Featured frameworks: institutional stabilization, critical infrastructure, water security, and future governance.</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-            {frameworks.map((fw) => (
-              <article key={fw.slug} className="metal-panel rounded-lg p-6 sm:p-8">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
-                      {fw.number}
-                    </p>
-                    <h3 className="mt-3 text-2xl font-semibold text-white">
-                      {fw.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 silver-text">{fw.tagline}</p>
-                    <p className="mt-3 text-xs uppercase tracking-[0.12em] muted-text">{fw.category}</p>
-                  </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {featuredFrameworks.map((fw) => (
+              <article key={fw.slug} className="framework-card">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
+                    {fw.framework_number}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-semibold text-white">
+                    {fw.framework_title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 silver-text">{fw.enterprise_layer}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.12em] muted-text">{fw.category}</p>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-1">
-                  {fw.statuses.map((status) => (
-                    <span
-                      key={status}
-                      className="rounded-sm border hairline bg-white/[0.03] px-2 py-1 text-xs silver-text"
-                    >
-                      {status}
-                    </span>
-                  ))}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <span className={`status-pill ${getStatusPillClass(fw.source_status)}`}>
+                    {fw.source_status}
+                  </span>
+                  <span className={`status-pill ${getStatusPillClass(fw.public_claim_status)}`}>
+                    {fw.public_claim_status}
+                  </span>
                 </div>
-                <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-                  <ButtonLink href={fw.links.detail} variant="primary">
+                <div className="flex flex-col gap-2 sm:flex-row pt-4">
+                  <ButtonLink href={fw.framework_url} variant="primary">
                     Read
                   </ButtonLink>
-                  <ButtonLink href={fw.links.demo}>Demo</ButtonLink>
-                  <ButtonLink href={fw.links.github}>GitHub</ButtonLink>
+                  <ButtonLink href={fw.demo_url}>Demo</ButtonLink>
+                  <ButtonLink href={fw.github_repo_url}>GitHub</ButtonLink>
                 </div>
               </article>
             ))}
@@ -185,20 +205,120 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Full Framework Library */}
+      <section id="library" className="section-pad border-b hairline">
+        <div className="shell">
+          <div className="mb-12">
+            <h2 className="text-4xl font-semibold text-white">Framework Library</h2>
+            <p className="mt-3 muted-text">All 30 frameworks: enterprise infrastructure for the systems nobody tests until they fail.</p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {frameworkMasterMatrix.map((fw) => (
+              <article key={fw.slug} className="framework-card">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
+                    {fw.framework_number}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-white">
+                    {fw.framework_title}
+                  </h3>
+                  <p className="mt-1 text-xs uppercase tracking-[0.12em] muted-text">{fw.category}</p>
+                </div>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <span className={`status-pill ${getStatusPillClass(fw.source_status)}`}>
+                    {fw.source_status.length > 20 ? fw.source_status.substring(0, 17) + "..." : fw.source_status}
+                  </span>
+                  <span className={`status-pill ${getStatusPillClass(fw.public_claim_status)}`}>
+                    {fw.public_claim_status.length > 15 ? fw.public_claim_status.substring(0, 12) + "..." : fw.public_claim_status}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 sm:flex-row pt-3">
+                  <ButtonLink href={fw.framework_url}>
+                    Read
+                  </ButtonLink>
+                  <ButtonLink href={fw.demo_url}>Demo</ButtonLink>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Master Matrix Standard Section */}
+      <section id="matrix" className="section-pad border-b hairline">
+        <div className="shell">
+          <h2 className="text-4xl font-semibold text-white">Master Matrix Standard</h2>
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+            <div>
+              <p className="text-lg leading-7 silver-text">
+                No framework launches as inspiration alone.
+              </p>
+              <p className="mt-4 text-base leading-7 muted-text">
+                Every framework must make visible: research foundation, statistical basis, economic
+                impact model, implementation roadmap, procurement checklist, ROI logic, pilot design,
+                and policy brief.
+              </p>
+              <p className="mt-4 text-base leading-7 muted-text">
+                The master matrix ensures every framework is readable by institutions,
+                legible to operators, forkable by builders, testable by pilots,
+                and supportable by policy makers.
+              </p>
+              <div className="mt-8">
+                <ButtonLink href="/public/data/framework-master-matrix.json">
+                  View Master Matrix (JSON)
+                </ButtonLink>
+              </div>
+            </div>
+            <div className="glass-panel rounded-lg p-8">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] gold-text">
+                8 Required Components
+              </p>
+              <div className="mt-6 space-y-3">
+                {[
+                  "Research & Evidence",
+                  "Statistics & Data",
+                  "Economic Impact",
+                  "Implementation Path",
+                  "Procurement Ready",
+                  "ROI Logic",
+                  "Pilot Design",
+                  "Policy Brief"
+                ].map((item, i) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <p className="font-mono text-sm gold-text">0{i + 1}.</p>
+                    <p className="text-sm text-white">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Build Pipeline Section */}
       <section className="section-pad border-b hairline">
         <div className="shell">
-          <h2 className="text-4xl font-semibold text-white">Build pipeline</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
-            {pipeline.map((item, index) => (
+          <h2 className="text-4xl font-semibold text-white">Build Pipeline</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-6">
+            {[
+              "Name the hidden system failure",
+              "Structure the framework",
+              "Publish the demo preview",
+              "Open the forkable repo",
+              "Add research, procurement, pilot, policy",
+              "Track claims through matrix"
+            ].map((item, index) => (
               <div key={item} className="border-t hairline pt-5">
-                <p className="font-mono text-sm gold-text">0{index + 1}</p>
-                <p className="mt-4 text-lg font-medium leading-7 text-white">{item}</p>
+                <p className="font-mono text-sm gold-text">0{index + 1}.</p>
+                <p className="mt-4 text-sm font-medium leading-6 text-white">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="section-pad">
         <div className="shell flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <div>

@@ -1,6 +1,29 @@
 @import "tailwindcss";
 
 :root {
+  /* Canvas: Deep obsidian and slate bases */
+  --color-obsidian: #050607;
+  --color-obsidian-2: #090B0F;
+  --color-slate-deep: #11151C;
+  --color-slate-soft: #1A202B;
+  --color-ink: #EDEFF2;
+  --color-muted: #9AA4B2;
+  --color-faint: #687282;
+
+  /* Glass layer: Semi-transparent panels */
+  --glass-bg: rgba(255, 255, 255, 0.045);
+  --glass-bg-strong: rgba(255, 255, 255, 0.075);
+  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  --glass-blur: blur(18px);
+
+  /* Telemetry colors: Status signals */
+  --telemetry-mint: #42F5B3;
+  --telemetry-amber: #FFB84D;
+  --telemetry-crimson: #FF4D6D;
+
+  /* Legacy tokens for compatibility */
   --background: #050505;
   --foreground: #f8f7f2;
   --charcoal: #111111;
@@ -98,4 +121,74 @@ a {
     linear-gradient(rgba(199, 199, 199, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(199, 199, 199, 0.07) 1px, transparent 1px);
   background-size: 44px 44px;
+}
+
+/* Glass panel patterns */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-panel-strong {
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border-strong);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Framework cards */
+.framework-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(145deg, rgba(25, 25, 25, 0.92), rgba(8, 8, 8, 0.94));
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.framework-card:hover {
+  border-color: var(--glass-border-strong);
+  background: linear-gradient(145deg, rgba(35, 35, 35, 0.95), rgba(12, 12, 12, 0.96));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Status pills */
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.status-pill-mint {
+  color: var(--telemetry-mint);
+  border-color: rgba(66, 245, 179, 0.25);
+  background: rgba(66, 245, 179, 0.08);
+}
+
+.status-pill-amber {
+  color: var(--telemetry-amber);
+  border-color: rgba(255, 184, 77, 0.25);
+  background: rgba(255, 184, 77, 0.08);
+}
+
+.status-pill-crimson {
+  color: var(--telemetry-crimson);
+  border-color: rgba(255, 77, 109, 0.25);
+  background: rgba(255, 77, 109, 0.08);
+}
+
+/* Focus ring for accessibility */
+.focus-ring-obsidian:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
 }
