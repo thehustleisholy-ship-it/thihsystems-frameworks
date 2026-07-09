@@ -241,6 +241,7 @@ a {
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
+  font-family: inherit;
 }
 
 .btn-primary:hover {
@@ -263,11 +264,17 @@ a {
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
+  font-family: inherit;
 }
 
 .btn-secondary:hover {
   border-color: var(--surface-line-strong);
   color: var(--text-primary);
+}
+
+button.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  width: auto;
 }
 
 /* Utility Classes */

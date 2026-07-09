@@ -1,3 +1,6 @@
+'use client';
+
+import React from "react";
 import Link from "next/link";
 import { frameworkMasterMatrix } from "@/lib/framework-master-matrix";
 
@@ -41,16 +44,34 @@ function ButtonLink({
 }
 
 function getStatusPillClass(status: string): string {
-  if (status.includes("Ready for Public") || status.includes("verified")) {
+  const mintStatuses = ["Ready for Public", "Safe to publish", "Source verified", "Ready for public preview"];
+  const amberStatuses = [
+    "Needs Review",
+    "Needs Citation",
+    "Needs citation",
+    "Needs softening",
+    "Needs verification",
+    "Not yet sourced",
+    "Do not publish yet",
+    "Not Ready",
+    "Risk",
+    "Ready for internal review",
+  ];
+
+  if (mintStatuses.some((s) => status.includes(s))) {
     return "status-pill-mint";
   }
-  if (status.includes("Needs Review") || status.includes("Needs Citation")) {
-    return "status-pill-amber";
-  }
-  if (status.includes("Not Ready") || status.includes("Risk")) {
+  if (amberStatuses.some((s) => status.includes(s))) {
     return "status-pill-amber";
   }
   return "";
+}
+
+function getPublicClaimLabel(status: string): string {
+  if (status.includes("Do not publish yet")) {
+    return "Internal claim caution";
+  }
+  return status;
 }
 
 export default function Home() {
@@ -58,6 +79,11 @@ export default function Home() {
   const featuredFrameworks = frameworkMasterMatrix.filter((fw) =>
     featuredFrameworkNumbers.includes(fw.framework_number)
   );
+
+  const [showAllFrameworks, setShowAllFrameworks] = React.useState(false);
+  const visibleFrameworks = showAllFrameworks
+    ? frameworkMasterMatrix
+    : frameworkMasterMatrix.slice(0, 10);
 
   return (
     <main className="obsidian-canvas">
@@ -84,7 +110,7 @@ export default function Home() {
               </ButtonLink>
               <ButtonLink href="#matrix">Open the Master Matrix</ButtonLink>
               <ButtonLink href="/frameworks/job-loss-income-shock-stabilizer">
-                Review Framework 02 Flagship
+                Explore Framework 02 Source Pack
               </ButtonLink>
             </div>
           </div>
@@ -107,8 +133,8 @@ export default function Home() {
             </div>
             <div>
               <p className="text-4xl font-bold telemetry-mint">1</p>
-              <p className="mt-2 text-sm text-secondary">Flagship Source Pack</p>
-              <p className="mt-1 text-xs text-muted">Framework 02 is the first internally source-packed pilot candidate.</p>
+              <p className="mt-2 text-sm text-secondary">Source Pack</p>
+              <p className="mt-1 text-xs text-muted">Framework 02 is source-identified and ready for partnership exploration.</p>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-line">
@@ -116,6 +142,90 @@ export default function Home() {
               <span className="inline-block w-3 h-3 rounded-full bg-quantum-mint mr-2"></span>
               Evidence Discipline: Claims are marked by source status and public-claim readiness.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Status Legend */}
+      <section className="section-pad border-b border-line">
+        <div className="shell max-w-4xl">
+          <h3 className="text-lg font-bold text-primary mb-4">Status Signals</h3>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="glass-plane p-6 rounded">
+              <p className="flex items-center gap-2 mb-2">
+                <span className="inline-block w-4 h-4 rounded-full bg-quantum-mint"></span>
+                <span className="text-sm font-semibold text-primary">Quantum Mint</span>
+              </p>
+              <p className="text-sm text-muted">
+                Source verified, ready, or publicly safe for institutional use.
+              </p>
+            </div>
+            <div className="glass-plane p-6 rounded">
+              <p className="flex items-center gap-2 mb-2">
+                <span className="inline-block w-4 h-4 rounded-full bg-electric-amber"></span>
+                <span className="text-sm font-semibold text-primary">Electric Amber</span>
+              </p>
+              <p className="text-sm text-muted">
+                Needs citation, review, softening, or internal assessment before public claims.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6 text-xs text-muted">
+            The library shows evidence gaps openly. A warning status is not a failure; it is a transparency signal.
+          </p>
+        </div>
+      </section>
+
+      {/* What This Library Is: FAQ for AEO/GEO */}
+      <section className="section-pad border-b border-line">
+        <div className="shell">
+          <h2 className="text-4xl font-bold text-primary mb-12">What This Library Is</h2>
+
+          <div className="max-w-3xl space-y-12">
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                What is Framework Fridays by THIHsystems?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, demo previews, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                What is an enterprise-layer infrastructure framework?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                An enterprise-layer infrastructure framework maps the operating layer behind a failure, including the research base, core data inputs, workflows, economics, procurement path, pilot design, and policy support path.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                Who is this for?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                It is built for institutions, operators, policymakers, funders, builders, advocates, and the public.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                Are these finished products?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                No. These are public framework packages. Some are concept structured, some are source-identified, and some are ready for internal review or pilot design. Status signals show where each framework stands. The site does not claim validation where no pilot evidence exists.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                How does the Master Matrix work?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                The Master Matrix standardizes all 30 frameworks across research, statistics, economics, implementation, procurement, ROI logic, pilot readiness, policy path, source status, and public-claim status.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -164,12 +274,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Frameworks: Audience-Based */}
+      {/* Recommended Starting Points */}
       <section className="section-pad border-b border-line">
         <div className="shell">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-primary">Core Frameworks</h2>
-            <p className="mt-3 text-secondary">Four flagship frameworks representing the scope of this library.</p>
+            <h2 className="text-4xl font-bold text-primary">Recommended Starting Points</h2>
+            <p className="mt-3 text-secondary">Four entry points based on audience need, not a ranking of importance.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -188,10 +298,10 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
                   <span className={`status-pill ${getStatusPillClass(fw.source_status)}`}>
-                    {fw.source_status.length > 18 ? fw.source_status.substring(0, 15) + "..." : fw.source_status}
+                    {fw.source_status}
                   </span>
                   <span className={`status-pill ${getStatusPillClass(fw.public_claim_status)}`}>
-                    {fw.public_claim_status.length > 15 ? fw.public_claim_status.substring(0, 12) + "..." : fw.public_claim_status}
+                    {getPublicClaimLabel(fw.public_claim_status)}
                   </span>
                 </div>
                 <div className="flex flex-col gap-2 sm:flex-row pt-4">
@@ -214,11 +324,11 @@ export default function Home() {
         <div className="shell">
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-primary">Framework Library</h2>
-            <p className="mt-3 text-secondary">All 30 frameworks. Organized by operating layer.</p>
+            <p className="mt-3 text-secondary">All {showAllFrameworks ? "30" : "10+"} frameworks. Organized by operating layer.</p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {frameworkMasterMatrix.map((fw) => (
+            {visibleFrameworks.map((fw) => (
               <article key={fw.slug} className="framework-card">
                 <div>
                   <p className="uppercase-label text-muted">Framework {fw.framework_number}</p>
@@ -232,10 +342,10 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
                   <span className={`status-pill ${getStatusPillClass(fw.source_status)}`}>
-                    {fw.source_status.length > 18 ? fw.source_status.substring(0, 15) + "..." : fw.source_status}
+                    {fw.source_status}
                   </span>
                   <span className={`status-pill ${getStatusPillClass(fw.public_claim_status)}`}>
-                    {fw.public_claim_status.length > 15 ? fw.public_claim_status.substring(0, 12) + "..." : fw.public_claim_status}
+                    {getPublicClaimLabel(fw.public_claim_status)}
                   </span>
                 </div>
                 <div className="flex flex-col gap-2 sm:flex-row pt-3">
@@ -245,60 +355,17 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* What This Library Is: FAQ for AEO/GEO */}
-      <section className="section-pad border-b border-line">
-        <div className="shell">
-          <h2 className="text-4xl font-bold text-primary mb-12">What This Library Is</h2>
-
-          <div className="max-w-3xl space-y-12">
-            <div>
-              <h3 className="text-xl font-bold text-primary mb-3">
-                What is Framework Fridays by THIHsystems?
-              </h3>
-              <p className="text-base leading-7 text-muted">
-                Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, demo previews, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.
-              </p>
+          {!showAllFrameworks && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setShowAllFrameworks(true)}
+                className="btn-secondary"
+              >
+                Show all 30 frameworks
+              </button>
             </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-primary mb-3">
-                What is an enterprise-layer infrastructure framework?
-              </h3>
-              <p className="text-base leading-7 text-muted">
-                An enterprise-layer infrastructure framework maps the operating layer behind a failure, including the research base, core data inputs, workflows, economics, procurement path, pilot design, and policy support path.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-primary mb-3">
-                Who is this for?
-              </h3>
-              <p className="text-base leading-7 text-muted">
-                It is built for institutions, operators, policymakers, funders, builders, advocates, and the public.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-primary mb-3">
-                Are these finished products?
-              </h3>
-              <p className="text-base leading-7 text-muted">
-                No. These are public framework packages. Some are concept structured, some are source packed, and some are ready for internal review or pilot design. The site does not claim validation where no pilot evidence exists.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-primary mb-3">
-                How does the Master Matrix work?
-              </h3>
-              <p className="text-base leading-7 text-muted">
-                The Master Matrix standardizes all 30 frameworks across research, statistics, economics, implementation, procurement, ROI logic, pilot readiness, policy path, source status, and public-claim status.
-              </p>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
