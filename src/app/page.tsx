@@ -265,7 +265,7 @@ export default function Home() {
                 and supportable by policy makers.
               </p>
               <div className="mt-8">
-                <ButtonLink href="/public/data/framework-master-matrix.json">
+                <ButtonLink href="/data/framework-master-matrix.json">
                   View Master Matrix (JSON)
                 </ButtonLink>
               </div>
