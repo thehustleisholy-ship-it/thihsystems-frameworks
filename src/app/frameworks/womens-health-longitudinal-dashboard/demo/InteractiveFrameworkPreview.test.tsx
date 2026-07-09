@@ -1,4 +1,4 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it } from "vitest";
 
@@ -31,7 +31,7 @@ describe("InteractiveFrameworkPreview", () => {
     });
   });
 
-  it("switches presets, supports slider arrow keys, and resets to the active seed", async () => {
+  it("switches presets, updates sliders, and resets to the active seed", async () => {
     const user = userEvent.setup();
     render(<InteractiveFrameworkPreview />);
 
@@ -42,8 +42,7 @@ describe("InteractiveFrameworkPreview", () => {
     expect(screen.getByText(/sparse evidence/i)).toBeVisible();
     expect(screen.getByText(/at least 6 tracked cycles/i)).toBeVisible();
 
-    cycles.focus();
-    await user.keyboard("{ArrowRight}");
+    fireEvent.change(cycles, { target: { value: "4" } });
     expect(cycles).toHaveValue("4");
 
     await user.click(screen.getByRole("button", { name: /reset to mixed symptoms/i }));
@@ -57,24 +56,21 @@ describe("InteractiveFrameworkPreview", () => {
     await user.click(screen.getByRole("button", { name: /mixed symptoms/i }));
     const cycles = screen.getByRole("slider", { name: /tracked cycles/i });
 
-    cycles.focus();
-    await user.keyboard("{ArrowRight}{ArrowRight}{ArrowRight}");
+    fireEvent.change(cycles, { target: { value: "6" } });
 
     expect(cycles).toHaveValue("6");
     expect(screen.getAllByText(/developing evidence/i)[0]).toBeVisible();
     expect(screen.queryByText(/at least 6 tracked cycles/i)).not.toBeInTheDocument();
   });
 
-  it("updates visible derived output when a slider changes", async () => {
-    const user = userEvent.setup();
+  it("updates visible derived output when a slider changes", () => {
     render(<InteractiveFrameworkPreview />);
 
     const summary = screen.getByRole("region", { name: /12-minute visit summary/i });
     expect(within(summary).getByText(/Fatigue 3\/10/i)).toBeVisible();
 
     const fatigue = screen.getByRole("slider", { name: /fatigue/i });
-    fatigue.focus();
-    await user.keyboard("{ArrowRight}{ArrowRight}");
+    fireEvent.change(fatigue, { target: { value: "5" } });
 
     expect(within(summary).getByText(/Fatigue 5\/10/i)).toBeVisible();
     expect(screen.getByText(/Fatigue: 5/i)).toBeVisible();

@@ -88,29 +88,6 @@ export default function InteractiveFrameworkPreview() {
     }));
   }
 
-  function handleSliderKey(
-    key: keyof ControlsState,
-    eventKey: string,
-    min: number,
-    max: number,
-  ) {
-    const delta =
-      eventKey === "ArrowRight" || eventKey === "ArrowUp"
-        ? 1
-        : eventKey === "ArrowLeft" || eventKey === "ArrowDown"
-          ? -1
-          : 0;
-
-    if (delta === 0) {
-      return;
-    }
-
-    setControls((current) => ({
-      ...current,
-      [key]: Math.min(max, Math.max(min, current[key] + delta)),
-    }));
-  }
-
   return (
     <section
       aria-label="Interactive framework preview"
@@ -198,9 +175,6 @@ export default function InteractiveFrameworkPreview() {
                     max={control.max}
                     min={control.min}
                     onChange={(event) => updateControl(control.key, event.target.value)}
-                    onKeyDown={(event) => {
-                      handleSliderKey(control.key, event.key, control.min, control.max);
-                    }}
                     type="range"
                     value={value}
                   />
