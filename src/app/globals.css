@@ -296,3 +296,18 @@ button.btn-secondary {
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+
+.framework-range {
+  accent-color: var(--quantum-mint);
+}
+
+.framework-live-transition {
+  transition: color 150ms ease-out, border-color 150ms ease-out,
+    background-color 150ms ease-out, opacity 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .framework-live-transition {
+    transition-duration: 0ms;
+  }
+}
