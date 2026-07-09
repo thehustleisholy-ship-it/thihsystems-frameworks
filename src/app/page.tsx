@@ -61,7 +61,7 @@ export default function Home() {
 
   return (
     <main className="obsidian-canvas">
-      {/* A. Hero: Intent-Based Architecture */}
+      {/* Hero: Enterprise Command Surface */}
       <section className="section-pad border-b border-line">
         <div className="shell">
           <div className="max-w-4xl">
@@ -69,156 +69,107 @@ export default function Home() {
             <h1 className="text-6xl font-bold leading-tight text-primary mb-6">
               Framework Fridays by THIHsystems
             </h1>
-            <p className="text-xl font-semibold text-secondary mb-4">
-              Enterprise-layer frameworks for the systems nobody tests until they fail.
+            <p className="text-2xl font-semibold text-secondary mb-4">
+              A public operating-layer library for hidden infrastructure failures.
             </p>
-            <p className="text-base leading-7 text-muted max-w-3xl mb-8">
-              A public infrastructure portfolio where hidden system failures become source-aware frameworks, demo previews, forkable repos, procurement paths, pilot guides, and policy briefs.
+            <p className="text-base leading-7 text-muted max-w-3xl mb-4">
+              Thirty enterprise frameworks mapping the research, economics, procurement paths, pilot designs, source queues, and policy briefs behind systems nobody tests until they fail.
+            </p>
+            <p className="text-sm text-muted max-w-3xl mb-8">
+              Built for institutions, operators, policymakers, funders, and builders who need more than commentary.
             </p>
             <div className="flex flex-wrap gap-3">
               <ButtonLink href="/#library" variant="primary">
-                Explore the Framework Library
+                Enter the Framework Library
               </ButtonLink>
-              <ButtonLink href="#matrix">View Master Matrix</ButtonLink>
-              <ButtonLink href="https://github.com/thehustleisholy-ship-it/thihsystems-frameworks">
-                Fork the Hub Repo
+              <ButtonLink href="#matrix">Open the Master Matrix</ButtonLink>
+              <ButtonLink href="/frameworks/job-loss-income-shock-stabilizer">
+                Review Framework 02 Flagship
               </ButtonLink>
             </div>
           </div>
         </div>
       </section>
 
-      {/* B. Intent Omnibar */}
+      {/* Signal Strip: Meaning-Driven Signals */}
       <section className="section-pad border-b border-line">
         <div className="shell">
-          <div className="max-w-4xl">
-            <p className="uppercase-label text-muted mb-4">Interface preview</p>
-            <div className="intent-omnibar">
-              <svg
-                className="h-5 w-5 text-muted"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-              <input
-                type="text"
-                placeholder="Ask the framework library what system failure you want to make visible..."
-                disabled
-              />
-            </div>
-            <p className="text-xs text-muted mt-3">Intent Omnibar • Non-functional interface concept</p>
-          </div>
-        </div>
-      </section>
-
-      {/* C. Signal Strip */}
-      <section className="section-pad border-b border-line">
-        <div className="shell">
-          <div className="grid gap-12 md:grid-cols-5">
+          <div className="grid gap-12 md:grid-cols-3">
             <div>
               <p className="text-4xl font-bold text-primary">30</p>
-              <p className="mt-2 text-sm text-muted">Public Frameworks</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-primary">60</p>
-              <p className="mt-2 text-sm text-muted">Public Routes</p>
-            </div>
-            <div>
-              <p className="text-4xl font-bold text-primary">30</p>
-              <p className="mt-2 text-sm text-muted">Forkable Repos</p>
+              <p className="mt-2 text-sm text-secondary">Frameworks</p>
+              <p className="mt-1 text-xs text-muted">Mapped across health, housing, justice, water, food, energy, mobility, and planetary risk.</p>
             </div>
             <div>
               <p className="text-4xl font-bold telemetry-mint">1</p>
-              <p className="mt-2 text-sm text-muted">Master Matrix Standard</p>
+              <p className="mt-2 text-sm text-secondary">Master Matrix</p>
+              <p className="mt-1 text-xs text-muted">Every framework tracked by research, numbers, economics, procurement, ROI, pilot, and policy path.</p>
             </div>
             <div>
-              <p className="text-4xl font-bold telemetry-mint">∞</p>
-              <p className="mt-2 text-sm text-muted">Source &amp; Claim Discipline</p>
+              <p className="text-4xl font-bold telemetry-mint">1</p>
+              <p className="mt-2 text-sm text-secondary">Flagship Source Pack</p>
+              <p className="mt-1 text-xs text-muted">Framework 02 is the first internally source-packed pilot candidate.</p>
             </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-line">
+            <p className="text-sm text-muted">
+              <span className="inline-block w-3 h-3 rounded-full bg-quantum-mint mr-2"></span>
+              Evidence Discipline: Claims are marked by source status and public-claim readiness.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* D. Three Foundational Value Frameworks */}
+      {/* Role-Based Navigation */}
       <section className="section-pad border-b border-line">
         <div className="shell">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-primary">The 2030 Operating Surface</h2>
-            <p className="mt-3 text-secondary">Enterprise-layer infrastructure for intent-driven operations.</p>
+            <h2 className="text-4xl font-bold text-primary">Start by Role</h2>
+            <p className="mt-3 text-secondary">Find frameworks by your institutional role.</p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Value Pipeline */}
-            <div className="value-pipeline-card">
-              <p className="uppercase-label text-muted">Operations</p>
-              <h3 className="mt-4 text-lg font-bold text-primary">Autonomous Value Pipeline</h3>
-              <p className="mt-3 text-sm text-secondary leading-6">
-                Models frameworks as connected system flows instead of isolated pages.
-              </p>
-              <div className="mt-6 flex items-center gap-2">
-                <div className="h-8 w-8 rounded border border-surface-line bg-surface-glass flex items-center justify-center text-xs text-muted">
-                  ⊙
-                </div>
-                <p className="text-xs text-muted">Node-flow style layout</p>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                role: "For institutions",
+                description: "Procurement paths, pilot guides, source queues, and readiness signals.",
+              },
+              {
+                role: "For operators",
+                description: "Workflows, data inputs, demo previews, and implementation paths.",
+              },
+              {
+                role: "For policymakers",
+                description: "Policy briefs, governance gaps, public-risk framing, and model intervention paths.",
+              },
+              {
+                role: "For funders and sponsors",
+                description: "Economic logic, avoided-cost models, pilot readiness, and evaluation structure.",
+              },
+              {
+                role: "For builders",
+                description: "Forkable repos, data models, workflow maps, and open questions.",
+              },
+              {
+                role: "For the public",
+                description: "Plain-English frameworks that make hidden system failures visible.",
+              },
+            ].map((item) => (
+              <div key={item.role} className="glass-plane p-6 rounded">
+                <h3 className="text-lg font-bold text-primary">{item.role}</h3>
+                <p className="mt-3 text-sm text-muted">{item.description}</p>
               </div>
-              <p className="mt-4 text-xs font-semibold text-quantum-mint">Feature: What-if sandbox overlays</p>
-              <p className="mt-2 text-xs text-muted italic">Interface concept</p>
-            </div>
-
-            {/* Command Hive */}
-            <div className="value-pipeline-card">
-              <p className="uppercase-label text-muted">Management</p>
-              <h3 className="mt-4 text-lg font-bold text-primary">Cognitive Layering &amp; Agentic Swarms</h3>
-              <p className="mt-3 text-sm text-secondary leading-6">
-                Supervises agents, claim states, source queues, and readiness signals.
-              </p>
-              <div className="mt-6 grid grid-cols-3 gap-2">
-                <div className="h-8 w-8 rounded border border-surface-line bg-surface-glass flex items-center justify-center text-xs text-muted">
-                  ◆
-                </div>
-                <div className="h-8 w-8 rounded border border-surface-line bg-surface-glass flex items-center justify-center text-xs text-muted">
-                  ◆
-                </div>
-                <div className="h-8 w-8 rounded border border-surface-line bg-surface-glass flex items-center justify-center text-xs text-muted">
-                  ◆
-                </div>
-              </div>
-              <p className="mt-4 text-xs font-semibold text-electric-amber">Feature: Friction-point highlighting</p>
-              <p className="mt-2 text-xs text-muted italic">Interface concept</p>
-            </div>
-
-            {/* Macro Yield */}
-            <div className="value-pipeline-card">
-              <p className="uppercase-label text-muted">Executive Strategy</p>
-              <h3 className="mt-4 text-lg font-bold text-primary">Macro-Yield Matrix</h3>
-              <p className="mt-3 text-sm text-secondary leading-6">
-                Isolates systemic drivers that determine institutional value and readiness.
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-2">
-                <div className="h-12 rounded border border-surface-line bg-surface-glass flex items-center justify-center text-xs text-muted font-semibold">
-                  80%
-                </div>
-                <div className="h-12 rounded border border-surface-line bg-surface-glass flex items-center justify-center text-xs text-muted font-semibold">
-                  20%
-                </div>
-              </div>
-              <p className="mt-4 text-xs font-semibold text-electric-amber">Feature: Microshift indicators</p>
-              <p className="mt-2 text-xs text-muted italic">Interface concept</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* E. Start Here Section */}
+      {/* Featured Frameworks: Audience-Based */}
       <section className="section-pad border-b border-line">
         <div className="shell">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-primary">Start Here</h2>
-            <p className="mt-3 text-secondary">Four foundational frameworks for enterprise infrastructure.</p>
+            <h2 className="text-4xl font-bold text-primary">Core Frameworks</h2>
+            <p className="mt-3 text-secondary">Four flagship frameworks representing the scope of this library.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -229,7 +180,10 @@ export default function Home() {
                   <h3 className="mt-3 text-xl font-bold text-primary">
                     {fw.framework_title}
                   </h3>
-                  <p className="mt-2 text-sm text-secondary leading-6">{fw.enterprise_layer}</p>
+                  <p className="mt-2 text-sm text-secondary">{fw.enterprise_layer}</p>
+                  <p className="mt-3 text-xs text-muted leading-5">
+                    {fw.hidden_foundation}
+                  </p>
                   <p className="mt-3 text-xs uppercase-label text-muted">{fw.category}</p>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -245,7 +199,9 @@ export default function Home() {
                     Read
                   </ButtonLink>
                   <ButtonLink href={fw.demo_url}>Demo</ButtonLink>
-                  <ButtonLink href={fw.github_repo_url}>GitHub</ButtonLink>
+                  <ButtonLink href={`/data/framework-master-matrix.json#framework-${fw.framework_number}`}>
+                    Matrix
+                  </ButtonLink>
                 </div>
               </article>
             ))}
@@ -253,12 +209,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* F. Full Framework Library */}
+      {/* Framework Library */}
       <section id="library" className="section-pad border-b border-line">
         <div className="shell">
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-primary">Framework Library</h2>
-            <p className="mt-3 text-secondary">All 30 enterprise-layer frameworks for systems infrastructure.</p>
+            <p className="mt-3 text-secondary">All 30 frameworks. Organized by operating layer.</p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -269,7 +225,10 @@ export default function Home() {
                   <h3 className="mt-2 text-base font-bold text-primary">
                     {fw.framework_title}
                   </h3>
-                  <p className="mt-2 text-xs uppercase-label text-muted">{fw.category}</p>
+                  <p className="mt-2 text-xs text-muted leading-5">
+                    {fw.hidden_foundation}
+                  </p>
+                  <p className="mt-3 text-xs uppercase-label text-muted">{fw.category}</p>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
                   <span className={`status-pill ${getStatusPillClass(fw.source_status)}`}>
@@ -289,14 +248,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* G. Master Matrix Standard */}
+      {/* What This Library Is: FAQ for AEO/GEO */}
+      <section className="section-pad border-b border-line">
+        <div className="shell">
+          <h2 className="text-4xl font-bold text-primary mb-12">What This Library Is</h2>
+
+          <div className="max-w-3xl space-y-12">
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                What is Framework Fridays by THIHsystems?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, demo previews, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                What is an enterprise-layer infrastructure framework?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                An enterprise-layer infrastructure framework maps the operating layer behind a failure, including the research base, core data inputs, workflows, economics, procurement path, pilot design, and policy support path.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                Who is this for?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                It is built for institutions, operators, policymakers, funders, builders, advocates, and the public.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                Are these finished products?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                No. These are public framework packages. Some are concept structured, some are source packed, and some are ready for internal review or pilot design. The site does not claim validation where no pilot evidence exists.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                How does the Master Matrix work?
+              </h3>
+              <p className="text-base leading-7 text-muted">
+                The Master Matrix standardizes all 30 frameworks across research, statistics, economics, implementation, procurement, ROI logic, pilot readiness, policy path, source status, and public-claim status.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Master Matrix Standard */}
       <section id="matrix" className="section-pad border-b border-line">
         <div className="shell">
           <h2 className="text-4xl font-bold text-primary">The Master Matrix Standard</h2>
           <div className="mt-8 grid gap-8 lg:grid-cols-2">
             <div>
               <p className="text-lg font-semibold text-secondary mb-4">
-                No framework launches as inspiration alone.
+                Standardized framework tracking.
               </p>
               <p className="text-base leading-7 text-muted">
                 Every framework must make visible the research foundation, statistical basis, economic impact model, implementation roadmap, procurement checklist, ROI logic, pilot design, and policy brief.
@@ -330,28 +343,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* H. Build Pipeline */}
-      <section className="section-pad border-b border-line">
-        <div className="shell">
-          <h2 className="text-4xl font-bold text-primary mb-8">Build Pipeline</h2>
-          <div className="grid gap-4 md:grid-cols-6">
-            {[
-              "Name the hidden system failure",
-              "Structure the framework",
-              "Publish the demo preview",
-              "Open the forkable repo",
-              "Add research, procurement, pilot, and policy paths",
-              "Track claims through the master matrix"
-            ].map((item, index) => (
-              <div key={item} className="border-t border-line pt-5">
-                <p className="mono-text text-sm font-bold text-quantum-mint">0{index + 1}.</p>
-                <p className="mt-4 text-sm font-medium leading-6 text-primary">{item}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
