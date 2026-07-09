@@ -1,37 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  /* Canvas: Deep obsidian and slate bases */
-  --color-obsidian: #050607;
-  --color-obsidian-2: #090B0F;
-  --color-slate-deep: #11151C;
-  --color-slate-soft: #1A202B;
-  --color-ink: #EDEFF2;
-  --color-muted: #9AA4B2;
-  --color-faint: #687282;
+  /* 2030 Enterprise Interface: 4-Color Foundation */
 
-  /* Glass layer: Semi-transparent panels */
-  --glass-bg: rgba(255, 255, 255, 0.045);
-  --glass-bg-strong: rgba(255, 255, 255, 0.075);
-  --glass-border: rgba(255, 255, 255, 0.11);
-  --glass-border-strong: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
-  --glass-blur: blur(18px);
+  /* Primary Colors */
+  --obsidian-night: #050607;
+  --frosted-slate: #1A202B;
+  --quantum-mint: #42F5B3;
+  --electric-amber: #FFB84D;
 
-  /* Telemetry colors: Status signals */
-  --telemetry-mint: #42F5B3;
-  --telemetry-amber: #FFB84D;
-  --telemetry-crimson: #FF4D6D;
+  /* Derived Alpha Tokens */
+  --surface-glass: rgba(26, 32, 43, 0.12);
+  --surface-glass-strong: rgba(26, 32, 43, 0.18);
+  --surface-line: rgba(255, 255, 255, 0.10);
+  --surface-line-strong: rgba(255, 255, 255, 0.18);
+  --text-primary: rgba(255, 255, 255, 0.96);
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.52);
 
   /* Legacy tokens for compatibility */
   --background: #050505;
   --foreground: #f8f7f2;
-  --charcoal: #111111;
-  --charcoal-soft: #191919;
-  --gold: #d8b25a;
-  --gold-bright: #f0d487;
-  --silver: #c7c7c7;
-  --silver-dim: #858585;
 }
 
 @theme inline {
@@ -52,10 +41,8 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(circle at 18% 0%, rgba(216, 178, 90, 0.13), transparent 28rem),
-    linear-gradient(180deg, #050505 0%, #111111 42%, #050505 100%);
-  color: var(--foreground);
+  background: var(--obsidian-night);
+  color: var(--text-primary);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
@@ -70,7 +57,7 @@ a {
 }
 
 ::selection {
-  background: rgba(216, 178, 90, 0.35);
+  background: rgba(66, 245, 179, 0.25);
   color: #ffffff;
 }
 
@@ -83,112 +70,222 @@ a {
   padding-block: clamp(56px, 8vw, 112px);
 }
 
-.hairline {
-  border-color: rgba(199, 199, 199, 0.18);
+/* Typography */
+.text-primary {
+  color: var(--text-primary);
 }
 
-.gold-text {
-  color: var(--gold-bright);
+.text-secondary {
+  color: var(--text-secondary);
 }
 
-.silver-text {
-  color: var(--silver);
+.text-muted {
+  color: var(--text-muted);
 }
 
-.muted-text {
-  color: rgba(248, 247, 242, 0.68);
+/* Obsidian Canvas */
+.obsidian-canvas {
+  background: var(--obsidian-night);
 }
 
-.focus-ring:focus-visible {
-  outline: 2px solid var(--gold-bright);
-  outline-offset: 3px;
+/* Glass Surfaces */
+.glass-plane {
+  background: var(--surface-glass);
+  border: 1px solid var(--surface-line);
+  backdrop-filter: blur(12px);
 }
 
-.metal-panel {
-  border: 1px solid rgba(199, 199, 199, 0.18);
-  background: linear-gradient(145deg, rgba(25, 25, 25, 0.92), rgba(8, 8, 8, 0.94));
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+.glass-plane-strong {
+  background: var(--surface-glass-strong);
+  border: 1px solid var(--surface-line-strong);
+  backdrop-filter: blur(18px);
 }
 
-.gold-button {
-  background: linear-gradient(135deg, #f0d487, #c69737);
-  color: #080808;
-  box-shadow: 0 16px 36px rgba(216, 178, 90, 0.18);
+/* Intent Omnibar */
+.intent-omnibar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface-glass-strong);
+  border: 1px solid var(--surface-line-strong);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(18px);
+  transition: all 0.3s ease;
 }
 
-.preview-grid {
-  background-image:
-    linear-gradient(rgba(199, 199, 199, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 199, 199, 0.07) 1px, transparent 1px);
-  background-size: 44px 44px;
+.intent-omnibar:focus-within {
+  border-color: var(--surface-line-strong);
+  background: var(--surface-glass-strong);
 }
 
-/* Glass panel patterns */
-.glass-panel {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
+.intent-omnibar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  outline: none;
 }
 
-.glass-panel-strong {
-  background: var(--glass-bg-strong);
-  border: 1px solid var(--glass-border-strong);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
+.intent-omnibar input::placeholder {
+  color: var(--text-muted);
 }
 
-/* Framework cards */
+/* Telemetry Colors */
+.telemetry-mint {
+  color: var(--quantum-mint);
+}
+
+.telemetry-amber {
+  color: var(--electric-amber);
+}
+
+/* Status Pills */
+.status-pill {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.status-pill-mint {
+  color: var(--quantum-mint);
+  border-color: rgba(66, 245, 179, 0.25);
+  background: rgba(66, 245, 179, 0.06);
+}
+
+.status-pill-amber {
+  color: var(--electric-amber);
+  border-color: rgba(255, 184, 77, 0.25);
+  background: rgba(255, 184, 77, 0.06);
+}
+
+/* Framework Cards */
 .framework-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
-  border: 1px solid var(--glass-border);
-  background: linear-gradient(145deg, rgba(25, 25, 25, 0.92), rgba(8, 8, 8, 0.94));
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass);
   border-radius: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .framework-card:hover {
-  border-color: var(--glass-border-strong);
-  background: linear-gradient(145deg, rgba(35, 35, 35, 0.95), rgba(12, 12, 12, 0.96));
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  border-color: var(--surface-line-strong);
+  background: var(--surface-glass-strong);
 }
 
-/* Status pills */
-.status-pill {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+/* Matrix Card */
+.matrix-card {
+  padding: 2rem;
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass-strong);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(18px);
 }
 
-.status-pill-mint {
-  color: var(--telemetry-mint);
-  border-color: rgba(66, 245, 179, 0.25);
-  background: rgba(66, 245, 179, 0.08);
+/* Command Hive Card */
+.command-hive-card {
+  padding: 1.5rem;
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass);
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
-.status-pill-amber {
-  color: var(--telemetry-amber);
-  border-color: rgba(255, 184, 77, 0.25);
-  background: rgba(255, 184, 77, 0.08);
+/* Value Pipeline Card */
+.value-pipeline-card {
+  padding: 2rem;
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass-strong);
+  border-radius: 0.5rem;
+  position: relative;
 }
 
-.status-pill-crimson {
-  color: var(--telemetry-crimson);
-  border-color: rgba(255, 77, 109, 0.25);
-  background: rgba(255, 77, 109, 0.08);
+/* Macro Yield Card */
+.macro-yield-card {
+  padding: 2rem;
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass-strong);
+  border-radius: 0.5rem;
 }
 
-/* Focus ring for accessibility */
-.focus-ring-obsidian:focus-visible {
-  outline: 2px solid var(--color-ink);
+/* Focus Ring */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--quantum-mint);
   outline-offset: 3px;
+}
+
+/* Button Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--quantum-mint);
+  color: var(--quantum-mint);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: rgba(66, 245, 179, 0.1);
+  border-color: var(--quantum-mint);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--surface-line-strong);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  border-color: var(--surface-line-strong);
+  color: var(--text-primary);
+}
+
+/* Utility Classes */
+.border-line {
+  border-color: var(--surface-line);
+}
+
+.border-line-strong {
+  border-color: var(--surface-line-strong);
+}
+
+.mono-text {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.uppercase-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
