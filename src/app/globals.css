@@ -306,6 +306,37 @@ button.btn-secondary {
     background-color 150ms ease-out, opacity 150ms ease-out;
 }
 
+.water-bank-cross-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.water-bank-cross-section__band {
+  border: 1px solid var(--surface-line);
+  background: var(--surface-glass);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.water-bank-cross-section__meter {
+  block-size: 0.55rem;
+  border-radius: 999px;
+  background: var(--surface-line);
+  overflow: hidden;
+}
+
+.water-bank-cross-section__fill {
+  display: block;
+  block-size: 100%;
+  border-radius: inherit;
+  background: var(--quantum-mint);
+}
+
+.water-bank-cross-section__fill[data-signal="amber"],
+.water-bank-cross-section__fill[data-signal="red"] {
+  background: var(--electric-amber);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .framework-live-transition {
     transition-duration: 0ms;
