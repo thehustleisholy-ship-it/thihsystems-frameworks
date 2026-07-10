@@ -158,7 +158,7 @@ export default function WaterBankingPreview() {
         </section>
 
         <section className="glass-plane rounded-xl p-5 framework-live-transition">
-          <div className="flex items-start justify-between gap-4">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
             <div>
               <h2 className="uppercase-label" id="water-input-controls">
                 Input controls
