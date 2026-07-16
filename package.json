@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "export:matrix": "tsx scripts/export-framework-master-matrix.ts all",
+    "check:matrix": "vitest run src/lib/framework-portfolio-integrity.test.ts"
   },
   "dependencies": {
     "next": "16.2.10",
@@ -27,6 +29,7 @@
     "eslint-config-next": "16.2.10",
     "jsdom": "^29.1.1",
     "tailwindcss": "^4",
+    "tsx": "^4.23.1",
     "typescript": "^5",
     "vitest": "^4.1.10"
   }
