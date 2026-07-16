@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { frameworks } from "@/lib/framework-content";
 import { getFrameworkBySlug } from "@/lib/framework-master-matrix";
+import { getFrameworkPublication } from "@/lib/framework-publication";
+import FrameworkEvidence from "./FrameworkEvidence";
 
 function ArrowIcon() {
   return (
@@ -76,6 +78,7 @@ export default async function FrameworkDetailPage({ params }: Props) {
 
 
   const canonical = getFrameworkBySlug(slug);
+  const publication = getFrameworkPublication(slug);
   const relatedFrameworks = canonical?.related_framework_slugs
     .map((relatedSlug) => getFrameworkBySlug(relatedSlug))
     .filter((related) => related !== undefined) ?? [];
@@ -152,6 +155,8 @@ export default async function FrameworkDetailPage({ params }: Props) {
           </div>
         </section>
       )}
+      {publication && <FrameworkEvidence publication={publication} />}
+
       <section className="section-pad">
         <div className="shell flex flex-col justify-between gap-8 rounded-lg border hairline bg-white/[0.03] p-6 sm:p-8 lg:flex-row lg:items-end">
           <div>
