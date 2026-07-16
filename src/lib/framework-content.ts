@@ -1,3 +1,5 @@
+import { frameworkMasterMatrix } from "./framework-master-matrix";
+
 export type Framework = {
   number: string;
   slug: string;
@@ -17,7 +19,7 @@ export type Framework = {
   };
 };
 
-export const frameworks: Framework[] = [
+const frameworkPresentationRecords: Framework[] = [
   {
     number: "Framework 01",
     slug: "womens-health-longitudinal-dashboard",
@@ -502,6 +504,35 @@ export const frameworks: Framework[] = [
   },
 ];
 
+/**
+ * Public framework content derives every identity and route from the canonical
+ * master matrix while retaining richer editorial copy in this module.
+ */
+export const frameworks: Framework[] = frameworkMasterMatrix.map((canonical) => {
+  const presentation = frameworkPresentationRecords.find(
+    (record) => record.slug === canonical.slug,
+  );
+
+  if (!presentation) {
+    throw new Error(`Missing presentation content for canonical framework ${canonical.framework_number}`);
+  }
+
+  return {
+    ...presentation,
+    number: `Framework ${canonical.framework_number}`,
+    slug: canonical.slug,
+    title: canonical.framework_title,
+    category: canonical.category,
+    enterpriseLayer: canonical.enterprise_layer,
+    statuses: [canonical.maturity_stage, canonical.source_status],
+    links: {
+      ...presentation.links,
+      detail: canonical.framework_url,
+      demo: canonical.demo_url,
+      github: canonical.github_repo_url,
+    },
+  };
+});
 // Backward compatibility: export Framework 01 data for existing routes
 export const framework = frameworks[0];
 export const links = frameworks[0].links;
