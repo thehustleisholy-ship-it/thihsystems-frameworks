@@ -15,6 +15,14 @@ export type VerificationStatus =
   | "source-reviewed"
   | "rejected";
 
+export type ReviewDisposition =
+  | "verified"
+  | "qualified"
+  | "contradicted"
+  | "outdated"
+  | "awaiting-review"
+  | "unsuitable-for-public-use";
+
 /**
  * Reusable evidence record for public claims. Unknown values remain null;
  * absence must never be replaced by invented metadata.
@@ -33,6 +41,8 @@ export type EvidenceRecord = {
   geography: string | null;
   population: string | null;
   measurement_definition: string | null;
+  measurement_window?: string | null;
+  denominator?: string | null;
   value: number | string | null;
   unit: string | null;
   limitations: string[];
@@ -41,6 +51,8 @@ export type EvidenceRecord = {
   review_date: string | null;
   next_review_date: string | null;
   public_use_approval: boolean;
+  review_disposition?: ReviewDisposition;
+  source_type?: "primary" | "secondary" | null;
 };
 
 export function isReviewableEvidence(record: EvidenceRecord): boolean {
