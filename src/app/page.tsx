@@ -108,6 +108,8 @@ export default function Home() {
               <ButtonLink href="/#library" variant="primary">
                 Enter the Framework Library
               </ButtonLink>
+              <ButtonLink href="/research">Research Status</ButtonLink>
+              <ButtonLink href="/system-map">System Map 01–13</ButtonLink>
               <ButtonLink href="#matrix">Open the Master Matrix</ButtonLink>
               <ButtonLink href="/frameworks/job-loss-income-shock-stabilizer">
                 Explore Framework 02 Source Pack

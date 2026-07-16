@@ -342,3 +342,44 @@ button.btn-secondary {
     transition-duration: 0ms;
   }
 }
+.evidence-disclosure {
+  border: 1px solid var(--surface-line);
+  border-radius: 0.5rem;
+  background: var(--surface-glass);
+  padding: 1.25rem;
+}
+
+.evidence-disclosure > summary {
+  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 650;
+  min-height: 44px;
+}
+
+.evidence-disclosure > summary:focus-visible {
+  outline: 2px solid var(--quantum-mint);
+  outline-offset: 4px;
+}
+
+.system-map-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.system-map-node {
+  border: 1px solid var(--surface-line);
+  border-top: 3px solid var(--quantum-mint);
+  border-radius: 0.75rem;
+  background: var(--surface-glass);
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .evidence-disclosure,
+  .system-map-node {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}
