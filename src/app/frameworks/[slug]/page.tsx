@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { frameworks } from "@/lib/framework-content";
+import { getFrameworkBySlug } from "@/lib/framework-master-matrix";
 
 function ArrowIcon() {
   return (
@@ -69,19 +71,14 @@ export default async function FrameworkDetailPage({ params }: Props) {
   const fw = frameworks.find((f) => f.slug === slug);
 
   if (!fw) {
-    return (
-      <main>
-        <div className="section-pad shell">
-          <h1 className="text-4xl font-semibold text-white">Framework not found</h1>
-          <p className="mt-4 muted-text">
-            <Link href="/" className="gold-text">
-              Return to home
-            </Link>
-          </p>
-        </div>
-      </main>
-    );
+    notFound();
   }
+
+
+  const canonical = getFrameworkBySlug(slug);
+  const relatedFrameworks = canonical?.related_framework_slugs
+    .map((relatedSlug) => getFrameworkBySlug(relatedSlug))
+    .filter((related) => related !== undefined) ?? [];
 
   return (
     <main>
@@ -137,16 +134,34 @@ export default async function FrameworkDetailPage({ params }: Props) {
         </div>
       </section>
 
+      {relatedFrameworks.length > 0 && (
+        <section className="section-pad border-t hairline">
+          <div className="shell max-w-4xl">
+            <h2 className="text-2xl font-semibold text-white">Related frameworks</h2>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {relatedFrameworks.map((related) => (
+                <Link
+                  key={related.slug}
+                  className="focus-ring rounded-md border hairline px-4 py-3 text-sm silver-text"
+                  href={related.framework_url}
+                >
+                  Framework {related.framework_number}: {related.framework_title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <section className="section-pad">
         <div className="shell flex flex-col justify-between gap-8 rounded-lg border hairline bg-white/[0.03] p-6 sm:p-8 lg:flex-row lg:items-end">
           <div>
             <h2 className="text-3xl font-semibold text-white">Explore this framework.</h2>
             <p className="mt-3 max-w-2xl muted-text">
-              View the demo preview, fork the GitHub repo, or read the full framework specification.
+              Open the current preview, inspect the repository, or read the framework specification.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <CtaLink href={fw.links.demo}>View Demo</CtaLink>
+            <CtaLink href={fw.links.demo}>{fw.statuses.includes("Interactive Prototype") ? "Interactive Prototype" : "Concept Preview"}</CtaLink>
             <CtaLink href={fw.links.github}>GitHub</CtaLink>
           </div>
         </div>
