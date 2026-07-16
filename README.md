@@ -1,99 +1,114 @@
 # THIHsystems Framework Fridays
 
-**AI frameworks for real human burdens.**
+**A public operating-layer library for hidden infrastructure failures.**
 
-Framework Fridays is a public framework library by THIHsystems. Every Friday, we introduce a practical AI framework, explain the thinking on Substack, publish the build notes on GitHub, and turn the strongest ideas into working demos.
+This repository contains one active portfolio of exactly 30 frameworks across
+health, housing, justice, workforce, water, food, energy, mobility, ecological
+risk, and future governance. The frameworks map the research, economics,
+procurement, workflows, pilot design, policy, risk, and evidence gaps behind
+systems that are often noticed only after they fail.
 
-This repository is not a collection of copy-and-paste products.
+## Canonical catalog
 
-It is a library of adaptable frameworks: problem maps, data models, workflow ideas, demo scaffolds, schemas, prompts, and implementation notes that builders can study, personalize, fork, and improve.
+`src/lib/framework-master-matrix.ts` is the sole authority for every active
+framework number, title, slug, public route, preview route, maturity stage,
+evidence status, and related-framework reference.
 
-## The operating thesis
+Other modules may contain richer editorial or artifact-planning copy, but they
+must derive or validate identity against the canonical registry. Generated JSON,
+CSV, and Markdown files in `public/data/` are exports, not independent sources.
 
-Not just leads.  
-Not just sales.  
-Not automation for automation's sake.
+The current catalog includes:
 
-AI can help people ask better questions, organize real problems, prepare for important conversations, and build systems that serve.
+- 30 active catalog entries and structured framework records
+- 2 meaningful, deterministic **Interactive Prototypes**:
+  - Framework 01, Women's Health Longitudinal Dashboard
+  - Framework 10, Managed Aquifer Recharge & Underground Water Banking
+- 28 **Concept Previews** with no claim of completed interaction
+- 1 expanded research/procurement package for Framework 02
+- 0 documented expert-reviewed, pilot-ready, or field-validated frameworks
 
-## Framework Library
+Synthetic and modeled outputs are illustrative and assumptions-based. They are
+not measured outcomes and do not replace qualified medical, legal, financial,
+engineering, policy, or other professional review.
 
-| # | Framework | Vertical | Status | Demo | Substack |
-|---|-----------|----------|--------|------|----------|
-| 01 | Women's Health Longitudinal Dashboard | HealthTech / Patient Data | Spec ready, demo live | [Demo](https://frameworks.thihsystems.com/frameworks/womens-health-longitudinal-dashboard/demo) | [Substack](https://substack.com/@michaelmartinthih) |
-| 02 | Service Trade Intake Stewardship | Local Services / Trades | Planned | Coming soon | Coming soon |
-| 03 | Real Estate Client Clarity Framework | Real Estate / Client Ops | Planned | Coming soon | Coming soon |
+## What the labels mean
 
-## How each framework is organized
+- **Catalog entry:** an active identity in the canonical 30-framework registry.
+- **Structured Framework:** the operating problem, stakeholders, workflow,
+  implementation, procurement, ROI logic, pilot path, policy path, risk, and
+  disclaimer have been structured.
+- **Research package:** research notes or source records exist; this does not
+  automatically mean the sources were reviewed.
+- **Source-Reviewed:** attached, reviewable citations have an accountable
+  reviewer, review date, limitations, and public-use approval.
+- **Interactive Prototype:** meaningful working interaction produces visible,
+  illustrative outputs.
+- **Expert-Reviewed:** a qualified reviewer and review date are recorded.
+- **Pilot-Ready:** safety review, measures, ownership, exit criteria, and pilot
+  guide are recorded.
+- **Field-Validated:** actual field evidence and measured results are recorded.
 
-Each framework folder may include:
+See [the evidence and maturity standard](docs/EVIDENCE_AND_MATURITY_STANDARD.md).
 
-- `README.md`, plain-English overview
-- `framework.md`, full written framework
-- `schemas/`, structured data models
-- `demo-data/`, synthetic or sample data only
-- `scripts/`, local proof-of-concept tools
-- `outputs/`, generated examples
-- `docs/`, privacy notes, roadmap, open questions, MVP test plan
+## How the frameworks connect
 
-## Current Framework
+The portfolio treats each framework as an operating layer: inputs become a
+workflow; the workflow serves affected people and institutions; implementation
+requires procurement, governance, evidence, and measurable safeguards.
+Related-framework links are stored as canonical slugs and are validated before
+publication.
 
-### Framework 01: Women's Health Longitudinal Dashboard
+## Legacy archive material
 
-**Patient-owned. Longitudinal. Clinical-conversation-ready.**
+`frameworks/02-service-trade-intake-stewardship/` and
+`frameworks/03-real-estate-client-clarity-framework/` predate the active
+catalog. They are preserved as legacy archive material, not active Frameworks
+02 and 03. The active identities are Job-Loss & Income-Shock Stabilizer and
+Returning Citizen Reentry Roadmap.
 
-A framework for helping patients organize symptoms, cycles, life events, labs, medications, and clinical questions into a visit-ready export.
+The original interactive artifact matrix also describes an earlier portfolio.
+Its historically useful records remain explicitly archived in code. See
+[the reconciliation record](docs/FRAMEWORK_IDENTITY_RECONCILIATION.md).
 
-This is not a diagnostic tool and is not medical advice. It is designed to help patients organize their own data and prepare better questions for licensed clinicians.
+## Repository structure
 
-## Build philosophy
+- `src/lib/framework-master-matrix.ts` — canonical active registry
+- `src/lib/framework-content.ts` — derived identity plus editorial copy
+- `src/lib/evidence-record.ts` — reusable claim/evidence schema
+- `src/lib/interactive-artifact-matrix.ts` — canonical active plans plus
+  explicitly archived historical records
+- `frameworks/` — detailed framework and legacy archive packages
+- `public/data/` — generated registry exports
+- `docs/` — standards, source queue, and reconciliation decisions
 
-A framework is not a shortcut around discernment.
+## Local development and verification
 
-Use these ideas as starting points. Change the fields. Change the flow. Change the language. Change the assumptions. Make the framework serve the person and community in front of you.
-
-The goal is not to clone the idea.
-
-The goal is to build systems that serve.
-
-## Publishing pipeline
-
-- LinkedIn introduces the issue.
-- Substack explains the framework.
-- GitHub holds the forkable build.
-- `frameworks.thihsystems.com` houses working demos.
-
-## Local website development
-
-The public website currently lives at the repository root as a Next.js App Router project.
-
-```bash
+```powershell
 npm install
 npm run dev
 ```
 
-Verification:
-
-```bash
+```powershell
+npm test
 npm run lint
 npm run build
+npm run export:matrix
+npm run check:matrix
 ```
 
-No environment variables are required for v1.
+No environment variables are required. CI runs tests, lint, build, portfolio
+integrity, and export-freshness checks. CI does not deploy.
 
-## Links
+## Public endpoints
 
-- Website: `https://frameworks.thihsystems.com`
-- Preview URL: `https://thihsystems-frameworks.vercel.app`
-- Substack: `https://substack.com/@michaelmartinthih`
-- THIHsystems LinkedIn: `https://www.linkedin.com/company/124453928/admin/dashboard/`
-- Personal LinkedIn: `https://www.linkedin.com/in/michaelmartinthih`
-- GitHub: This repository
+- Website: https://frameworks.thihsystems.com
+- Vercel preview: https://thihsystems-frameworks.vercel.app
+- Substack: https://substack.com/@michaelmartinthih
 
-## Built by
+## Publishing principle
 
-Michael E Martin Jr  
-THIHsystems
-
-
-
+A framework is not a shortcut around discernment. Status labels describe
+repository evidence, not ambition. Missing evidence remains visible, and no
+simulation, public page, planned pilot, or source queue is represented as a
+validated outcome.

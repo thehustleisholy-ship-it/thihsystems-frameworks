@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | THIHsystems Framework Fridays",
   },
   description:
-    "Explore 30 enterprise infrastructure frameworks for hidden system failures across health, housing, justice, workforce, water, food, energy, mobility, ecological risk, and future governance. Includes demo previews, forkable repos, procurement paths, pilot guides, policy briefs, and source-status tracking.",
+    "Explore 30 enterprise infrastructure frameworks for hidden system failures across health, housing, justice, workforce, water, food, energy, mobility, ecological risk, and future governance. Includes concept previews and interactive prototypes, forkable repos, procurement paths, pilot guides, policy briefs, and source-status tracking.",
   keywords: [
     "enterprise infrastructure",
     "framework library",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Framework Fridays by THIHsystems",
-    description: "Thirty enterprise-layer frameworks for hidden infrastructure failures, with source queues, demo previews, forkable repos, pilot paths, and policy briefs.",
+    description: "Thirty enterprise-layer frameworks for hidden infrastructure failures, with source queues, concept previews and interactive prototypes, forkable repos, pilot paths, and policy briefs.",
   },
 };
 
@@ -122,7 +122,7 @@ const jsonLd = {
           "name": "What is Framework Fridays by THIHsystems?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, demo previews, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.",
+            "text": "Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, concept previews and interactive prototypes, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.",
           },
         },
         {

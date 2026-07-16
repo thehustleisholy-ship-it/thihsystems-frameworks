@@ -55,6 +55,27 @@ export enum RiskLevel {
   Critical = "Critical",
 }
 
+export enum MaturityStage {
+  Concept = "Concept",
+  StructuredFramework = "Structured Framework",
+  SourceReviewed = "Source-Reviewed",
+  InteractivePrototype = "Interactive Prototype",
+  ExpertReviewed = "Expert-Reviewed",
+  PilotReady = "Pilot-Ready",
+  FieldValidated = "Field-Validated",
+}
+
+export type ResearchCitation = {
+  title: string;
+  url: string;
+  reviewed_on: string;
+};
+
+export type ExpertReview = {
+  reviewer: string;
+  reviewed_on: string;
+};
+
 export type FrameworkMatrixEntry = {
   // Identification
   framework_number: string;
@@ -90,7 +111,9 @@ export type FrameworkMatrixEntry = {
   demo_type: string;
 
   // Maturity and readiness
-  maturity_status: string;
+  legacy_maturity_notes: string;
+  maturity_stage: MaturityStage;
+  preview_type: "concept-preview" | "interactive-prototype";
   procurement_readiness: ReadinessStatus;
   pilot_readiness: ReadinessStatus;
   policy_readiness: ReadinessStatus;
@@ -102,6 +125,9 @@ export type FrameworkMatrixEntry = {
   // Source tracking
   source_status: SourceStatus;
   public_claim_status: PublicClaimStatus;
+  research_citations: ResearchCitation[];
+  expert_review: ExpertReview | null;
+  related_framework_slugs: string[];
 
   // Public endpoints
   github_repo_url: string;
@@ -111,7 +137,16 @@ export type FrameworkMatrixEntry = {
   linkedin_launch_url?: string;
 };
 
-export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
+type FrameworkMatrixSeed = Omit<
+  FrameworkMatrixEntry,
+  | "maturity_stage"
+  | "preview_type"
+  | "research_citations"
+  | "expert_review"
+  | "related_framework_slugs"
+>;
+
+const frameworkRegistrySeeds: FrameworkMatrixSeed[] = [
   {
     framework_number: "01",
     framework_title: "Women's Health Longitudinal Dashboard",
@@ -124,7 +159,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level1,
-    implementation_roadmap: "Demo live. Repo structure ready. Needs: MVP user testing, clinical validation.",
+    implementation_roadmap: "Interactive prototype live. Repo structure ready. Needs: MVP user testing, clinical validation.",
     procurement_checklist: "HIPAA compliance. Patient consent flows. EHR interop readiness.",
     roi_calculator_logic: "Patient prep time saved x visit efficiency gain x clinical accuracy improvement.",
     pilot_guide: "Start: single clinic, 20 patients, 12-week cycle.",
@@ -139,7 +174,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Track symptoms → add cycle context → export visit-ready report → clinical review",
     demo_type: "Live interactive dashboard",
-    maturity_status: "Spec Ready, Demo Live, Repo Live",
+    legacy_maturity_notes: "Spec Ready, Interactive Prototype, Repo Live",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.NeedsReview,
@@ -171,7 +206,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
       "Assumptions-based ROI model: $1,178 cost vs. $22,782 modeled benefit (18.3x return under assumptions). Modeled break-even at 0.2 weeks accelerated employment. Requires pilot validation for actual outcomes.",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
     implementation_roadmap:
-      "Concept structured (complete). Demo preview (30-day workflow designed). Pilot ready (workforce partner identified, participant recruitment plan drafted). Scale decision after 12-month pilot (month 12 of 2026).",
+      "Concept structured (complete). Concept preview (30-day workflow designed). Pilot ready (workforce partner identified, participant recruitment plan drafted). Scale decision after 12-month pilot (month 12 of 2026).",
     procurement_checklist:
       "Lead implementation partner RFP. Benefits calculator development per state. Assessment platform procurement/build. Staff hiring (1 PM, 2-3 advisors, 1 coach, 0.5 evaluator). Data integration setup. Interagency MOU (UI, WIOA, emergency assistance). Participant communications. Pilot launch infrastructure.",
     roi_calculator_logic:
@@ -192,7 +227,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
       "Day 1-3: Intake & assessment (financial, career, benefits). Day 4-7: Benefits cliff analysis & financial triage. Day 8-21: Job search acceleration. Day 22-30: Offer evaluation & decision support. Follow-up: 30-day, 90-day, 6-month, 1-year outcomes.",
     demo_type:
       "Interactive 30-day workflow tracker, state benefits calculator, job search bootcamp checklist, offer evaluation tool, outcomes dashboard",
-    maturity_status: "Concept Structured, Implementation Roadmap Complete, Pilot-Ready",
+    legacy_maturity_notes: "Concept Structured, Implementation Roadmap Complete, Pilot planning documented; not pilot-ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.ReadyForInternalReview,
@@ -217,7 +252,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: reentry partner testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: reentry partner testing.",
     procurement_checklist:
       "Housing coordination. Employment pathways. Legal requirement tracking. Support service mapping.",
     roi_calculator_logic:
@@ -234,7 +269,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Intake → documentation audit → pathway plan → requirement tracker → support coordination",
     demo_type: "Integrated reentry checklist and service mapper",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.NeedsReview,
@@ -258,7 +293,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: clinical partnership testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: clinical partnership testing.",
     procurement_checklist:
       "Clinical escalation protocols. Patient advocacy coordination. Hospital policy integration.",
     roi_calculator_logic: "Maternal adverse events prevented x escalation speed x outcome improvement.",
@@ -272,7 +307,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Symptom tracking → risk assessment → escalation flag → advocacy coordination → clinical review",
     demo_type: "Risk escalation protocol and advocacy coordination tool",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.NeedsReview,
@@ -296,7 +331,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: hospital resilience testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: hospital resilience testing.",
     procurement_checklist:
       "Power systems. Fuel supply. Water resilience. Oxygen continuity. Staffing plans. Pharmacy resilience.",
     roi_calculator_logic:
@@ -312,7 +347,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Resilience audit → system mapping → 72-hour scenario test → continuity plan → implementation",
     demo_type: "Resilience audit checklist and continuity scenario planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.Drafted,
@@ -337,7 +372,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level1,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: legal aid partner testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: legal aid partner testing.",
     procurement_checklist:
       "Evidence organization. Court preparation. Legal coordination. Timeline documentation.",
     roi_calculator_logic: "Housing retained x legal success rate x court preparation time saved.",
@@ -350,7 +385,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Evidence collection → organization → court-prep package → legal review → defense filing",
     demo_type: "Evidence vault and court-prep document organizer",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.NeedsReview,
@@ -374,7 +409,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: recovery facility partnership.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: recovery facility partnership.",
     procurement_checklist:
       "Wastewater infrastructure. Recovery technology. Fertilizer production. Regulatory compliance.",
     roi_calculator_logic: "Phosphorus recovered x fertilizer production cost x agricultural value.",
@@ -389,7 +424,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Nutrient audit → recovery opportunity → technology selection → facility deployment → monitoring",
     demo_type: "Nutrient recovery opportunity and ROI calculator",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.Drafted,
@@ -413,7 +448,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: construction industry testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: construction industry testing.",
     procurement_checklist:
       "Aggregate supply mapping. Alternative materials. Material substitution. Recycled content.",
     roi_calculator_logic: "Aggregate supply risk mitigated x construction continuity x cost optimization.",
@@ -427,7 +462,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Supply audit → risk assessment → alternative sourcing → material testing → substitution plan",
     demo_type: "Aggregate supply risk mapper and substitution planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.Drafted,
@@ -452,7 +487,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: agricultural partner testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: agricultural partner testing.",
     procurement_checklist:
       "Soil assessment. Transition planning. No-till equipment. Cover crop sourcing. Financial support.",
     roi_calculator_logic:
@@ -469,7 +504,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Soil audit → transition planning → equipment and input sourcing → implementation → monitoring",
     demo_type: "Soil transition planner and ROI calculator",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.Drafted,
@@ -494,7 +529,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Needs: water authority testing.",
+    implementation_roadmap: "Concept structured. Concept preview. Needs: water authority testing.",
     procurement_checklist:
       "Hydrologic assessment. Recharge site identification. Water quality standards. Regulatory approval.",
     roi_calculator_logic:
@@ -511,7 +546,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Hydrogeologic survey → recharge potential assessment → site selection → regulatory approval → operation",
     demo_type: "Aquifer and water banking opportunity assessor",
-    maturity_status: "Concept Structured, Demo Preview, Repo Pending",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Pending",
     procurement_readiness: ReadinessStatus.NeedsReview,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.Drafted,
@@ -537,7 +572,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
     implementation_roadmap:
-      "Concept structured. Demo preview. Repo ready. Implementation partners: critical infrastructure sectors.",
+      "Concept structured. Concept preview. Repo ready. Implementation partners: critical infrastructure sectors.",
     procurement_checklist:
       "Backup positioning systems. Timing redundancy. Navigation contingency. Critical infrastructure priority.",
     roi_calculator_logic:
@@ -552,7 +587,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Dependency audit → risk assessment → backup system selection → integration testing → activation protocol",
     demo_type: "GPS dependency mapper and backup contingency planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -578,7 +613,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: pediatric clinics.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: pediatric clinics.",
     procurement_checklist:
       "Developmental screening integration. Referral coordination. Clinical data standards.",
     roi_calculator_logic:
@@ -594,7 +629,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Milestone tracking → screening coordination → specialist referral → therapy integration → school coordination",
     demo_type: "Developmental journey tracker and referral coordinator",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -619,7 +654,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: municipalities.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: municipalities.",
     procurement_checklist:
       "Grain storage. Local production capacity. Supply chain resilience. Distribution planning.",
     roi_calculator_logic:
@@ -636,7 +671,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Food supply audit → reserve capacity assessment → local production planning → buffer construction → monitoring",
     demo_type: "Food security vulnerability assessor and strategic reserve planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.ReadyForPublicPreview,
@@ -661,7 +696,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: supervision agencies.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: supervision agencies.",
     procurement_checklist:
       "Compliance calendar. Requirement tracking. Escalation protocols. Supervisor coordination.",
     roi_calculator_logic:
@@ -676,7 +711,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Requirements intake → calendar creation → reminder system → escalation protocol → reporting",
     demo_type: "Compliance calendar and requirement tracker",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -700,7 +735,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: patient advocacy.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: patient advocacy.",
     procurement_checklist:
       "Evidence collection system. Visit preparation tools. Clinical communication templates.",
     roi_calculator_logic:
@@ -717,7 +752,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Symptom tracking → evidence collection → visit preparation → clinical dialogue → outcome tracking",
     demo_type: "Chronic pain evidence journal and visit preparation tool",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -742,7 +777,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: workforce boards.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: workforce boards.",
     procurement_checklist:
       "Apprenticeship coordination. Employer partnerships. Training program mapping. Career pathway clarity.",
     roi_calculator_logic:
@@ -759,7 +794,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Labor market analysis → gap identification → apprenticeship program audit → capacity building → placement",
     demo_type: "Trades workforce gap analyzer and pipeline builder",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -785,7 +820,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level1,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: legal aid.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: legal aid.",
     procurement_checklist:
       "Evidence organization. Timeline documentation. Legal case preparation. Testimony support.",
     roi_calculator_logic: "Asylum grants approved x case success rate x evidence organization speed.",
@@ -799,7 +834,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Evidence intake → organization → timeline building → legal case prep → court presentation support",
     demo_type: "Asylum evidence organizer and case preparation tool",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -823,7 +858,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: agricultural regions.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: agricultural regions.",
     procurement_checklist:
       "Pollinator habitat mapping. Crop pollination dependency assessment. Alternative pollination planning.",
     roi_calculator_logic:
@@ -840,7 +875,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Pollinator audit → crop dependency mapping → habitat assessment → restoration planning → monitoring",
     demo_type: "Pollinator risk mapper and habitat restoration planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -865,7 +900,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: energy planners.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: energy planners.",
     procurement_checklist:
       "Copper demand analysis. Supply chain mapping. Material substitution. Recycling infrastructure.",
     roi_calculator_logic:
@@ -882,7 +917,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Demand forecasting → supply analysis → substitution assessment → procurement planning → recycling integration",
     demo_type: "Material flow planner for electrification",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -907,7 +942,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: regional planners.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: regional planners.",
     procurement_checklist:
       "Local production mapping. Critical goods assessment. Manufacturing capacity. Network coordination.",
     roi_calculator_logic:
@@ -924,7 +959,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Critical goods mapping → supply vulnerability audit → local production assessment → network building → coordination",
     demo_type: "Critical goods mapper and production network planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -949,7 +984,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: social services.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: social services.",
     procurement_checklist:
       "Benefits eligibility navigation. Legal documentation. Support service coordination. Financial assistance.",
     roi_calculator_logic:
@@ -967,7 +1002,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Intake → eligibility assessment → benefits navigation → legal documentation → support coordination",
     demo_type: "Kinship care support and benefits navigator",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -991,7 +1026,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: coastal regions.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: coastal regions.",
     procurement_checklist:
       "Watershed nutrient audit. Agricultural runoff reduction. Coastal habitat restoration. Fisheries recovery.",
     roi_calculator_logic:
@@ -1008,7 +1043,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Dead zone assessment → source tracking → intervention planning → agricultural partnership → monitoring",
     demo_type: "Dead zone mapper and recovery planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -1033,7 +1068,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: aging services.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: aging services.",
     procurement_checklist:
       "Risk detection. Response coordination. Legal options. Protective documentation. Financial recovery.",
     roi_calculator_logic: "Abuse cases identified x elder protection x financial recovery x prevention.",
@@ -1048,7 +1083,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Risk assessment → detection → protective intervention → legal options → financial recovery planning",
     demo_type: "Elder financial risk detector and response coordinator",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -1072,7 +1107,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: DV organizations.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: DV organizations.",
     procurement_checklist:
       "Safety planning. Evidence documentation. Legal coordination. Shelter access. Protective orders.",
     roi_calculator_logic:
@@ -1089,7 +1124,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Safety assessment → planning → documentation → legal coordination → exit support → stabilization",
     demo_type: "Safety planner and evidence documentation tool",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -1114,7 +1149,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: renewable operators.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: renewable operators.",
     procurement_checklist:
       "Asset tracking. Lifecycle planning. Recycling partnerships. Material recovery. Regulatory compliance.",
     roi_calculator_logic:
@@ -1132,7 +1167,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Asset inventory → lifecycle forecasting → recovery planning → recycler partnership → material tracking",
     demo_type: "Renewable asset lifecycle and recovery planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.Drafted,
@@ -1157,7 +1192,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: school systems.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: school systems.",
     procurement_checklist:
       "Discipline data systems. Alternative discipline tracking. Intervention pathways. Youth advocacy.",
     roi_calculator_logic:
@@ -1174,7 +1209,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Data analysis → pipeline identification → intervention design → accountability shifts → outcomes measurement",
     demo_type: "School discipline analyzer and intervention mapper",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.ReadyForPublicPreview,
@@ -1199,7 +1234,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: transit planners.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: transit planners.",
     procurement_checklist:
       "Corridor viability. Infrastructure assessment. Operating model. Service design. Investment planning.",
     roi_calculator_logic: "Passenger demand served x corridor economic activation x environmental impact.",
@@ -1214,7 +1249,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Market analysis → corridor selection → feasibility study → operating model → financing planning",
     demo_type: "Rail corridor analyzer and network planner",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.ReadyForInternalReview,
     pilot_readiness: ReadinessStatus.ReadyForPublicPreview,
     policy_readiness: ReadinessStatus.ReadyForPublicPreview,
@@ -1240,7 +1275,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level1,
-    implementation_roadmap: "Concept structured. Demo preview. Repo ready. Testing: policy institutions.",
+    implementation_roadmap: "Concept structured. Concept preview. Repo ready. Testing: policy institutions.",
     procurement_checklist:
       "Longevity impact mapping. Institutional readiness assessment. Equity planning. Policy development.",
     roi_calculator_logic: "Societal resilience to longevity transitions x equity maintained x opportunity.",
@@ -1255,7 +1290,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Scenario building → institutional impact assessment → readiness mapping → policy planning → transition strategy",
     demo_type: "Longevity scenario planner and institutional readiness assessor",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.Drafted,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.ReadyForPublicPreview,
@@ -1281,7 +1316,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
     implementation_roadmap:
-      "Concept structured. Demo preview. Repo ready. Testing: international policy institutions.",
+      "Concept structured. Concept preview. Repo ready. Testing: international policy institutions.",
     procurement_checklist:
       "Governance frameworks. Consent infrastructure. Moratorium support. Risk assessment. International coordination.",
     roi_calculator_logic: "Responsible governance frameworks established x dangerous deployment prevented.",
@@ -1296,7 +1331,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Governance gap analysis → consent framework design → moratorium support → risk assessment → international coordination",
     demo_type: "Geoengineering governance framework and pre-deployment checklist",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.Drafted,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.ReadyForPublicPreview,
@@ -1322,7 +1357,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     economic_impact: "Needs source verification",
     evidence_confidence: EvidenceConfidenceLevel.Level2,
     implementation_roadmap:
-      "Concept structured. Demo preview. Repo ready. Testing: space agencies and operators.",
+      "Concept structured. Concept preview. Repo ready. Testing: space agencies and operators.",
     procurement_checklist:
       "Debris tracking. Collision prevention. Governance frameworks. Operator accountability. Commons management.",
     roi_calculator_logic: "Orbital safety maintained x space infrastructure continuity x economic value protected.",
@@ -1337,7 +1372,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     key_workflow:
       "Debris tracking → collision risk analysis → governance framework design → operator coordination → accountability",
     demo_type: "Orbital debris tracker and collision governance framework",
-    maturity_status: "Concept Structured, Demo Preview, Repo Ready",
+    legacy_maturity_notes: "Concept Structured, Concept Preview, Repo Ready",
     procurement_readiness: ReadinessStatus.Drafted,
     pilot_readiness: ReadinessStatus.Drafted,
     policy_readiness: ReadinessStatus.ReadyForPublicPreview,
@@ -1351,3 +1386,64 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     framework_url: "/frameworks/orbital-debris-tracking-collision-governance",
   },
 ];
+const relatedFrameworks: Record<string, string[]> = {
+  "womens-health-longitudinal-dashboard": [
+    "black-maternal-health-emergency-response-system",
+    "chronic-pain-evidence-journal",
+  ],
+  "black-maternal-health-emergency-response-system": [
+    "womens-health-longitudinal-dashboard",
+  ],
+  "chronic-pain-evidence-journal": [
+    "womens-health-longitudinal-dashboard",
+  ],
+  "phosphorus-recovery-circular-fertilizer": [
+    "ocean-dead-zone-reversal-hypoxia-recovery",
+  ],
+  "ocean-dead-zone-reversal-hypoxia-recovery": [
+    "phosphorus-recovery-circular-fertilizer",
+  ],
+  "topsoil-regeneration-no-till-transition": [
+    "managed-aquifer-recharge-water-banking",
+  ],
+  "managed-aquifer-recharge-water-banking": [
+    "topsoil-regeneration-no-till-transition",
+  ],
+  "copper-constraint-electrification-material-flow": [
+    "solar-wind-end-of-life-recovery-framework",
+  ],
+  "solar-wind-end-of-life-recovery-framework": [
+    "copper-constraint-electrification-material-flow",
+  ],
+};
+const interactivePrototypeSlugs = new Set([
+  "womens-health-longitudinal-dashboard",
+  "managed-aquifer-recharge-water-banking",
+]);
+
+/** The sole active registry for identity, maturity, evidence, relationships, and routes. */
+export const frameworkMasterMatrix: FrameworkMatrixEntry[] = frameworkRegistrySeeds.map(
+  (framework) => {
+    const isInteractivePrototype = interactivePrototypeSlugs.has(framework.slug);
+    return {
+      ...framework,
+      maturity_stage: isInteractivePrototype
+        ? MaturityStage.InteractivePrototype
+        : MaturityStage.StructuredFramework,
+      preview_type: isInteractivePrototype ? "interactive-prototype" : "concept-preview",
+      research_citations: [],
+      expert_review: null,
+      related_framework_slugs: relatedFrameworks[framework.slug] ?? [],
+    };
+  },
+);
+
+export function getFrameworkBySlug(slug: string): FrameworkMatrixEntry | undefined {
+  return frameworkMasterMatrix.find((framework) => framework.slug === slug);
+}
+
+export function getFrameworkByNumber(frameworkNumber: string): FrameworkMatrixEntry | undefined {
+  return frameworkMasterMatrix.find(
+    (framework) => framework.framework_number === frameworkNumber,
+  );
+}

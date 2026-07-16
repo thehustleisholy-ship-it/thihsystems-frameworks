@@ -7,7 +7,7 @@ import InteractiveFrameworkPreview from "./InteractiveFrameworkPreview";
 const framework = frameworks[0];
 
 export const metadata: Metadata = {
-  title: `${framework.title} Demo`,
+  title: `${framework.title} Interactive Prototype`,
   description:
     "Interactive synthetic preview for a patient-owned longitudinal women's health framework.",
 };
@@ -24,9 +24,9 @@ export default function DemoPage() {
             >
               Back to framework
             </Link>
-            <p className="uppercase-label mt-4 telemetry-amber">Framework 01 demo</p>
+            <p className="uppercase-label mt-4 telemetry-amber">Framework 01 · Interactive Prototype</p>
             <h1 className="mt-3 text-3xl font-semibold text-primary sm:text-4xl">
-              {framework.title} Demo
+              {framework.title} Interactive Prototype
             </h1>
             <p className="mt-3 max-w-3xl text-secondary">
               Toggle synthetic history depth and symptom inputs to see how local,

@@ -2,161 +2,84 @@ import fs from "fs";
 import path from "path";
 import {
   frameworkMasterMatrix,
-  FrameworkMatrixEntry,
+  type FrameworkMatrixEntry,
 } from "../src/lib/framework-master-matrix";
 
-interface ExportFormat {
-  format: "json" | "csv" | "markdown";
-  includeFields?: string[];
-  outputPath?: string;
-}
+export type ExportFormat = "json" | "csv" | "markdown";
 
-function exportAsJSON(
-  data: typeof frameworkMasterMatrix,
-  outputPath?: string
-): string {
-  const filePath =
-    outputPath ||
-    path.join(process.cwd(), "public", "data", "framework-master-matrix.json");
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-  console.log(`✓ Exported to ${filePath}`);
-  return filePath;
-}
-
-function exportAsCSV(
-  data: typeof frameworkMasterMatrix,
-  includeFields?: string[],
-  outputPath?: string
-): string {
-  const filePath =
-    outputPath ||
-    path.join(
-      process.cwd(),
-      "public",
-      "data",
-      "framework-master-matrix.csv"
-    );
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-
-  if (!data.length) {
-    console.log("No frameworks to export");
-    return filePath;
+function serializeCell(value: unknown): string {
+  if (Array.isArray(value) || (typeof value === "object" && value !== null)) {
+    return JSON.stringify(value);
   }
+  return value === null || value === undefined ? "" : String(value);
+}
 
-  const allFields = includeFields || Object.keys(data[0]);
-  const headers = allFields.join(",");
+export function renderMatrixJSON(data: FrameworkMatrixEntry[]): string {
+  return `${JSON.stringify(data, null, 2)}\n`;
+}
 
-  const rows = data.map((framework: FrameworkMatrixEntry) =>
-    allFields
-      .map((field) => {
-        const value = (framework as Record<string, unknown>)[field];
-        const stringValue =
-          typeof value === "string"
-            ? value.replace(/"/g, '""')
-            : String(value || "");
-        return `"${stringValue}"`;
-      })
-      .join(",")
+export function renderMatrixCSV(data: FrameworkMatrixEntry[]): string {
+  if (!data.length) return "";
+  const fields = Object.keys(data[0]) as Array<keyof FrameworkMatrixEntry>;
+  const rows = data.map((framework) =>
+    fields
+      .map((field) => `"${serializeCell(framework[field]).replace(/"/g, '""')}"`)
+      .join(","),
   );
-
-  const csv = [headers, ...rows].join("\n");
-  fs.writeFileSync(filePath, csv);
-  console.log(`✓ Exported to ${filePath}`);
-  return filePath;
+  return [fields.join(","), ...rows].join("\n") + "\n";
 }
 
-function exportAsMarkdown(
-  data: typeof frameworkMasterMatrix,
-  outputPath?: string
-): string {
-  const filePath =
-    outputPath ||
-    path.join(
-      process.cwd(),
-      "public",
-      "data",
-      "framework-master-matrix.md"
-    );
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+export function renderMatrixMarkdown(data: FrameworkMatrixEntry[]): string {
+  const frameworks = data
+    .map(
+      (framework) => `## ${framework.framework_number}: ${framework.framework_title}
 
-  const markdown = `# Framework Master Matrix Export
+- **Slug:** \`${framework.slug}\`
+- **Maturity:** ${framework.maturity_stage}
+- **Preview:** ${framework.preview_type === "interactive-prototype" ? "Interactive Prototype" : "Concept Preview"}
+- **Evidence:** ${framework.source_status}
+- **Public route:** \`${framework.framework_url}\`
+- **Preview route:** \`${framework.demo_url}\`
+`,
+    )
+    .join("\n");
 
-Generated: ${new Date().toISOString()}
+  return `# Framework Master Matrix Export
 
-## Summary
-- Total Frameworks: ${data.length}
-- Generated on: ${new Date().toLocaleDateString()}
+Generated from \`src/lib/framework-master-matrix.ts\`. Do not edit manually.
 
-## Frameworks
+- **Total active frameworks:** ${data.length}
 
-${data
-  .map(
-    (framework: FrameworkMatrixEntry) => `
-### ${framework.framework_number}: ${framework.framework_title}
-
-**Slug:** \`${framework.slug}\`
-**Category:** ${framework.category}
-**Evidence Confidence:** Level ${framework.evidence_confidence}
-**Risk Level:** ${framework.risk_level}
-
-**Research:** ${framework.documented_research}
-
-**Statistics:** ${framework.statistics}
-
-**Economic Impact:** ${framework.economic_impact}
-
-**Implementation Roadmap:** ${framework.implementation_roadmap}
-
-**Procurement Readiness:** ${framework.procurement_readiness}
-**Pilot Readiness:** ${framework.pilot_readiness}
-**Policy Readiness:** ${framework.policy_readiness}
-
-**Source Status:** ${framework.source_status}
-**Public Claim Status:** ${framework.public_claim_status}
-
----
-`
-  )
-  .join("\n")}
-
-`;
-
-  fs.writeFileSync(filePath, markdown);
-  console.log(`✓ Exported to ${filePath}`);
-  return filePath;
+${frameworks}`;
 }
 
-export async function exportFrameworkMatrix(
-  options: ExportFormat
-): Promise<void> {
-  const { format, includeFields, outputPath } = options;
+export const matrixExportPaths: Record<ExportFormat, string> = {
+  json: path.join(process.cwd(), "public", "data", "framework-master-matrix.json"),
+  csv: path.join(process.cwd(), "public", "data", "framework-master-matrix.csv"),
+  markdown: path.join(process.cwd(), "public", "data", "framework-master-matrix.md"),
+};
 
-  console.log(`Exporting framework matrix as ${format}...`);
-
-  switch (format) {
-    case "json":
-      exportAsJSON(frameworkMasterMatrix, outputPath);
-      break;
-    case "csv":
-      exportAsCSV(frameworkMasterMatrix, includeFields, outputPath);
-      break;
-    case "markdown":
-      exportAsMarkdown(frameworkMasterMatrix, outputPath);
-      break;
-    default:
-      console.error(`Unknown export format: ${format}`);
-      process.exit(1);
-  }
+export function writeMatrixExport(format: ExportFormat): void {
+  const renderers = {
+    json: renderMatrixJSON,
+    csv: renderMatrixCSV,
+    markdown: renderMatrixMarkdown,
+  };
+  const outputPath = matrixExportPaths[format];
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, renderers[format](frameworkMasterMatrix));
+  console.log(`Exported ${format} to ${outputPath}`);
 }
 
-// CLI entry point
+export function writeAllMatrixExports(): void {
+  (Object.keys(matrixExportPaths) as ExportFormat[]).forEach(writeMatrixExport);
+}
+
 if (require.main === module) {
-  const format = (process.argv[2] || "json") as "json" | "csv" | "markdown";
-  const outputPath = process.argv[3];
-
-  exportFrameworkMatrix({ format, outputPath }).catch((err) => {
-    console.error("Export failed:", err);
-    process.exit(1);
-  });
+  const requested = process.argv[2];
+  if (requested && requested !== "all" && !(requested in matrixExportPaths)) {
+    throw new Error(`Unknown export format: ${requested}`);
+  }
+  if (!requested || requested === "all") writeAllMatrixExports();
+  else writeMatrixExport(requested as ExportFormat);
 }
