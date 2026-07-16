@@ -71,11 +71,14 @@ export default function FrameworkEvidence({
                     {claim.claim_class}: {CLAIM_CLASSES[claim.claim_class]}
                   </span>
                   <span className="status-pill">{claim.verification_status}</span>
+                  {claim.review_disposition && <span className="status-pill">{claim.review_disposition}</span>}
                 </div>
                 <p className="mt-4 text-base leading-7 text-white">{claim.exact_public_claim}</p>
                 <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-                  <div><dt className="muted-text">Source</dt><dd className="silver-text">{claim.source_title ?? "Not yet documented"}</dd></div>
+                  <div><dt className="muted-text">Source</dt><dd className="silver-text">{claim.url_or_doi ? <a className="underline" href={claim.url_or_doi} rel="noreferrer" target="_blank">{claim.source_title}</a> : (claim.source_title ?? "Not yet documented")}</dd></div>
                   <div><dt className="muted-text">Data year</dt><dd className="silver-text">{claim.data_year ?? "Not yet documented"}</dd></div>
+                  <div><dt className="muted-text">Measurement window</dt><dd className="silver-text">{claim.measurement_window ?? "Not yet documented"}</dd></div>
+                  <div><dt className="muted-text">Denominator</dt><dd className="silver-text">{claim.denominator ?? "Not applicable or not documented"}</dd></div>
                   <div><dt className="muted-text">Last review</dt><dd className="silver-text">{claim.review_date ?? "Not yet reviewed"}</dd></div>
                   <div><dt className="muted-text">Public-use approval</dt><dd className="silver-text">{claim.public_use_approval ? "Approved" : "Not approved as verified fact"}</dd></div>
                 </dl>
@@ -121,12 +124,12 @@ export default function FrameworkEvidence({
         <details className="evidence-disclosure mt-4">
           <summary>Sources ({publication.sources.length})</summary>
           {publication.sources.length ? publication.sources.map((source) => (
-            <article className="mt-4 glass-plane rounded p-4" key={source.repository_path}>
+            <article className="mt-4 glass-plane rounded p-4" key={source.title}>
               <p className="font-semibold text-white">{source.title}</p>
               <a className="mt-2 block font-mono text-xs muted-text underline" href={repositoryUrl(source.repository_path)} rel="noreferrer" target="_blank">{source.repository_path}</a>
               <p className="mt-2 text-sm telemetry-amber">{source.verification_status}</p>
               <p className="mt-2 text-sm muted-text">Last reviewed: {source.last_reviewed ?? "Not yet reviewed"}</p>
-              {source.external_url && <a href={source.external_url}>Open source</a>}
+              {source.external_url && <a className="mt-2 inline-block text-sm text-white underline" href={source.external_url} rel="noreferrer" target="_blank">Open primary source</a>}
             </article>
           )) : <p className="mt-4 telemetry-amber">Not yet documented.</p>}
         </details>

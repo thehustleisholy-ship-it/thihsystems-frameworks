@@ -1,4 +1,5 @@
 import type { EvidenceRecord } from "./evidence-record";
+import { framework04Claims } from "./framework-04-evidence";
 import {
   frameworkMasterMatrix,
   type FrameworkMatrixEntry,
@@ -188,20 +189,65 @@ const repositoryOverrides: Record<string, Partial<FrameworkPublication>> = {
     next_action: "Create a hydrogeology source package before adding real-world assumptions.",
   },
   "black-maternal-health-emergency-response-system": {
+    founders_why: documented(
+      "Michael's personal motivation is not yet documented. A dated interview scaffold is available; the current public purpose is limited to safer documentation and escalation infrastructure design.",
+      ["frameworks/04-black-maternal-health-emergency-response-system/FOUNDERS-WHY.md"],
+    ),
+    human_pain: documented(
+      "In 2024, NVSS recorded 17.9 maternal deaths per 100,000 live births; the rate for non-Hispanic Black women was 44.8 compared with 14.2 for non-Hispanic White women. These 42-day maternal-mortality measures are distinct from one-year pregnancy-related mortality.",
+      ["frameworks/04-black-maternal-health-emergency-response-system/research/RESEARCH-DOSSIER.md"],
+    ),
+    hidden_infrastructure_failure: documented(
+      "The design hypothesis is that concerns, warning-sign education, escalation attempts, and responses are not consistently organized into a patient-controlled, reviewable chronology. No causal effect has been established.",
+      ["frameworks/04-black-maternal-health-emergency-response-system/research/CLAIMS-LEDGER.md"],
+    ),
+    proposed_intervention: documented(
+      "A non-diagnostic concept for symptom documentation, generic source-linked warning-sign education, patient or advocate escalation logging, explicit user-initiated emergency calling, and provenance-aware export.",
+      ["frameworks/04-black-maternal-health-emergency-response-system/design/INTERACTIVE-SPEC.md"],
+    ),
+    evidence_summary: documented(
+      "Nine primary-source claims received a dated metadata review: five verified public-health statements and four qualified federal legal or regulatory boundaries. Five research-queue claims remain unapproved. This is not clinical, legal, privacy, or expert review.",
+      ["frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv"],
+    ),
+    claims: framework04Claims,
+    assumptions: [
+      "Documentation and generic education may be useful without providing diagnosis or treatment direction; this remains a design hypothesis.",
+      "A real escalation feature would require a named and continuously accountable responder; no operator exists.",
+      "NVSS, PMSS, pregnancy-associated death, severe maternal morbidity, and MMRC preventability are distinct measures.",
+    ],
+    safety_boundaries: [
+      "Not diagnosis, triage, treatment, or a substitute for emergency or clinical care.",
+      "Never delay emergency care to complete documentation and never imply that absence of a listed sign means safety.",
+      "No real health data until clinical, privacy, security, FDA, accessibility, and jurisdiction-specific legal reviews are complete.",
+      "Evidence-preservation features cannot promise admissibility or clinical truth.",
+    ],
     open_questions: [
-      "Which claims can be supported by government statistics versus peer-reviewed research?",
-      "What medical, legal, privacy, and escalation boundaries require expert review?",
+      "What exact user, operator, jurisdiction, and care setting are in scope?",
+      "Who owns and responds to an escalation, including nights, downtime, and failed delivery?",
+      "What evidence supports a patient-activated workflow without false reassurance or alarm fatigue?",
+      "What is Michael's personal Founder's Why in his own approved words?",
+    ],
+    sources: [
+      { title: "NCHS 2024 maternal mortality report", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://blogs.cdc.gov/nchs/2026/03/04/7885/", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "CDC MMRC 2017–2019 report", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.cdc.gov/maternal-mortality/media/pdfs/Pregnancy-Related-Deaths-Data-MMRCs-2017-2019-H_1.pdf", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "CDC PMSS definitions FAQ", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.cdc.gov/maternal-mortality/php/pregnancy-mortality-surveillance-data/faqs.html", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "CDC Hear Her warning signs", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.cdc.gov/hearher/maternal-warning-signs/index.html", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "HHS OCR health-app guidance", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/access-right-health-apps-apis/index.html", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "FTC Health Breach Notification Rule", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.ftc.gov/legal-library/browse/rules/health-breach-notification-rule", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "FDA device software policy", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/policy-device-software-functions-and-mobile-medical-applications", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
+      { title: "Federal Rule of Evidence 901", repository_path: "frameworks/04-black-maternal-health-emergency-response-system/research/SOURCE-REGISTER.csv", external_url: "https://www.law.cornell.edu/rules/fre/rule_901", verification_status: "source-reviewed", last_reviewed: "2026-07-16" },
     ],
     build_record: [
-      {
-        type: "Open Question",
-        summary: "No Framework 04 research or publication package is present on this branch.",
-        evidence_path: "docs/SOURCE_REVIEW_QUEUE.md",
-        date: null,
-      },
+      { type: "Research Win", summary: "Created a dated claim ledger separating 42-day maternal mortality, one-year pregnancy-related mortality, and MMRC preventability.", evidence_path: "frameworks/04-black-maternal-health-emergency-response-system/research/CLAIMS-LEDGER.md", date: "2026-07-16" },
+      { type: "Correction", summary: "Reclassified the dismissal statement as a design thesis rather than a measured causal finding.", evidence_path: "frameworks/04-black-maternal-health-emergency-response-system/social/PUBLIC-BUILD-RECORD.md", date: "2026-07-16" },
     ],
-    documentation_completeness: "not-documented",
-    next_action: "Merge or author the missing research package before publishing claim-level content.",
+    next_attempts: [
+      { type: "Next Attempt", summary: "Commission independent clinical, privacy, FDA, evidence-law, accessibility, and patient-governance review before prototyping with real data.", evidence_path: "frameworks/04-black-maternal-health-emergency-response-system/social/PUBLIC-BUILD-RECORD.md", date: null },
+    ],
+    pilot_status: "Not pilot-ready. No partner, clinical owner, expert approval, real-data workflow, or measured outcome is recorded.",
+    last_reviewed_date: "2026-07-16",
+    documentation_completeness: "partial",
+    next_action: "Obtain independent clinical and legal review, then test only a synthetic non-diagnostic interaction specification.",
   },
 };
 
