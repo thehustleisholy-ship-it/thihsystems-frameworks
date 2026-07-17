@@ -282,9 +282,9 @@ export const frameworks: Framework[] = [
     title: "Asylum Evidence & Documentation Builder",
     category: "Immigration & Displacement",
     enterpriseLayer: "Protection evidence organization and case-prep infrastructure",
-    theme: "A person fleeing danger should not lose protection because their evidence was scattered.",
+    theme: "A person fleeing danger should not lose the opportunity to communicate their experience because the supporting record became scattered.",
     tagline: "Asylum case evidence organization and documentation system.",
-    thesis: "A person fleeing danger should not lose protection because their evidence was scattered. Asylum cases depend on organized evidence, timeline documentation, and legal-prep infrastructure.",
+    thesis: "A person fleeing danger should not lose the opportunity to communicate their experience because the supporting record became scattered. This proposed framework explores bounded evidence organization for conversations with qualified counsel.",
     statuses: ["Concept Structured", "Demo Preview", "Repo Ready"],
     links: {
       detail: "/frameworks/asylum-evidence-documentation-builder",
@@ -505,6 +505,3 @@ export const frameworks: Framework[] = [
 // Backward compatibility: export Framework 01 data for existing routes
 export const framework = frameworks[0];
 export const links = frameworks[0].links;
-
-
-

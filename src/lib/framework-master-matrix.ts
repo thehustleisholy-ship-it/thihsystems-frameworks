@@ -780,7 +780,7 @@ export const frameworkMasterMatrix: FrameworkMatrixEntry[] = [
     category: "Immigration & Displacement",
     enterprise_layer: "Protection evidence organization and case-prep infrastructure",
     hidden_foundation:
-      "A person fleeing danger should not lose protection because their evidence was scattered.",
+      "A person fleeing danger should not lose the opportunity to communicate their experience because the supporting record became scattered.",
     documented_research: "Research queue required - asylum case documentation practices",
     statistics: "Needs source verification",
     economic_impact: "Needs source verification",
