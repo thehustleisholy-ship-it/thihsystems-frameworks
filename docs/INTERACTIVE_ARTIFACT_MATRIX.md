@@ -1,4 +1,12 @@
-# Interactive Artifact Matrix: 30 Frameworks
+# Interactive Artifact Matrix
+
+> **Archived planning record:** This document describes an earlier portfolio
+> and is not an active identity source. Use `src/lib/framework-master-matrix.ts`
+> for current numbers, titles, slugs, routes, and maturity. Historical concepts
+> are preserved here without being treated as active numbered frameworks.
+>
+> See `docs/FRAMEWORK_IDENTITY_RECONCILIATION.md`.
+: 30 Frameworks
 
 **Purpose:** Planning layer for interactive tools, calculators, simulators, and dashboards across all 30 frameworks.
 

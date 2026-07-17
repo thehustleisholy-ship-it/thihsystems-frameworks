@@ -1,3 +1,5 @@
+import { frameworkMasterMatrix } from "./framework-master-matrix";
+
 /**
  * Interactive Artifact Matrix
  * Defines interactive tools, calculators, simulators, and dashboards for all 30 frameworks.
@@ -66,7 +68,7 @@ export interface InteractiveArtifact {
   partner_model?: "validation" | "pilot" | "vendor" | "policy" | "research";
 }
 
-export const interactiveArtifactMatrix: InteractiveArtifact[] = [
+export const archivedInteractiveArtifactRecords: InteractiveArtifact[] = [
   {
     framework_number: "01",
     framework_title: "Women's Health Longitudinal Dashboard",
@@ -1017,6 +1019,54 @@ export const interactiveArtifactMatrix: InteractiveArtifact[] = [
   },
 ];
 
+/**
+ * Active planning records derive identity and routes from the canonical
+ * registry. Earlier conflicting plans remain archived above.
+ */
+export const interactiveArtifactMatrix: InteractiveArtifact[] = frameworkMasterMatrix.map(
+  (canonical) => {
+    const archived = archivedInteractiveArtifactRecords.find(
+      (record) =>
+        record.framework_number === canonical.framework_number &&
+        record.framework_slug === canonical.slug &&
+        record.framework_title === canonical.framework_title,
+    );
+
+    if (archived) {
+      return {
+        ...archived,
+        framework_number: canonical.framework_number,
+        framework_title: canonical.framework_title,
+        framework_slug: canonical.slug,
+        proposed_route: canonical.demo_url,
+      };
+    }
+
+    return {
+      framework_number: canonical.framework_number,
+      framework_title: canonical.framework_title,
+      framework_slug: canonical.slug,
+      artifact_type: "explorer",
+      primary_user: ["institutions", "operators"],
+      core_question: "Which operating-layer questions must be resolved before implementation?",
+      required_inputs: [],
+      generated_outputs: [],
+      learning_opportunity: "Concept planning only; domain validation is required.",
+      build_difficulty: "high",
+      risk_level: canonical.risk_level === "Low" || canonical.risk_level === "Very Low"
+        ? "low"
+        : canonical.risk_level === "Moderate"
+          ? "medium"
+          : "high",
+      disclaimer_type: ["conceptual", "pending-research"],
+      growth_hook: "Requires evidence review and a qualified domain partner before development.",
+      proposed_route: canonical.demo_url,
+      dev_status: "deferred",
+      domain_expertise_required: [],
+      partner_model: "validation",
+    };
+  },
+);
 /**
  * Helper: Get artifact by framework number
  */

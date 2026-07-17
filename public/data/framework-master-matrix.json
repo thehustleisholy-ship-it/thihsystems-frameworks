@@ -10,7 +10,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 1: Conceptual, based on observed system failure",
-    "implementation_roadmap": "Demo live. Repo structure ready. Needs: MVP user testing, clinical validation.",
+    "implementation_roadmap": "Interactive prototype live. Repo structure ready. Needs: MVP user testing, clinical validation.",
     "procurement_checklist": "HIPAA compliance. Patient consent flows. EHR interop readiness.",
     "roi_calculator_logic": "Patient prep time saved x visit efficiency gain x clinical accuracy improvement.",
     "pilot_guide": "Start: single clinic, 20 patients, 12-week cycle.",
@@ -21,7 +21,7 @@
     "core_data_inputs": "Symptoms, cycle phase, labs, medications, life events, clinical questions",
     "key_workflow": "Track symptoms → add cycle context → export visit-ready report → clinical review",
     "demo_type": "Live interactive dashboard",
-    "maturity_status": "Spec Ready, Demo Live, Repo Live",
+    "legacy_maturity_notes": "Spec Ready, Interactive Prototype, Repo Live",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Needs Review",
@@ -33,7 +33,15 @@
     "demo_url": "/frameworks/womens-health-longitudinal-dashboard/demo",
     "framework_url": "/frameworks/womens-health-longitudinal-dashboard",
     "substack_url": "https://substack.com/@michaelmartinthih",
-    "linkedin_launch_url": "https://www.linkedin.com/company/124453928/"
+    "linkedin_launch_url": "https://www.linkedin.com/company/124453928/",
+    "maturity_stage": "Interactive Prototype",
+    "preview_type": "interactive-prototype",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "black-maternal-health-emergency-response-system",
+      "chronic-pain-evidence-journal"
+    ]
   },
   {
     "framework_number": "02",
@@ -46,7 +54,7 @@
     "statistics": "Job displacement causes 20-40% earnings loss; 40% of households lack $400 emergency fund; UI replacement rate 40-50% of prior wage; ~50% never return to pre-loss wage level.",
     "economic_impact": "Assumptions-based ROI model: $1,178 cost vs. $22,782 modeled benefit (18.3x return under assumptions). Modeled break-even at 0.2 weeks accelerated employment. Requires pilot validation for actual outcomes.",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured (complete). Demo preview (30-day workflow designed). Pilot ready (workforce partner identified, participant recruitment plan drafted). Scale decision after 12-month pilot (month 12 of 2026).",
+    "implementation_roadmap": "Concept structured (complete). Concept preview (30-day workflow designed). Pilot ready (workforce partner identified, participant recruitment plan drafted). Scale decision after 12-month pilot (month 12 of 2026).",
     "procurement_checklist": "Lead implementation partner RFP. Benefits calculator development per state. Assessment platform procurement/build. Staff hiring (1 PM, 2-3 advisors, 1 coach, 0.5 evaluator). Data integration setup. Interagency MOU (UI, WIOA, emergency assistance). Participant communications. Pilot launch infrastructure.",
     "roi_calculator_logic": "Modeled ROI scenario (not validated): $1,178 cost × (modeled accelerated reemployment $5,400 + wage improvement $11,232 + avoided instability $1,750 + government savings $4,400) = 18.3x modeled ROI. Conservative scenario (30% realization) = 4.8x. Actual ROI requires pilot data.",
     "pilot_guide": "50-75 job-loss cases over 6 months, with matched comparison group. Intensive 30-day service delivery (intake, benefits analysis, job search, offer support). Outcomes tracking at 30-day, 90-day, 6-month, 12-month. Evaluation by external evaluator.",
@@ -57,7 +65,7 @@
     "core_data_inputs": "Participant financial situation (income, expenses, debt, savings); employment history & skills; benefits eligibility (UI, SNAP, childcare, housing); state benefits rules; job market data; wage records (for outcome validation)",
     "key_workflow": "Day 1-3: Intake & assessment (financial, career, benefits). Day 4-7: Benefits cliff analysis & financial triage. Day 8-21: Job search acceleration. Day 22-30: Offer evaluation & decision support. Follow-up: 30-day, 90-day, 6-month, 1-year outcomes.",
     "demo_type": "Interactive 30-day workflow tracker, state benefits calculator, job search bootcamp checklist, offer evaluation tool, outcomes dashboard",
-    "maturity_status": "Concept Structured, Implementation Roadmap Complete, Pilot-Ready",
+    "legacy_maturity_notes": "Concept Structured, Implementation Roadmap Complete, Pilot planning documented; not pilot-ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Ready for Internal Review",
@@ -67,7 +75,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-02-job-loss-income-shock-stabilizer",
     "demo_url": "/frameworks/job-loss-income-shock-stabilizer/demo",
-    "framework_url": "/frameworks/job-loss-income-shock-stabilizer"
+    "framework_url": "/frameworks/job-loss-income-shock-stabilizer",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "03",
@@ -80,7 +93,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: reentry partner testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: reentry partner testing.",
     "procurement_checklist": "Housing coordination. Employment pathways. Legal requirement tracking. Support service mapping.",
     "roi_calculator_logic": "Recidivism reduction x employment placement x housing stability x family reunification.",
     "pilot_guide": "Partner: reentry center. Participants: 30 returners, 12-month tracking.",
@@ -91,7 +104,7 @@
     "core_data_inputs": "Release requirements, documentation needs, housing leads, employment opportunities, legal compliance dates",
     "key_workflow": "Intake → documentation audit → pathway plan → requirement tracker → support coordination",
     "demo_type": "Integrated reentry checklist and service mapper",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Needs Review",
@@ -101,7 +114,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-03-returning-citizen-reentry-roadmap",
     "demo_url": "/frameworks/returning-citizen-reentry-roadmap/demo",
-    "framework_url": "/frameworks/returning-citizen-reentry-roadmap"
+    "framework_url": "/frameworks/returning-citizen-reentry-roadmap",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "04",
@@ -114,7 +132,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: clinical partnership testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: clinical partnership testing.",
     "procurement_checklist": "Clinical escalation protocols. Patient advocacy coordination. Hospital policy integration.",
     "roi_calculator_logic": "Maternal adverse events prevented x escalation speed x outcome improvement.",
     "pilot_guide": "Partner: maternal health clinic. Track: risk escalations, response time, outcomes.",
@@ -125,7 +143,7 @@
     "core_data_inputs": "Maternal health symptoms, risk factors, clinical dismissal patterns, escalation triggers",
     "key_workflow": "Symptom tracking → risk assessment → escalation flag → advocacy coordination → clinical review",
     "demo_type": "Risk escalation protocol and advocacy coordination tool",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Needs Review",
@@ -135,7 +153,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-04-black-maternal-health-emergency-response-system",
     "demo_url": "/frameworks/black-maternal-health-emergency-response-system/demo",
-    "framework_url": "/frameworks/black-maternal-health-emergency-response-system"
+    "framework_url": "/frameworks/black-maternal-health-emergency-response-system",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "womens-health-longitudinal-dashboard"
+    ]
   },
   {
     "framework_number": "05",
@@ -148,7 +173,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: hospital resilience testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: hospital resilience testing.",
     "procurement_checklist": "Power systems. Fuel supply. Water resilience. Oxygen continuity. Staffing plans. Pharmacy resilience.",
     "roi_calculator_logic": "Grid-failure duration x patient safety x operational continuity x regulatory compliance.",
     "pilot_guide": "Partner: regional hospital. Audit: 72-hour continuity across all systems.",
@@ -159,7 +184,7 @@
     "core_data_inputs": "Power capacity, backup fuel, water supply, oxygen generation, staffing rosters, pharmacy stock",
     "key_workflow": "Resilience audit → system mapping → 72-hour scenario test → continuity plan → implementation",
     "demo_type": "Resilience audit checklist and continuity scenario planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Drafted",
@@ -169,7 +194,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-05-hospital-grid-independence-resilience",
     "demo_url": "/frameworks/hospital-grid-independence-resilience/demo",
-    "framework_url": "/frameworks/hospital-grid-independence-resilience"
+    "framework_url": "/frameworks/hospital-grid-independence-resilience",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "06",
@@ -182,7 +212,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 1: Conceptual, based on observed system failure",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: legal aid partner testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: legal aid partner testing.",
     "procurement_checklist": "Evidence organization. Court preparation. Legal coordination. Timeline documentation.",
     "roi_calculator_logic": "Housing retained x legal success rate x court preparation time saved.",
     "pilot_guide": "Partner: legal aid. Track: evidence organization speed, case outcomes.",
@@ -193,7 +223,7 @@
     "core_data_inputs": "Lease terms, payment history, communications, repair issues, legal notices",
     "key_workflow": "Evidence collection → organization → court-prep package → legal review → defense filing",
     "demo_type": "Evidence vault and court-prep document organizer",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Needs Review",
@@ -203,7 +233,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-06-eviction-defense-documentation-system",
     "demo_url": "/frameworks/eviction-defense-documentation-system/demo",
-    "framework_url": "/frameworks/eviction-defense-documentation-system"
+    "framework_url": "/frameworks/eviction-defense-documentation-system",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "07",
@@ -216,7 +251,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: recovery facility partnership.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: recovery facility partnership.",
     "procurement_checklist": "Wastewater infrastructure. Recovery technology. Fertilizer production. Regulatory compliance.",
     "roi_calculator_logic": "Phosphorus recovered x fertilizer production cost x agricultural value.",
     "pilot_guide": "Partner: wastewater treatment facility. Measure: recovery rate, fertilizer production.",
@@ -227,7 +262,7 @@
     "core_data_inputs": "Wastewater volume and composition, phosphorus content, recovery capacity, agricultural demand",
     "key_workflow": "Nutrient audit → recovery opportunity → technology selection → facility deployment → monitoring",
     "demo_type": "Nutrient recovery opportunity and ROI calculator",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Drafted",
@@ -237,7 +272,14 @@
     "public_claim_status": "Needs softening",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-07-phosphorus-recovery-circular-fertilizer",
     "demo_url": "/frameworks/phosphorus-recovery-circular-fertilizer/demo",
-    "framework_url": "/frameworks/phosphorus-recovery-circular-fertilizer"
+    "framework_url": "/frameworks/phosphorus-recovery-circular-fertilizer",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "ocean-dead-zone-reversal-hypoxia-recovery"
+    ]
   },
   {
     "framework_number": "08",
@@ -250,7 +292,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: construction industry testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: construction industry testing.",
     "procurement_checklist": "Aggregate supply mapping. Alternative materials. Material substitution. Recycled content.",
     "roi_calculator_logic": "Aggregate supply risk mitigated x construction continuity x cost optimization.",
     "pilot_guide": "Partner: construction project. Track: aggregate sourcing, substitution feasibility.",
@@ -261,7 +303,7 @@
     "core_data_inputs": "Aggregate demand, supply sources, transportation distance, recycled material availability, cost data",
     "key_workflow": "Supply audit → risk assessment → alternative sourcing → material testing → substitution plan",
     "demo_type": "Aggregate supply risk mapper and substitution planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Drafted",
@@ -271,7 +313,12 @@
     "public_claim_status": "Needs softening",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-08-sand-crisis-alternative-aggregate",
     "demo_url": "/frameworks/sand-crisis-alternative-aggregate/demo",
-    "framework_url": "/frameworks/sand-crisis-alternative-aggregate"
+    "framework_url": "/frameworks/sand-crisis-alternative-aggregate",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "09",
@@ -284,7 +331,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: agricultural partner testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: agricultural partner testing.",
     "procurement_checklist": "Soil assessment. Transition planning. No-till equipment. Cover crop sourcing. Financial support.",
     "roi_calculator_logic": "Soil health improvement x crop yield recovery x input cost reduction x carbon credit value.",
     "pilot_guide": "Partner: regional farm. Track: soil metrics, transition timeline, yield outcomes.",
@@ -295,7 +342,7 @@
     "core_data_inputs": "Current soil metrics, farm size, crop type, existing equipment, financing capacity, regional conditions",
     "key_workflow": "Soil audit → transition planning → equipment and input sourcing → implementation → monitoring",
     "demo_type": "Soil transition planner and ROI calculator",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Drafted",
@@ -305,7 +352,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-09-topsoil-regeneration-no-till-transition",
     "demo_url": "/frameworks/topsoil-regeneration-no-till-transition/demo",
-    "framework_url": "/frameworks/topsoil-regeneration-no-till-transition"
+    "framework_url": "/frameworks/topsoil-regeneration-no-till-transition",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "managed-aquifer-recharge-water-banking"
+    ]
   },
   {
     "framework_number": "10",
@@ -318,7 +372,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Needs: water authority testing.",
+    "implementation_roadmap": "Concept structured. Concept preview. Needs: water authority testing.",
     "procurement_checklist": "Hydrologic assessment. Recharge site identification. Water quality standards. Regulatory approval.",
     "roi_calculator_logic": "Water supply secured x drought resilience value x agricultural continuity x emergency reserves.",
     "pilot_guide": "Partner: water authority. Measure: recharge volume, aquifer impact, drought buffer created.",
@@ -329,7 +383,7 @@
     "core_data_inputs": "Aquifer characteristics, recharge potential, seasonal water availability, demand profiles, quality standards",
     "key_workflow": "Hydrogeologic survey → recharge potential assessment → site selection → regulatory approval → operation",
     "demo_type": "Aquifer and water banking opportunity assessor",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Pending",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Pending",
     "procurement_readiness": "Needs Review",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Drafted",
@@ -339,7 +393,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-10-managed-aquifer-recharge-water-banking",
     "demo_url": "/frameworks/managed-aquifer-recharge-water-banking/demo",
-    "framework_url": "/frameworks/managed-aquifer-recharge-water-banking"
+    "framework_url": "/frameworks/managed-aquifer-recharge-water-banking",
+    "maturity_stage": "Interactive Prototype",
+    "preview_type": "interactive-prototype",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "topsoil-regeneration-no-till-transition"
+    ]
   },
   {
     "framework_number": "11",
@@ -352,7 +413,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Implementation partners: critical infrastructure sectors.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Implementation partners: critical infrastructure sectors.",
     "procurement_checklist": "Backup positioning systems. Timing redundancy. Navigation contingency. Critical infrastructure priority.",
     "roi_calculator_logic": "GPS outage duration x critical system impact x contingency cost x resilience value.",
     "pilot_guide": "Sector-specific testing with transportation, power, finance, emergency services.",
@@ -363,7 +424,7 @@
     "core_data_inputs": "GPS dependency mapping, critical system list, backup system capacity, timing requirements",
     "key_workflow": "Dependency audit → risk assessment → backup system selection → integration testing → activation protocol",
     "demo_type": "GPS dependency mapper and backup contingency planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -373,7 +434,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-11-gps-failure-contingency-backup-navigation",
     "demo_url": "/frameworks/gps-failure-contingency-backup-navigation/demo",
-    "framework_url": "/frameworks/gps-failure-contingency-backup-navigation"
+    "framework_url": "/frameworks/gps-failure-contingency-backup-navigation",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "12",
@@ -386,7 +452,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: pediatric clinics.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: pediatric clinics.",
     "procurement_checklist": "Developmental screening integration. Referral coordination. Clinical data standards.",
     "roi_calculator_logic": "Early identification rate x intervention speed x developmental outcome improvement x long-term cost savings.",
     "pilot_guide": "Partner: pediatric clinic network. Track: screening rates, referral timeliness, outcomes.",
@@ -397,7 +463,7 @@
     "core_data_inputs": "Developmental milestones, screening results, specialist referrals, therapy history, school services",
     "key_workflow": "Milestone tracking → screening coordination → specialist referral → therapy integration → school coordination",
     "demo_type": "Developmental journey tracker and referral coordinator",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -407,7 +473,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-12-pediatric-neurodevelopmental-journey-map",
     "demo_url": "/frameworks/pediatric-neurodevelopmental-journey-map/demo",
-    "framework_url": "/frameworks/pediatric-neurodevelopmental-journey-map"
+    "framework_url": "/frameworks/pediatric-neurodevelopmental-journey-map",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "13",
@@ -420,7 +491,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: municipalities.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: municipalities.",
     "procurement_checklist": "Grain storage. Local production capacity. Supply chain resilience. Distribution planning.",
     "roi_calculator_logic": "Food security buffer maintained x supply disruption resilience x local production activated.",
     "pilot_guide": "Partner: regional planning authority. Map: food supply days, reserve capacity, production gaps.",
@@ -431,7 +502,7 @@
     "core_data_inputs": "Population size, current food supply days, local production capacity, storage availability, supply chain data",
     "key_workflow": "Food supply audit → reserve capacity assessment → local production planning → buffer construction → monitoring",
     "demo_type": "Food security vulnerability assessor and strategic reserve planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Ready for Public Preview",
@@ -441,7 +512,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-13-strategic-grain-reserve-local-food-security",
     "demo_url": "/frameworks/strategic-grain-reserve-local-food-security/demo",
-    "framework_url": "/frameworks/strategic-grain-reserve-local-food-security"
+    "framework_url": "/frameworks/strategic-grain-reserve-local-food-security",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "14",
@@ -454,7 +530,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: supervision agencies.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: supervision agencies.",
     "procurement_checklist": "Compliance calendar. Requirement tracking. Escalation protocols. Supervisor coordination.",
     "roi_calculator_logic": "Technical violations prevented x supervision efficiency x reentry success x incarceration reduction.",
     "pilot_guide": "Partner: probation department. Track: violation rates, compliance trends, outcomes.",
@@ -465,7 +541,7 @@
     "core_data_inputs": "Supervision requirements, compliance deadlines, schedule, support resources, violation history",
     "key_workflow": "Requirements intake → calendar creation → reminder system → escalation protocol → reporting",
     "demo_type": "Compliance calendar and requirement tracker",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -475,7 +551,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-14-parole-probation-compliance-tracker",
     "demo_url": "/frameworks/parole-probation-compliance-tracker/demo",
-    "framework_url": "/frameworks/parole-probation-compliance-tracker"
+    "framework_url": "/frameworks/parole-probation-compliance-tracker",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "15",
@@ -488,7 +569,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: patient advocacy.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: patient advocacy.",
     "procurement_checklist": "Evidence collection system. Visit preparation tools. Clinical communication templates.",
     "roi_calculator_logic": "Clinical validation rate x diagnosis speed x treatment optimization x patient outcomes improved.",
     "pilot_guide": "Partner: chronic pain support group. Track: evidence collection, clinical interactions, outcomes.",
@@ -499,7 +580,7 @@
     "core_data_inputs": "Pain symptoms, triggers, impacts, treatments tried, lab results, clinical interactions",
     "key_workflow": "Symptom tracking → evidence collection → visit preparation → clinical dialogue → outcome tracking",
     "demo_type": "Chronic pain evidence journal and visit preparation tool",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -509,7 +590,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-15-chronic-pain-evidence-journal",
     "demo_url": "/frameworks/chronic-pain-evidence-journal/demo",
-    "framework_url": "/frameworks/chronic-pain-evidence-journal"
+    "framework_url": "/frameworks/chronic-pain-evidence-journal",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "womens-health-longitudinal-dashboard"
+    ]
   },
   {
     "framework_number": "16",
@@ -522,7 +610,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: workforce boards.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: workforce boards.",
     "procurement_checklist": "Apprenticeship coordination. Employer partnerships. Training program mapping. Career pathway clarity.",
     "roi_calculator_logic": "Apprentices placed x wage premiums x infrastructure labor availability x regional economic impact.",
     "pilot_guide": "Partner: regional workforce board. Map: talent gaps, apprenticeship programs, employer demand.",
@@ -533,7 +621,7 @@
     "core_data_inputs": "Regional trade demand, apprenticeship capacity, training quality, wage outcomes, employer commitments",
     "key_workflow": "Labor market analysis → gap identification → apprenticeship program audit → capacity building → placement",
     "demo_type": "Trades workforce gap analyzer and pipeline builder",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -543,7 +631,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-16-trades-workforce-pipeline-apprenticeship",
     "demo_url": "/frameworks/trades-workforce-pipeline-apprenticeship/demo",
-    "framework_url": "/frameworks/trades-workforce-pipeline-apprenticeship"
+    "framework_url": "/frameworks/trades-workforce-pipeline-apprenticeship",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "17",
@@ -556,7 +649,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 1: Conceptual, based on observed system failure",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: legal aid.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: legal aid.",
     "procurement_checklist": "Evidence organization. Timeline documentation. Legal case preparation. Testimony support.",
     "roi_calculator_logic": "Asylum grants approved x case success rate x evidence organization speed.",
     "pilot_guide": "Partner: asylum legal aid. Track: case preparation speed, documentation quality.",
@@ -567,7 +660,7 @@
     "core_data_inputs": "Evidence collection, persecutor information, country conditions, personal history, legal documentation",
     "key_workflow": "Evidence intake → organization → timeline building → legal case prep → court presentation support",
     "demo_type": "Asylum evidence organizer and case preparation tool",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -577,7 +670,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-17-asylum-evidence-documentation-builder",
     "demo_url": "/frameworks/asylum-evidence-documentation-builder/demo",
-    "framework_url": "/frameworks/asylum-evidence-documentation-builder"
+    "framework_url": "/frameworks/asylum-evidence-documentation-builder",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "18",
@@ -590,7 +688,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: agricultural regions.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: agricultural regions.",
     "procurement_checklist": "Pollinator habitat mapping. Crop pollination dependency assessment. Alternative pollination planning.",
     "roi_calculator_logic": "Crop pollination secured x habitat resilience x agricultural continuity x food security value.",
     "pilot_guide": "Partner: agricultural region. Map: pollinator habitat, crop dependencies, risk areas.",
@@ -601,7 +699,7 @@
     "core_data_inputs": "Crop types and pollination needs, pollinator habitat, risk factors, habitat restoration opportunities",
     "key_workflow": "Pollinator audit → crop dependency mapping → habitat assessment → restoration planning → monitoring",
     "demo_type": "Pollinator risk mapper and habitat restoration planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -611,7 +709,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-18-pollinator-collapse-buffer-alternative-pollination",
     "demo_url": "/frameworks/pollinator-collapse-buffer-alternative-pollination/demo",
-    "framework_url": "/frameworks/pollinator-collapse-buffer-alternative-pollination"
+    "framework_url": "/frameworks/pollinator-collapse-buffer-alternative-pollination",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "19",
@@ -624,7 +727,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: energy planners.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: energy planners.",
     "procurement_checklist": "Copper demand analysis. Supply chain mapping. Material substitution. Recycling infrastructure.",
     "roi_calculator_logic": "Electrification material supply secured x substitution pathways x cost optimization.",
     "pilot_guide": "Partner: energy planning agency. Map: copper demand, supply gaps, substitution options.",
@@ -635,7 +738,7 @@
     "core_data_inputs": "Electrification targets, copper demand projections, supply sources, recycling capacity, substitution options",
     "key_workflow": "Demand forecasting → supply analysis → substitution assessment → procurement planning → recycling integration",
     "demo_type": "Material flow planner for electrification",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -645,7 +748,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-19-copper-constraint-electrification-material-flow",
     "demo_url": "/frameworks/copper-constraint-electrification-material-flow/demo",
-    "framework_url": "/frameworks/copper-constraint-electrification-material-flow"
+    "framework_url": "/frameworks/copper-constraint-electrification-material-flow",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "solar-wind-end-of-life-recovery-framework"
+    ]
   },
   {
     "framework_number": "20",
@@ -658,7 +768,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: regional planners.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: regional planners.",
     "procurement_checklist": "Local production mapping. Critical goods assessment. Manufacturing capacity. Network coordination.",
     "roi_calculator_logic": "Supply disruption resilience x critical goods availability x regional economic strength.",
     "pilot_guide": "Partner: regional planning authority. Map: critical goods gaps, local capacity.",
@@ -669,7 +779,7 @@
     "core_data_inputs": "Critical goods list, supply chain vulnerabilities, local production capacity, manufacturing capability",
     "key_workflow": "Critical goods mapping → supply vulnerability audit → local production assessment → network building → coordination",
     "demo_type": "Critical goods mapper and production network planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -679,7 +789,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-20-distributed-manufacturing-local-production-network",
     "demo_url": "/frameworks/distributed-manufacturing-local-production-network/demo",
-    "framework_url": "/frameworks/distributed-manufacturing-local-production-network"
+    "framework_url": "/frameworks/distributed-manufacturing-local-production-network",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "21",
@@ -692,7 +807,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: social services.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: social services.",
     "procurement_checklist": "Benefits eligibility navigation. Legal documentation. Support service coordination. Financial assistance.",
     "roi_calculator_logic": "Child welfare outcomes improved x caregiver support x kinship stability x system efficiency.",
     "pilot_guide": "Partner: family services agency. Track: kinship caregiver support, benefits access, family outcomes.",
@@ -703,7 +818,7 @@
     "core_data_inputs": "Family situation, child information, legal status, benefits eligibility, support needs",
     "key_workflow": "Intake → eligibility assessment → benefits navigation → legal documentation → support coordination",
     "demo_type": "Kinship care support and benefits navigator",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -713,7 +828,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-21-kinship-care-grandfamily-support-infrastructure",
     "demo_url": "/frameworks/kinship-care-grandfamily-support-infrastructure/demo",
-    "framework_url": "/frameworks/kinship-care-grandfamily-support-infrastructure"
+    "framework_url": "/frameworks/kinship-care-grandfamily-support-infrastructure",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "22",
@@ -726,7 +846,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: coastal regions.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: coastal regions.",
     "procurement_checklist": "Watershed nutrient audit. Agricultural runoff reduction. Coastal habitat restoration. Fisheries recovery.",
     "roi_calculator_logic": "Dead zone reduction x fisheries recovery x coastal ecosystem health x economic resilience.",
     "pilot_guide": "Partner: coastal region. Map: nutrient sources, watershed impacts, recovery opportunities.",
@@ -737,7 +857,7 @@
     "core_data_inputs": "Nutrient sources, agricultural practices, coastal conditions, fisheries data, recovery potential",
     "key_workflow": "Dead zone assessment → source tracking → intervention planning → agricultural partnership → monitoring",
     "demo_type": "Dead zone mapper and recovery planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -747,7 +867,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-22-ocean-dead-zone-reversal-hypoxia-recovery",
     "demo_url": "/frameworks/ocean-dead-zone-reversal-hypoxia-recovery/demo",
-    "framework_url": "/frameworks/ocean-dead-zone-reversal-hypoxia-recovery"
+    "framework_url": "/frameworks/ocean-dead-zone-reversal-hypoxia-recovery",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "phosphorus-recovery-circular-fertilizer"
+    ]
   },
   {
     "framework_number": "23",
@@ -760,7 +887,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: aging services.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: aging services.",
     "procurement_checklist": "Risk detection. Response coordination. Legal options. Protective documentation. Financial recovery.",
     "roi_calculator_logic": "Abuse cases identified x elder protection x financial recovery x prevention.",
     "pilot_guide": "Partner: elder services. Track: detection rates, response speed, protective outcomes.",
@@ -771,7 +898,7 @@
     "core_data_inputs": "Financial activity, relationship changes, cognitive status, spending patterns, trusted contact information",
     "key_workflow": "Risk assessment → detection → protective intervention → legal options → financial recovery planning",
     "demo_type": "Elder financial risk detector and response coordinator",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -781,7 +908,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-23-elder-financial-abuse-detection-response",
     "demo_url": "/frameworks/elder-financial-abuse-detection-response/demo",
-    "framework_url": "/frameworks/elder-financial-abuse-detection-response"
+    "framework_url": "/frameworks/elder-financial-abuse-detection-response",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "24",
@@ -794,7 +926,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: DV organizations.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: DV organizations.",
     "procurement_checklist": "Safety planning. Evidence documentation. Legal coordination. Shelter access. Protective orders.",
     "roi_calculator_logic": "Successful exits achieved x safety maintained x legal protection secured x long-term stability.",
     "pilot_guide": "Partner: DV service provider. Track: safety plan completeness, exit success, survivor outcomes.",
@@ -805,7 +937,7 @@
     "core_data_inputs": "Safety concerns, protective orders, financial needs, housing options, employment barriers, children",
     "key_workflow": "Safety assessment → planning → documentation → legal coordination → exit support → stabilization",
     "demo_type": "Safety planner and evidence documentation tool",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -815,7 +947,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-24-domestic-violence-exit-safety-documentation",
     "demo_url": "/frameworks/domestic-violence-exit-safety-documentation/demo",
-    "framework_url": "/frameworks/domestic-violence-exit-safety-documentation"
+    "framework_url": "/frameworks/domestic-violence-exit-safety-documentation",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "25",
@@ -828,7 +965,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: renewable operators.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: renewable operators.",
     "procurement_checklist": "Asset tracking. Lifecycle planning. Recycling partnerships. Material recovery. Regulatory compliance.",
     "roi_calculator_logic": "Asset lifecycle optimized x material recovery value x waste diversion x circular economy return.",
     "pilot_guide": "Partner: renewable energy operator. Map: asset ages, end-of-life timelines, recovery options.",
@@ -839,7 +976,7 @@
     "core_data_inputs": "Solar/wind asset information, installation dates, degradation rates, end-of-life timelines, material composition",
     "key_workflow": "Asset inventory → lifecycle forecasting → recovery planning → recycler partnership → material tracking",
     "demo_type": "Renewable asset lifecycle and recovery planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Drafted",
@@ -849,7 +986,14 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-25-solar-wind-end-of-life-recovery-framework",
     "demo_url": "/frameworks/solar-wind-end-of-life-recovery-framework/demo",
-    "framework_url": "/frameworks/solar-wind-end-of-life-recovery-framework"
+    "framework_url": "/frameworks/solar-wind-end-of-life-recovery-framework",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": [
+      "copper-constraint-electrification-material-flow"
+    ]
   },
   {
     "framework_number": "26",
@@ -862,7 +1006,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: school systems.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: school systems.",
     "procurement_checklist": "Discipline data systems. Alternative discipline tracking. Intervention pathways. Youth advocacy.",
     "roi_calculator_logic": "Youth diversions from justice system x educational outcomes x opportunity creation x long-term cost savings.",
     "pilot_guide": "Partner: school system. Map: discipline patterns, escalation points, alternatives.",
@@ -873,7 +1017,7 @@
     "core_data_inputs": "School discipline data, suspension/expulsion patterns, justice referrals, demographic trends, alternative program availability",
     "key_workflow": "Data analysis → pipeline identification → intervention design → accountability shifts → outcomes measurement",
     "demo_type": "School discipline analyzer and intervention mapper",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Ready for Public Preview",
@@ -883,7 +1027,12 @@
     "public_claim_status": "Safe to publish",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-26-school-to-prison-pipeline-disruption",
     "demo_url": "/frameworks/school-to-prison-pipeline-disruption/demo",
-    "framework_url": "/frameworks/school-to-prison-pipeline-disruption"
+    "framework_url": "/frameworks/school-to-prison-pipeline-disruption",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "27",
@@ -896,7 +1045,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: transit planners.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: transit planners.",
     "procurement_checklist": "Corridor viability. Infrastructure assessment. Operating model. Service design. Investment planning.",
     "roi_calculator_logic": "Passenger demand served x corridor economic activation x environmental impact.",
     "pilot_guide": "Partner: transit authority. Assess: corridor viability, demand, infrastructure needs.",
@@ -907,7 +1056,7 @@
     "core_data_inputs": "Corridor demand, population centers, existing infrastructure, environmental impacts, economic opportunity",
     "key_workflow": "Market analysis → corridor selection → feasibility study → operating model → financing planning",
     "demo_type": "Rail corridor analyzer and network planner",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Ready for Internal Review",
     "pilot_readiness": "Ready for Public Preview",
     "policy_readiness": "Ready for Public Preview",
@@ -917,7 +1066,12 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-27-intercity-rail-revival-sleeper-train-network",
     "demo_url": "/frameworks/intercity-rail-revival-sleeper-train-network/demo",
-    "framework_url": "/frameworks/intercity-rail-revival-sleeper-train-network"
+    "framework_url": "/frameworks/intercity-rail-revival-sleeper-train-network",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "28",
@@ -930,7 +1084,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 1: Conceptual, based on observed system failure",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: policy institutions.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: policy institutions.",
     "procurement_checklist": "Longevity impact mapping. Institutional readiness assessment. Equity planning. Policy development.",
     "roi_calculator_logic": "Societal resilience to longevity transitions x equity maintained x opportunity.",
     "pilot_guide": "Partner: policy institution. Map: longevity scenarios, institutional readiness gaps.",
@@ -941,7 +1095,7 @@
     "core_data_inputs": "Longevity scenarios, institutional capacity, equity frameworks, policy gaps, transition risks",
     "key_workflow": "Scenario building → institutional impact assessment → readiness mapping → policy planning → transition strategy",
     "demo_type": "Longevity scenario planner and institutional readiness assessor",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Drafted",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Ready for Public Preview",
@@ -951,7 +1105,12 @@
     "public_claim_status": "Needs softening",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-28-human-lifespan-extension-longevity-society",
     "demo_url": "/frameworks/human-lifespan-extension-longevity-society/demo",
-    "framework_url": "/frameworks/human-lifespan-extension-longevity-society"
+    "framework_url": "/frameworks/human-lifespan-extension-longevity-society",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "29",
@@ -964,7 +1123,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: international policy institutions.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: international policy institutions.",
     "procurement_checklist": "Governance frameworks. Consent infrastructure. Moratorium support. Risk assessment. International coordination.",
     "roi_calculator_logic": "Responsible governance frameworks established x dangerous deployment prevented.",
     "pilot_guide": "Partner: policy institution. Map: governance gaps, consent frameworks, risk assessments.",
@@ -975,7 +1134,7 @@
     "core_data_inputs": "Geoengineering proposals, governance gaps, consent frameworks, risk assessments, international law",
     "key_workflow": "Governance gap analysis → consent framework design → moratorium support → risk assessment → international coordination",
     "demo_type": "Geoengineering governance framework and pre-deployment checklist",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Drafted",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Ready for Public Preview",
@@ -985,7 +1144,12 @@
     "public_claim_status": "Needs softening",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-29-solar-geoengineering-governance-framework",
     "demo_url": "/frameworks/solar-geoengineering-governance-framework/demo",
-    "framework_url": "/frameworks/solar-geoengineering-governance-framework"
+    "framework_url": "/frameworks/solar-geoengineering-governance-framework",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   },
   {
     "framework_number": "30",
@@ -998,7 +1162,7 @@
     "statistics": "Needs source verification",
     "economic_impact": "Needs source verification",
     "evidence_confidence": "Level 2: Supported by credible secondary research",
-    "implementation_roadmap": "Concept structured. Demo preview. Repo ready. Testing: space agencies and operators.",
+    "implementation_roadmap": "Concept structured. Concept preview. Repo ready. Testing: space agencies and operators.",
     "procurement_checklist": "Debris tracking. Collision prevention. Governance frameworks. Operator accountability. Commons management.",
     "roi_calculator_logic": "Orbital safety maintained x space infrastructure continuity x economic value protected.",
     "pilot_guide": "Partner: space agency. Map: debris tracking capability, collision risks, governance gaps.",
@@ -1009,7 +1173,7 @@
     "core_data_inputs": "Debris catalog, operational satellites, collision risk assessments, governance frameworks, operator data",
     "key_workflow": "Debris tracking → collision risk analysis → governance framework design → operator coordination → accountability",
     "demo_type": "Orbital debris tracker and collision governance framework",
-    "maturity_status": "Concept Structured, Demo Preview, Repo Ready",
+    "legacy_maturity_notes": "Concept Structured, Concept Preview, Repo Ready",
     "procurement_readiness": "Drafted",
     "pilot_readiness": "Drafted",
     "policy_readiness": "Ready for Public Preview",
@@ -1019,6 +1183,11 @@
     "public_claim_status": "Needs citation",
     "github_repo_url": "https://github.com/thehustleisholy-ship-it/framework-30-orbital-debris-tracking-collision-governance",
     "demo_url": "/frameworks/orbital-debris-tracking-collision-governance/demo",
-    "framework_url": "/frameworks/orbital-debris-tracking-collision-governance"
+    "framework_url": "/frameworks/orbital-debris-tracking-collision-governance",
+    "maturity_stage": "Structured Framework",
+    "preview_type": "concept-preview",
+    "research_citations": [],
+    "expert_review": null,
+    "related_framework_slugs": []
   }
 ]

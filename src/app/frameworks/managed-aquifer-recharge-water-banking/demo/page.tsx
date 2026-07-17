@@ -22,7 +22,7 @@ export default function ManagedAquiferRechargeDemoPage() {
           </Link>
 
           <div className="max-w-4xl">
-            <p className="uppercase-label telemetry-amber">Framework 10 demo</p>
+            <p className="uppercase-label telemetry-amber">Framework 10 · Interactive Prototype</p>
             <h1 className="mt-3 text-3xl font-semibold text-white sm:text-5xl">
               Managed Aquifer Recharge & Underground Water Banking
             </h1>

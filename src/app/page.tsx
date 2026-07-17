@@ -92,7 +92,7 @@ export default function Home() {
         <div className="shell">
           <div className="max-w-4xl">
             <p className="uppercase-label text-muted mb-6">THIHsystems</p>
-            <h1 className="text-6xl font-bold leading-tight text-primary mb-6">
+            <h1 className="text-4xl font-bold leading-tight text-primary mb-6 break-words sm:text-6xl">
               Framework Fridays by THIHsystems
             </h1>
             <p className="text-2xl font-semibold text-secondary mb-4">
@@ -108,6 +108,8 @@ export default function Home() {
               <ButtonLink href="/#library" variant="primary">
                 Enter the Framework Library
               </ButtonLink>
+              <ButtonLink href="/research">Research Status</ButtonLink>
+              <ButtonLink href="/system-map">System Map 01–13</ButtonLink>
               <ButtonLink href="#matrix">Open the Master Matrix</ButtonLink>
               <ButtonLink href="/frameworks/job-loss-income-shock-stabilizer">
                 Explore Framework 02 Source Pack
@@ -187,7 +189,7 @@ export default function Home() {
                 What is Framework Fridays by THIHsystems?
               </h3>
               <p className="text-base leading-7 text-muted">
-                Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, demo previews, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.
+                Framework Fridays is a public enterprise infrastructure framework library that turns overlooked system failures into structured frameworks, concept previews, interactive prototypes, forkable repos, source queues, procurement paths, pilot guides, and policy briefs.
               </p>
             </div>
 
@@ -246,7 +248,7 @@ export default function Home() {
               },
               {
                 role: "For operators",
-                description: "Workflows, data inputs, demo previews, and implementation paths.",
+                description: "Workflows, data inputs, concept previews, interactive prototypes, and implementation paths.",
               },
               {
                 role: "For policymakers",
@@ -308,7 +310,7 @@ export default function Home() {
                   <ButtonLink href={fw.framework_url} variant="primary">
                     Read
                   </ButtonLink>
-                  <ButtonLink href={fw.demo_url}>Demo</ButtonLink>
+                  <ButtonLink href={fw.demo_url}>{fw.preview_type === "interactive-prototype" ? "Interactive Prototype" : "Concept Preview"}</ButtonLink>
                   <ButtonLink href={`/data/framework-master-matrix.json#framework-${fw.framework_number}`}>
                     Matrix
                   </ButtonLink>
@@ -350,7 +352,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2 sm:flex-row pt-3">
                   <ButtonLink href={fw.framework_url}>Read</ButtonLink>
-                  <ButtonLink href={fw.demo_url}>Demo</ButtonLink>
+                  <ButtonLink href={fw.demo_url}>{fw.preview_type === "interactive-prototype" ? "Interactive Prototype" : "Concept Preview"}</ButtonLink>
                 </div>
               </article>
             ))}

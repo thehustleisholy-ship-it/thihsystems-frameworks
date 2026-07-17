@@ -29,7 +29,7 @@ const sections = [
   },
   {
     title: "What is forkable now",
-    body: "The public site, framework page, static demo preview, synthetic sample structure, and Vercel-ready Next.js build are prepared as the starting point. The GitHub path is the place for future schema, export, and implementation notes.",
+    body: "The public site, framework page, interactive prototype, synthetic sample structure, and Vercel-ready Next.js build are prepared as the starting point. The GitHub path is the place for future schema, export, and implementation notes.",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function FrameworkDetailPage() {
             {framework.links.substack && <CtaLink href={framework.links.substack}>Read Substack</CtaLink>}
             <CtaLink href={framework.links.github}>Fork GitHub</CtaLink>
             <CtaLink href={framework.links.demo} primary>
-              Try Demo
+              Open Interactive Prototype
             </CtaLink>
           </div>
         </div>

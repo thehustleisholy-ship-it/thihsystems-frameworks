@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { frameworks } from "@/lib/framework-content";
 
 type Props = {
@@ -18,13 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!fw) {
     return {
-      title: "Demo Not Found",
+      title: "Preview Not Found",
     };
   }
 
   return {
-    title: `${fw.title} Demo Preview`,
-    description: `Demo preview for ${fw.title}. Preview uses synthetic or illustrative data only.`,
+    title: `${fw.title} Concept Preview`,
+    description: `Concept preview for ${fw.title}. Content is illustrative and not a validated tool.`,
   };
 }
 
@@ -41,42 +42,32 @@ export default async function DemoPage({ params }: Props) {
   const fw = frameworks.find((f) => f.slug === slug);
 
   if (!fw) {
-    return (
-      <main>
-        <div className="section-pad shell">
-          <h1 className="text-4xl font-semibold text-white">Demo not found</h1>
-          <p className="mt-4 muted-text">
-            <Link href="/" className="gold-text">
-              Return to home
-            </Link>
-          </p>
-        </div>
-      </main>
-    );
+    notFound();
   }
+
 
   const disclaimers: Record<string, string> = {
     "black-maternal-health-emergency-response-system":
-      "This is a demo preview using synthetic data only. Not medical advice. Seek immediate care for urgent symptoms.",
+      "This is a concept preview using synthetic data only. Not medical advice. Seek immediate care for urgent symptoms.",
     "eviction-defense-documentation-system":
-      "This is a demo preview using synthetic data only. Not legal advice. Consult a lawyer or legal aid organization.",
+      "This is a concept preview using synthetic data only. Not legal advice. Consult a lawyer or legal aid organization.",
     "returning-citizen-reentry-roadmap":
-      "This is a demo preview using synthetic data only. Not legal or supervision advice. Consult licensed counsel.",
+      "This is a concept preview using synthetic data only. Not legal or supervision advice. Consult licensed counsel.",
     "job-loss-income-shock-stabilizer":
-      "This is a demo preview using synthetic data only. Not financial, benefits, tax, or employment advice.",
+      "This is a concept preview using synthetic data only. Not financial, benefits, tax, or employment advice.",
     "hospital-grid-independence-resilience":
-      "This is a demo preview using synthetic data only. Not a substitute for professional emergency management or engineering review.",
+      "This is a concept preview using synthetic data only. Not a substitute for professional emergency management or engineering review.",
     "phosphorus-recovery-circular-fertilizer":
-      "This is a demo preview using synthetic data only. Requires engineering, regulatory, environmental, and agricultural validation.",
+      "This is a concept preview using synthetic data only. Requires engineering, regulatory, environmental, and agricultural validation.",
     "sand-crisis-alternative-aggregate":
-      "This is a demo preview using synthetic data only. Requires engineering, material science, regulatory, and project-specific validation.",
+      "This is a concept preview using synthetic data only. Requires engineering, material science, regulatory, and project-specific validation.",
     "topsoil-regeneration-no-till-transition":
-      "This is a demo preview using synthetic data only. Requires agronomic, regional, soil-specific, and financial validation.",
+      "This is a concept preview using synthetic data only. Requires agronomic, regional, soil-specific, and financial validation.",
     "managed-aquifer-recharge-water-banking":
-      "This is a demo preview using synthetic data only. Requires hydrologic modeling, water rights review, regulatory approval, and environmental validation.",
+      "This is a concept preview using synthetic data only. Requires hydrologic modeling, water rights review, regulatory approval, and environmental validation.",
   };
 
-  const disclaimer = disclaimers[fw.slug] || "This is a demo preview using synthetic or illustrative data only.";
+  const disclaimer = disclaimers[fw.slug] || "This is a concept preview using synthetic or illustrative data only.";
 
   return (
     <main className="min-h-screen">
@@ -87,7 +78,7 @@ export default async function DemoPage({ params }: Props) {
               Back to framework
             </Link>
             <h1 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
-              {fw.title} Demo
+              {fw.title} Concept Preview
             </h1>
           </div>
           <DisclaimerBanner text={disclaimer} />
@@ -135,7 +126,7 @@ export default async function DemoPage({ params }: Props) {
             <div>
               <h2 className="text-2xl font-semibold text-white">Preview Status</h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 muted-text">
-                This demo preview is illustrative and uses synthetic data. It demonstrates the conceptual operating layer and dashboard structure. The full interactive version and production implementation are in development.
+                This concept preview is illustrative. It is not a validated tool and presents no measured outcomes. Any modeled content is assumptions-based and requires independent research and professional review.
               </p>
             </div>
             <span className="rounded-sm border border-[#d8b25a]/40 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] gold-text">
