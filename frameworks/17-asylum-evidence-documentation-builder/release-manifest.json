@@ -1,18 +1,113 @@
 {
   "framework": 17,
   "releaseDate": "2026-07-17",
-  "status": "candidate",
+  "status": "visual-gate-ready",
   "applicableRequirements": {
-    "research": ["README.md","FRAMEWORK.md","research/SOURCE-REGISTER.md","research/CLAIMS-LEDGER.md","design/DATA-MODEL.md","docs/PRIVACY-ARCHITECTURE.md","docs/TEST-PLAN.md","roadmap.md","PARITY-CHECKLIST.md"],
-    "data": ["demo-data/synthetic-readiness-scenarios.json","schemas/chronology-event.schema.json","schemas/evidence-item.schema.json","schemas/translation-task.schema.json","schemas/conflict.schema.json","schemas/legal-review-question.schema.json","schemas/export-gate.schema.json"],
-    "outputs": ["outputs/sample-counsel-conversation-summary.md","outputs/generated-counsel-conversation-summary.md"],
-    "publication": ["publication/SUBSTACK.md","publication/SOCIAL-NATIVE.md","publication/VISUAL-ASSET-MANIFEST.md","publication/PUBLICATION-SEQUENCE.md","BUILD-RECORD.md"],
-    "application": ["../../src/app/frameworks/asylum-evidence-documentation-builder/demo/page.tsx","../../src/app/frameworks/asylum-evidence-documentation-builder/demo/AsylumReadinessBuilder.tsx","../../src/app/frameworks/asylum-evidence-documentation-builder/demo/asylum-readiness-engine.ts","../../src/app/frameworks/asylum-evidence-documentation-builder/demo/asylum-readiness-engine.test.ts","../../src/app/frameworks/asylum-evidence-documentation-builder/demo/AsylumReadinessBuilder.test.tsx"],
-    "verification": ["verification/framework-17-desktop.png","verification/framework-17-mobile-390.png","verification/VERIFICATION.md"]
+    "research": [
+      "README.md",
+      "FRAMEWORK.md",
+      "research/SOURCE-REGISTER.md",
+      "research/CLAIMS-LEDGER.md",
+      "design/DATA-MODEL.md",
+      "docs/PRIVACY-ARCHITECTURE.md",
+      "docs/TEST-PLAN.md",
+      "roadmap.md",
+      "PARITY-CHECKLIST.md"
+    ],
+    "data": [
+      "demo-data/synthetic-readiness-scenarios.json",
+      "schemas/chronology-event.schema.json",
+      "schemas/evidence-item.schema.json",
+      "schemas/translation-task.schema.json",
+      "schemas/conflict.schema.json",
+      "schemas/legal-review-question.schema.json",
+      "schemas/export-gate.schema.json"
+    ],
+    "outputs": [
+      "outputs/sample-counsel-conversation-summary.md",
+      "outputs/generated-counsel-conversation-summary.md"
+    ],
+    "publication": [
+      "publication/SUBSTACK.md",
+      "publication/SOCIAL-NATIVE.md",
+      "publication/VISUAL-ASSET-MANIFEST.md",
+      "publication/PUBLICATION-SEQUENCE.md",
+      "BUILD-RECORD.md"
+    ],
+    "application": [
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/page.tsx",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/AsylumReadinessBuilder.tsx",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/asylum-readiness-engine.ts",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/asylum-readiness-engine.test.ts",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/AsylumReadinessBuilder.test.tsx"
+    ],
+    "verification": [
+      "verification/framework-17-desktop.png",
+      "verification/framework-17-mobile-390.png",
+      "verification/VERIFICATION.md"
+    ],
+    "visuals": [
+      "visuals/README.md",
+      "visuals/visual-assets.json",
+      "visuals/master/framework-17-editorial-master.png",
+      "visuals/exports/substack-header.png",
+      "visuals/sources/substack-header.svg",
+      "visuals/exports/website-hero.png",
+      "visuals/sources/website-hero.svg",
+      "visuals/exports/open-graph.png",
+      "visuals/sources/open-graph.svg",
+      "visuals/exports/linkedin-landscape.png",
+      "visuals/sources/linkedin-landscape.svg",
+      "visuals/exports/instagram-square.png",
+      "visuals/sources/instagram-square.svg",
+      "visuals/exports/instagram-portrait.png",
+      "visuals/sources/instagram-portrait.svg",
+      "visuals/exports/story-reel-cover.png",
+      "visuals/sources/story-reel-cover.svg",
+      "visuals/exports/x-landscape.png",
+      "visuals/sources/x-landscape.svg",
+      "visuals/exports/pinterest-vertical.png",
+      "visuals/sources/pinterest-vertical.svg",
+      "visuals/exports/statistic-card.png",
+      "visuals/sources/statistic-card.svg",
+      "visuals/exports/system-map-relationship.png",
+      "visuals/sources/system-map-relationship.svg",
+      "visuals/exports/instagram-carousel-01.png",
+      "visuals/sources/instagram-carousel-01.svg",
+      "visuals/exports/instagram-carousel-02.png",
+      "visuals/sources/instagram-carousel-02.svg",
+      "visuals/exports/instagram-carousel-03.png",
+      "visuals/sources/instagram-carousel-03.svg",
+      "visuals/exports/instagram-carousel-04.png",
+      "visuals/sources/instagram-carousel-04.svg",
+      "visuals/exports/instagram-carousel-05.png",
+      "visuals/sources/instagram-carousel-05.svg",
+      "visuals/exports/instagram-carousel-06.png",
+      "visuals/sources/instagram-carousel-06.svg",
+      "visuals/exports/instagram-carousel-07.png",
+      "visuals/sources/instagram-carousel-07.svg",
+      "visuals/exports/instagram-carousel-08.png",
+      "visuals/sources/instagram-carousel-08.svg",
+      "verification/social-sharing-preview.png",
+      "../../public/framework-17/open-graph.png",
+      "../../scripts/generate-framework17-visuals.mjs",
+      "../../src/lib/framework-17-visual-release.test.ts",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/opengraph-image.png",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/opengraph-image.alt.txt",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/twitter-image.png",
+      "../../src/app/frameworks/asylum-evidence-documentation-builder/demo/twitter-image.alt.txt",
+      "../../src/lib/framework-17-og-preview.test.ts",
+      "verification/VISUAL-VERIFICATION.md"
+    ]
   },
   "intentionallyInapplicable": [
-    {"item":"field pilot","reason":"The assignment explicitly does not require a pilot or institutional adoption."},
-    {"item":"Python generator","reason":"The deterministic TypeScript engine and tested fixture provide the equivalent reproducibility."},
-    {"item":"push and deployment","reason":"Explicitly prohibited for this release."}
+    {
+      "item": "field pilot",
+      "reason": "The assignment explicitly does not require a pilot or institutional adoption."
+    },
+    {
+      "item": "Python generator",
+      "reason": "The deterministic TypeScript engine and tested fixture provide the equivalent reproducibility."
+    }
   ]
 }

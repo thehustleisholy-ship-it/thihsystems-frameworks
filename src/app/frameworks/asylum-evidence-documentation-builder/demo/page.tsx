@@ -2,6 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AsylumReadinessBuilder from "./AsylumReadinessBuilder";
 
-export const metadata: Metadata = { title: "Asylum Documentation Readiness Builder | Framework 17", description: "A synthetic, educational record-readiness illustration that preserves uncertainty and routes legal questions to qualified counsel." };
+export const metadata: Metadata = {
+  title: "Asylum Documentation Readiness Builder | Framework 17",
+  description: "A synthetic, educational record-readiness illustration that preserves uncertainty and routes legal questions to qualified counsel.",
+  openGraph: {
+    title: "Framework 17: Asylum Evidence & Documentation Builder",
+    description: "Organize the record without manufacturing the story. Proposed framework; synthetic educational illustration; not legal advice.",
+    images: [{
+      url: "/framework-17/open-graph.png",
+      width: 1200,
+      height: 630,
+      alt: "Dark green and amber Framework 17 title card with connected evidence and provenance nodes.",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Framework 17: Asylum Evidence & Documentation Builder",
+    description: "Organize the record without manufacturing the story. Proposed framework; not legal advice.",
+    images: ["/framework-17/open-graph.png"],
+  },
+};
 
 export default function Page() { return <main className="min-h-screen"><section className="border-b hairline py-8"><div className="shell"><Link className="focus-ring text-sm telemetry-mint" href="/frameworks/asylum-evidence-documentation-builder">Back to Framework 17</Link><p className="uppercase-label telemetry-amber mt-8">Framework 17 · Interactive illustration</p><h1 className="mt-3 max-w-4xl text-4xl font-semibold sm:text-6xl">Organize the record.<br />Do not manufacture the story.</h1><p className="mt-5 max-w-3xl text-lg text-secondary">A deterministic preparation view for a fictional person to map chronology, documents, translations, provenance, unresolved conflicts, and counsel questions.</p></div></section><section className="shell py-8"><AsylumReadinessBuilder /></section><section className="shell pb-16"><div className="glass-plane rounded-xl p-6"><h2 className="text-xl font-semibold">Privacy and safety</h2><p className="mt-3 max-w-4xl text-sm leading-6 text-secondary">This local illustration stores nothing and accepts no names, narratives, documents, contact information, or identifying data. A real implementation would require threat modeling, informed consent, access controls, deletion rules, safe-device guidance, encryption, and review by affected people and qualified privacy and immigration-law practitioners.</p></div></section></main>; }
