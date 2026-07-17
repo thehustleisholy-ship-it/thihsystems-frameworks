@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Question for qualified legal review","type":"object","required":["id","question","status"],"properties":{"id":{"type":"string"},"question":{"type":"string"},"linkedIds":{"type":"array","items":{"type":"string"}},"status":{"enum":["open","scheduled","reviewed"]}},"additionalProperties":false}
