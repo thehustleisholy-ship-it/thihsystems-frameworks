@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050607"/><stop offset="1" stop-color="#0b211b"/></linearGradient><clipPath id="clip"><rect width="1600" height="900" rx="0"/></clipPath></defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <image href="../master/framework-17-editorial-master.png" x="912" y="59" width="629" height="782" preserveAspectRatio="xMidYMid slice" opacity="0.42" clip-path="url(#clip)"/>
+  <rect x="59" y="59" width="1482" height="782" rx="21" fill="none" stroke="#f1eadb" stroke-opacity=".14"/>
+  <circle cx="59" cy="59" r="5" fill="#42d6a4"/><text x="59" y="95" text-anchor="start" fill="#e4a84c" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">HUMAN AND LEGAL BOUNDARIES</text>
+  <text x="59" y="171" text-anchor="start" fill="#f1eadb" font-family="Arial, Helvetica, sans-serif" font-size="61" font-weight="650"><tspan x="59" dy="0">Person confirms facts</tspan><tspan x="59" dy="67">System organizes metadata</tspan><tspan x="59" dy="67">Qualified practitioner reviews law</tspan></text>
+  <path d="M59 504H1541" stroke="#42d6a4" stroke-width="3"/><path d="M800 504v99" stroke="#e4a84c" stroke-width="3"/><circle cx="59" cy="504" r="14" fill="#42d6a4"/><circle cx="800" cy="504" r="14" fill="#e4a84c"/><circle cx="1541" cy="504" r="14" fill="#42d6a4"/><text x="800" y="648" text-anchor="middle" fill="#e4a84c" font-family="Arial" font-size="22">AI: metadata organization only</text>
+  <text x="59" y="630" text-anchor="start" fill="#f1eadb" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="450"><tspan x="59" dy="0">AI supports the middle layer. It never replaces</tspan><tspan x="59" dy="32">either person.</tspan></text>
+  <line x1="59" y1="808.55" x2="1541" y2="808.55" stroke="#42d6a4" stroke-opacity=".4"/>
+  <text x="59" y="841" fill="#f1eadb" fill-opacity=".82" font-family="Arial, Helvetica, sans-serif" font-size="13">Proposed framework · Synthetic educational illustration · Not legal advice</text>
+  <text x="1541" y="841" text-anchor="end" fill="#e4a84c" font-family="Arial, Helvetica, sans-serif" font-size="12">Representation boundary: S3</text>
+  </svg>

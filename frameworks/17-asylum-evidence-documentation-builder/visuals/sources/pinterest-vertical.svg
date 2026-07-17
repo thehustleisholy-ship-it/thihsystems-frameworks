@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050607"/><stop offset="1" stop-color="#0b211b"/></linearGradient><clipPath id="clip"><rect width="1000" height="1500" rx="0"/></clipPath></defs>
+  <rect width="1000" height="1500" fill="url(#g)"/>
+  <image href="../master/framework-17-editorial-master.png" x="65" y="855" width="870" height="420" preserveAspectRatio="xMidYMid slice" opacity="0.26" clip-path="url(#clip)"/>
+  <rect x="65" y="65" width="870" height="1370" rx="23" fill="none" stroke="#f1eadb" stroke-opacity=".14"/>
+  <circle cx="65" cy="65" r="5" fill="#42d6a4"/><text x="65" y="158" text-anchor="start" fill="#e4a84c" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="3">FRAMEWORK 17</text>
+  <text x="65" y="285" text-anchor="start" fill="#f1eadb" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="650"><tspan x="65" dy="0">Organize the record</tspan><tspan x="65" dy="75">without manufacturing</tspan><tspan x="65" dy="75">the story</tspan></text>
+  
+  <text x="65" y="1050" text-anchor="start" fill="#f1eadb" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="450"><tspan x="65" dy="0">inventory → provenance →</tspan><tspan x="65" dy="36">translation → visible conflicts →</tspan><tspan x="65" dy="36">qualified review</tspan></text>
+  <line x1="65" y1="1399.25" x2="935" y2="1399.25" stroke="#42d6a4" stroke-opacity=".4"/>
+  <text x="65" y="1435" fill="#f1eadb" fill-opacity=".82" font-family="Arial, Helvetica, sans-serif" font-size="14">Proposed framework · Synthetic educational illustration · Not legal advice</text>
+  <text x="935" y="1435" text-anchor="end" fill="#e4a84c" font-family="Arial, Helvetica, sans-serif" font-size="12">Description sources: S1 · S3 · S6 · S7</text>
+  </svg>

@@ -1,0 +1,8 @@
+{
+  "$comment": "Synthetic educational data only. No person or case is represented.",
+  "scenarios": [
+    {"id":"early-assembly","chronology":2,"identityDocuments":1,"supportingCategories":2,"translationQueue":5,"unresolvedConflicts":4,"provenance":1,"missingEvidenceExplanations":1,"legalReview":0,"secureExport":false},
+    {"id":"translation-heavy","chronology":4,"identityDocuments":3,"supportingCategories":5,"translationQueue":7,"unresolvedConflicts":2,"provenance":4,"missingEvidenceExplanations":3,"legalReview":1,"secureExport":false},
+    {"id":"review-ready","chronology":5,"identityDocuments":4,"supportingCategories":7,"translationQueue":1,"unresolvedConflicts":1,"provenance":5,"missingEvidenceExplanations":4,"legalReview":2,"secureExport":true}
+  ]
+}
